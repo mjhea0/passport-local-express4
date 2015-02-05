@@ -39,7 +39,7 @@ router.get('/logout', function(req, res) {
 });
 
 router.get('/ping', function(req, res){
-    res.status(status).send("pong!", 200);
+    res.status(200).send("pong!");
 });
 
 module.exports = router;
