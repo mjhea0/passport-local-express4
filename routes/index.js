@@ -15,7 +15,7 @@ router.get('/register', function(req, res) {
 router.post('/register', function(req, res, next) {
     Account.register(new Account({ username : req.body.username }), req.body.password, function(err, account) {
         if (err) {
-          return res.render("register", {info: "Sorry. That username already exists. Try again."});
+          return res.render('register', { error : err.message });
         }
 
         passport.authenticate('local')(req, res, function () {
@@ -31,7 +31,7 @@ router.post('/register', function(req, res, next) {
 
 
 router.get('/login', function(req, res) {
-    res.render('login', { user : req.user, message : req.flash('error')});
+    res.render('login', { user : req.user, error : req.flash('error')});
 });
 
 router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), function(req, res, next) {
