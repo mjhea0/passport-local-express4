@@ -1,43 +1,43 @@
-var should = require("should");
-var mongoose = require('mongoose');
-var Account = require("../models/account.js");
-var db;
+const should = require("should");
+const mongoose = require('mongoose');
+const Account = require("../models/account.js");
+const db;
 
-describe('Account', function() {
+describe('Account', () => {
 
-    before(function(done) {
+    before((done) => {
         db = mongoose.connect('mongodb://localhost/test');
             done();
     });
 
-    after(function(done) {
+    after((done) => {
         mongoose.connection.close();
         done();
     });
 
-    beforeEach(function(done) {
+    beforeEach( (done) => {
         var account = new Account({
             username: '12345',
             password: 'testy'
         });
 
-        account.save(function(error) {
+        account.save((error) => {
             if (error) console.log('error' + error.message);
             else console.log('no error');
             done();
         });
     });
 
-    it('find a user by username', function(done) {
-        Account.findOne({ username: '12345' }, function(err, account) {
+    it('find a user by username', (done) => {
+        Account.findOne({ username: '12345' }, (err, account) => {
             account.username.should.eql('12345');
             console.log("   username: ", account.username);
             done();
         });
     });
 
-    afterEach(function(done) {
-        Account.remove({}, function() {
+    afterEach((done) => {
+        Account.remove({}, () => {
             done();
         });
      });

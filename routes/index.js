@@ -1,25 +1,25 @@
-var express = require('express');
-var passport = require('passport');
-var Account = require('../models/account');
-var router = express.Router();
+const express = require('express');
+const passport = require('passport');
+const Account = require('../models/account');
+const router = express.Router();
 
 
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
     res.render('index', { user : req.user });
 });
 
-router.get('/register', function(req, res) {
+router.get('/register', (req, res) => {
     res.render('register', { });
 });
 
-router.post('/register', function(req, res, next) {
-    Account.register(new Account({ username : req.body.username }), req.body.password, function(err, account) {
+router.post('/register', (req, res, next) => {
+    Account.register(new Account({ username : req.body.username }), req.body.password, (err, account) => {
         if (err) {
           return res.render('register', { error : err.message });
         }
 
-        passport.authenticate('local')(req, res, function () {
-            req.session.save(function (err) {
+        passport.authenticate('local')(req, res, () => {
+            req.session.save((err) => {
                 if (err) {
                     return next(err);
                 }
@@ -30,12 +30,12 @@ router.post('/register', function(req, res, next) {
 });
 
 
-router.get('/login', function(req, res) {
+router.get('/login', (req, res) => {
     res.render('login', { user : req.user, error : req.flash('error')});
 });
 
-router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), function(req, res, next) {
-    req.session.save(function (err) {
+router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res, next) => {
+    req.session.save((err) => {
         if (err) {
             return next(err);
         }
@@ -43,9 +43,9 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/login'
     });
 });
 
-router.get('/logout', function(req, res, next) {
+router.get('/logout', (req, res, next) => {
     req.logout();
-    req.session.save(function (err) {
+    req.session.save((err) => {
         if (err) {
             return next(err);
         }
@@ -53,7 +53,7 @@ router.get('/logout', function(req, res, next) {
     });
 });
 
-router.get('/ping', function(req, res){
+router.get('/ping', (req, res) => {
     res.status(200).send("pong!");
 });
 
