@@ -1,13 +1,12 @@
 const should = require("should");
 const mongoose = require('mongoose');
 const Account = require("../models/account.js");
-const db;
 
 describe('Account', () => {
 
     before((done) => {
-        db = mongoose.connect('mongodb://localhost/test');
-            done();
+        const db = mongoose.connect('mongodb://localhost/test');
+        done();
     });
 
     after((done) => {
