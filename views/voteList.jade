@@ -1,0 +1,20 @@
+extends base/layout
+
+block content
+    .container
+        if (!vote)
+            p 현재 진행 중인 투표가 없습니다!
+        else
+            .list-group
+                each val in vote
+                    a.list-group-item.list-group-item-action.flex-column.align-items-start(href='#')
+                        .d-flex.w-100.justify-content-between
+                            h5.mb-1 #{val[0]}
+                            small 기간 : #{val[2]} ~ #{val[3]}
+                        p.mb-1
+                            case val[1]
+                                when '0': | 대기
+                                when '1': | 진행 중
+                                when '2': | 일시중지
+                                when '3': | 종료
+                                default: | 오류

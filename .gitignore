@@ -7,3 +7,9 @@
 node_modules
 *.out
 npm-debug.log
+*.html
+
+package-lock.json
+
+build/
+config/*.json

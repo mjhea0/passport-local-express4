@@ -1,0 +1,7 @@
+{
+  "id": "web",
+  "password": "elqlelqlelq",
+  "remoteUrl": "13.124.161.168:27017",
+  "localUrl": "localhost:27017",
+  "state": "remote"
+}

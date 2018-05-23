@@ -1,0 +1,25 @@
+nav.navbar.navbar-dark.bg-dark.navbar-expand-lg
+    a.navbar-brand(href="/") 투표
+    button.navbar-toggler(
+        type='button'
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="true"
+        aria-label="Toggle navigation"
+    )
+        span.navbar-toggler-icon
+    .collapse.navbar-collapse
+        ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+            li.nav-item: a.nav-link(href="/public") 공개 투표
+            li.nav-item: a.nav-link(href="/private") 비밀 투표
+        ul.navbar-nav.my-2.my-lg-0
+            if (!user)
+                li.nav-item: a.nav-link(href="/login") 로그인
+                li.nav-item: a.nav-link(href="/register") 회원가입
+            else if (user)
+                li.nav-item.navbar-text 환영합니다,
+                    b #{user.username}
+                    | 님!
+                li.nav-item: a.nav-link(href="/logout")
+                    b 로그아웃
