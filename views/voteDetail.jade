@@ -1,0 +1,24 @@
+extends base/layout
+
+block content
+    .container
+        if (!voteDetail)
+            p 해당 주소의 투표가 존재하지 않습니다!
+        else
+            h2 #{voteDetail.summary[0]}
+            small #{voteDetail.summary[4]}
+            h4
+                case voteDetail.summary[1]
+                    when '0': | 대기
+                    when '1': | 진행 중
+                    when '2': | 일시중지
+                    when '3': | 종료
+                    default: | 오류
+            h5 기간 : #{voteDetail.summary[2]} ~ #{voteDetail.summary[3]}
+            br
+            h3 후보자 목록
+            ul
+                each candidate in voteDetail.candidateList
+                    li: h4
+                        b #{candidate[0]}
+                        |  (득표수 : #{candidate[1]})

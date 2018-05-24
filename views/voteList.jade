@@ -7,7 +7,10 @@ block content
         else
             .list-group
                 each val in vote
-                    a.list-group-item.list-group-item-action.flex-column.align-items-start(href='#')
+                    -voteHref='/vote/'+val[4]
+                    a.list-group-item.list-group-item-action.flex-column.align-items-start(
+                        href=voteHref
+                    )
                         .d-flex.w-100.justify-content-between
                             h5.mb-1 #{val[0]}
                             small 기간 : #{val[2]} ~ #{val[3]}
