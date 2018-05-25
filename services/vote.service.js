@@ -12,7 +12,7 @@ const voteSummary = async (voteAddress) => {
   const summary = await Vote(voteAddress)
     .methods.getVoteSummary()
     .call();
-  summary['4'] = voteAddress;
+  summary['6'] = voteAddress;
   return summary;
 };
 

@@ -11,6 +11,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const flash = require('connect-flash');
 
+const dbConfig = require('./config/db-config');
 const routes = require('./routes/index');
 const accountRoutes = require('./routes/accounts');
 const voteRoutes = require('./routes/votes');
@@ -37,6 +38,10 @@ app.use(passport.initialize());
 app.use(flash());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(function(req, res, next) {
+    res.locals.user = req.user;
+    next();
+});
 
 // 라우팅
 app.use('/', [routes, accountRoutes, voteRoutes]);
@@ -48,8 +53,11 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 // mongoose
-// mongoose.connect('mongodb://web:elqlelqlelq@localhost/vote');
-mongoose.connect('mongodb://web:elqlelqlelq@13.124.161.168/vote');
+if(dbConfig.state === 'remote') {
+    mongoose.connect(`mongodb://${dbConfig.id}:${dbConfig.password}@${dbConfig.remoteUrl}/vote`);
+} else {
+    mongoose.connect(`mongodb://${dbConfig.id}:${dbConfig.password}@${dbConfig.localUrl}/vote`);
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -65,7 +73,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
+        res.render('base/error', {
             message: err.message,
             error: err
         });
@@ -76,7 +84,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+    res.render('base/error', {
         message: err.message,
         error: {}
     });
