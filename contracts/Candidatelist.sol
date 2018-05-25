@@ -9,6 +9,7 @@ contract Candidatelist is Ownable {
 
     struct Candidate {
         string name;
+        string commitment;
         uint numVote;
     }
     Candidate[] internal candidates;
@@ -19,7 +20,18 @@ contract Candidatelist is Ownable {
      * @return success 성공하면 true, 실패하면 false
      */
     function addCandidate(string _candidateName) public onlyOwner returns (bool success){
-        candidates.push(Candidate(_candidateName, 0));
+        candidates.push(Candidate(_candidateName, '', 0));
+        success = true;
+    }
+
+    /**
+     * @dev 후보리스트에 후보를 추가하는 메소드
+     * @param _candidateName 후보의 이름
+     * @param _commitment 후보의 공약
+     * @return success 성공하면 true, 실패하면 false
+     */
+    function addCandidate(string _candidateName, string _commitment) public onlyOwner returns (bool success){
+        candidates.push(Candidate(_candidateName, _commitment, 0));
         success = true;
     }
 
@@ -47,12 +59,14 @@ contract Candidatelist is Ownable {
      */
     function getCandidate(uint _candidateIndex) external view returns (
         string,
+        string,
         uint
     ) {
         require(_candidateIndex < candidates.length);
 
         return (
             candidates[_candidateIndex].name,
+            candidates[_candidateIndex].commitment,
             candidates[_candidateIndex].numVote
         );
     }

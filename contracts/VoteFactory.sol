@@ -42,6 +42,7 @@ contract VoteFactory is Ownable {
      */
     function makeNewVote(
         string _voteName,
+        string _voteDescription,
         address _voteOwner,
         uint _startDate,
         uint _endDate,
@@ -52,6 +53,7 @@ contract VoteFactory is Ownable {
     {
         address newVote = new Vote(
             _voteName,
+            _voteDescription,
             _voteOwner,
             _startDate,
             _endDate,

@@ -26,6 +26,7 @@ contract Vote is Ownable, Candidatelist, Voterlist {
     VoteState internal voteState;
 
     string private voteName;
+    string private voteDescription;
     bool private isPrivate;
     uint private startDate;
     uint private endDate;
@@ -38,6 +39,7 @@ contract Vote is Ownable, Candidatelist, Voterlist {
      */
     constructor(
         string _voteName,
+        string _voteDescription,
         address _owner,
         uint _startDate,
         uint _endDate,
@@ -47,6 +49,7 @@ contract Vote is Ownable, Candidatelist, Voterlist {
     {
         owner = _owner;
         voteName = _voteName;
+        voteDescription = _voteDescription;
         startDate = _startDate;
         endDate = _endDate;
         isPrivate = _isPrivate;
@@ -75,16 +78,25 @@ contract Vote is Ownable, Candidatelist, Voterlist {
      */
     function getVoteSummary() external view returns (
         string,
+        string,
         uint,
         uint,
-        uint
+        uint,
+        bool
     ) {
         return (
         voteName,
+        voteDescription,
         uint(voteState),
         startDate,
-        endDate
+        endDate,
+        isPrivate
         );
+    }
+
+    function setVoteDescription(string _description) public onlyOwner returns (bool success) {
+        voteDescription = _description;
+        success = true;
     }
 
     /**
