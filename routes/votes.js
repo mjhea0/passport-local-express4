@@ -8,7 +8,7 @@ const voterService = require('../services/voter.service');
 router.get('/:vote(public|private)', (req, res) => {
     voteService.getVoteList(req.originalUrl === '/private')
         .then((voteSummaryList) => {
-            res.render('voteList', {
+            res.render('vote/voteList', {
                 vote: voteSummaryList
             });
         })
@@ -32,7 +32,7 @@ router.get('/:vote(public|private)/:address', (req, res) => {
                         .then((voterNumber) => {
                             voteDetail.voterNumber = voterNumber;
 
-                            res.render('voteDetail', {
+                            res.render('vote/voteDetail', {
                                 voteDetail: voteDetail,
                                 path: req.path
                             });
@@ -42,6 +42,12 @@ router.get('/:vote(public|private)/:address', (req, res) => {
         .catch((err) => {
             res.send(err.toString());
         });
+});
+
+router.get('/:vote(public|private)/:address/vote', (req, res) => {
+    const voteAddress = req.params.address;
+    const user = req.user;
+    // voterService.getVoterState()
 });
 
 module.exports = router;

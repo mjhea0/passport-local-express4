@@ -57,6 +57,15 @@ contract Vote is Ownable, Candidatelist, Voterlist {
     }
 
     /**
+     * @dev 파라미터로 들어온 계정이 이 투표의 주인인지 확인하는 메소드
+     * @param accountAddress 계정 주소
+     * @return 계정 주소와 이 투표의 주인 주소가 맞으면 true
+     */
+    function isOwner(address accountAddress) external view returns (bool) {
+        return accountAddress == owner;
+    }
+
+    /**
      * @dev 투표를 한 사람의 수을 얻는 메소드
      * @return 투표자의 수
      */

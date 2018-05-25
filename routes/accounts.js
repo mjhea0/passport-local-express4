@@ -2,14 +2,23 @@ const express = require('express');
 const passport = require('passport');
 const Account = require('../models/account');
 const router = express.Router();
+const accountService = require('../services/account.service');
 
 router.get('/register', (req, res) => {
-    res.render('register', { });
+    res.render('account/register', { });
 });
 
-router.post('/register', (req, res, next) => {
-    const {username, password, passwordConfirm} = req.body;
-    Account.register(new Account({ username : username }), password, (err, account) => {
+router.post('/register', async (req, res, next) => {
+    const {username, password} = req.body;
+
+    // 계정을 만듦
+    const ethAccount = await accountService.makeNewAccount(password);
+
+    Account.register(new Account(
+        {
+            username : username,
+            etherAccount : ethAccount.address
+        }), password, (err, account) => {
         if (err) {
             return res.render('register', { error : err.message });
         }
@@ -27,7 +36,7 @@ router.post('/register', (req, res, next) => {
 
 
 router.get('/login', (req, res) => {
-    res.render('login', { user : req.user, error : req.flash('error')});
+    res.render('account/login', { error : req.flash('error')});
 });
 
 router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res, next) => {
