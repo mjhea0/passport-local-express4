@@ -28,7 +28,7 @@ describe('db 유저 다루는 테스트', () => {
   let userModel;
 
   before(() => {
-    mongoose.connect(`mongodb://${config.id}:${config.password}@${config.remoteUrl}/vote`)
+    mongoose.connect(`mongodb://${config.id}:${config.password}@${config.remoteUrl}:${config.mongoPort}/vote`)
       .then(() => console.log("connected db"))
       .catch((err) => console.error(err));
     userModel = mongoose.model('User', userSchema);

@@ -11,7 +11,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const flash = require('connect-flash');
 
-const dbConfig = require('./config/db-config');
+const dbConfig = require('./config/db-config.json');
 const routes = require('./routes/index');
 const accountRoutes = require('./routes/accounts');
 const voteRoutes = require('./routes/votes');
@@ -54,9 +54,9 @@ passport.deserializeUser(Account.deserializeUser());
 
 // mongoose
 if(dbConfig.state === 'remote') {
-    mongoose.connect(`mongodb://${dbConfig.id}:${dbConfig.password}@${dbConfig.remoteUrl}/vote`);
+    mongoose.connect(`mongodb://${dbConfig.id}:${dbConfig.password}@${dbConfig.remoteUrl}:${dbConfig.mongoPort}/vote`);
 } else {
-    mongoose.connect(`mongodb://${dbConfig.id}:${dbConfig.password}@${dbConfig.localUrl}/vote`);
+    mongoose.connect(`mongodb://${dbConfig.id}:${dbConfig.password}@${dbConfig.localUrl}:${dbConfig.mongoPort}/vote`);
 }
 
 // catch 404 and forward to error handler

@@ -1,8 +1,10 @@
+const dbConfig = require('./config/db-config.json');
+
 module.exports = {
   migrations_directory: "./migrations",
   networks: {
     development: {
-      host: "localhost",
+      host: dbConfig.state === 'remote' ? dbConfig.remoteUrl : dbConfig.localUrl,
       port: 8545,
       network_id: "5378"
     }
