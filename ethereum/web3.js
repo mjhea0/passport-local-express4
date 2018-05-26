@@ -14,10 +14,10 @@ if (typeof window !== 'undefined' && typeof window.web3 !== 'undefined') {
     //     'https://rinkeby.infura.io/Y4ogyw7K7SGyOOBUXg0t'
     // );
     let provider;
-    if (dbConfig.state === 'remote') {
-        provider = `http://${dbConfig.remoteUrl}:${dbConfig.ganachePort}`;
+    if (dbConfig.ganache.state === 'remote') {
+        provider = `http://${dbConfig.remoteUrl}:${dbConfig.ganache.port}`;
     } else {
-        provider = `http://${dbConfig.localUrl}:${dbConfig.ganachePort}`;
+        provider = `http://${dbConfig.localUrl}:${dbConfig.ganache.port}`;
     }
     web3 = new Web3(provider);
 }

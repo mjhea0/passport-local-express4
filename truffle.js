@@ -4,9 +4,9 @@ module.exports = {
   migrations_directory: "./migrations",
   networks: {
     development: {
-      host: dbConfig.state === 'remote' ? dbConfig.remoteUrl : dbConfig.localUrl,
-      port: 8545,
-      network_id: "5378"
+      host: dbConfig.ganache.state === 'remote' ? dbConfig.remoteUrl : dbConfig.localUrl,
+      port: dbConfig.ganache.port,
+      network_id: dbConfig.ganache.networkId
     }
   },
   solc: {
