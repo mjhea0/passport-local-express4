@@ -74,7 +74,9 @@ module.exports = (deployer, network, accounts) =>
             const jsonObj = {
                 factory: deployedVoteFactory.address,
                 test_public: deployedPublicVotes[0],
-                test_private: deployedPrivateVotes[0]
+                test_private: deployedPrivateVotes[0],
+                test_public_address: accounts[1],
+                test_private_address: accounts[2]
             };
             fs.writeFile('./config/contract-address.json', new Buffer.from(JSON.stringify(jsonObj)), 'utf8', (err) => {
                 if (err) throw 'error writing file: ' + err;

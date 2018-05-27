@@ -36,28 +36,41 @@ router.get('/:vote(public|private)/:address', (req, res) => {
                             if(req.user) {
                                 voterService.isOwner(voteAddress, req.user.etherAccount)
                                     .then((isVoteOwner) => {
-                                        console.log(isVoteOwner);
-                                        if(isVoteOwner) {
-                                            res.render('vote/voteDetail', {
-                                                voteDetail: voteDetail,
-                                                owner: isVoteOwner,
-                                                path: req.path
-                                            });
-                                            return;
-                                        }
+                                        voteDetail.owner = isVoteOwner;
+                                        res.render('vote/voteDetail', {
+                                            voteDetail: voteDetail,
+                                            path: req.path
+                                        });
                                     })
+                            } else {
+                                res.render('vote/voteDetail', {
+                                    voteDetail: voteDetail,
+                                    path: req.path
+                                });
                             }
-
-                            res.render('vote/voteDetail', {
-                                voteDetail: voteDetail,
-                                path: req.path
-                            });
                         })
                 })
         })
         .catch((err) => {
             res.send(err.toString());
         });
+});
+
+router.post('/:vote(public|private)/:address', (req, res) => {
+    const voteAddress = req.params.address;
+    const voterAddress = req.user.etherAccount;
+    const state = req.body.state;
+    voteService.setVoteState(voteAddress, voterAddress, state)
+        .then((success) => {
+            if(success) {
+                res.redirect(req.path)
+            } else {
+                res.send("실패");
+            }
+        })
+        .catch((err) => {
+            res.send(err.toString());
+        })
 });
 
 router.get('/:vote(public|private)/:address/vote', (req, res) => {

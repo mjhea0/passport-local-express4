@@ -4,27 +4,22 @@ const factory = require('../ethereum/factory');
 const Vote = require('../ethereum/vote');
 
 const voteAddressList = async (isPrivate) => {
-  // const address = web3.eth.accounts.create(password).address;
-  return await factory.methods.getDeployedVotes(isPrivate).call();
+    // const address = web3.eth.accounts.create(password).address;
+    return await factory.methods.getDeployedVotes(isPrivate).call();
 };
 
 const voteSummary = async (voteAddress) => {
-  const summary = await Vote(voteAddress)
-    .methods.getVoteSummary()
-    .call();
-  summary['6'] = voteAddress;
-  return summary;
+    const summary = await Vote(voteAddress)
+        .methods.getVoteSummary()
+        .call();
+    summary['6'] = voteAddress;
+    return summary;
 };
 
 const voteSummaryList = async (voteAddressList) => {
-  const summaryList = await voteAddressList.map(async (voteAddress) => await voteSummary(voteAddress));
-  const resultList = await Promise.all(summaryList);
-  return resultList;
-};
-
-const isPrivateVote = async (voteAddress) => {
-  const isPrivate = await Vote(voteAddress).methods.isPrivateVote().call();
-  return isPrivate;
+    const summaryList = await voteAddressList.map(async (voteAddress) => await voteSummary(voteAddress));
+    const resultList = await Promise.all(summaryList);
+    return resultList;
 };
 
 const getVoteList = async (isPrivate) => {
@@ -32,9 +27,15 @@ const getVoteList = async (isPrivate) => {
     return await voteSummaryList(addressList);
 };
 
+const setVoteState = async (voteAddress, voterAddress, voteState) => {
+    return await Vote(voteAddress)
+        .methods.setVoteState(voteState).send({from: voterAddress});
+};
+
 module.exports = {
-  getVoteList,
-  voteAddressList,
-  voteSummary,
-  voteSummaryList
+    getVoteList,
+    voteAddressList,
+    voteSummary,
+    voteSummaryList,
+    setVoteState
 };

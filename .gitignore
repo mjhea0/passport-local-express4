@@ -10,5 +10,3 @@ npm-debug.log
 *.html
 
 package-lock.json
-
-/config

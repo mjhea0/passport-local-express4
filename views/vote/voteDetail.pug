@@ -43,15 +43,15 @@ block content
                     .form-group
                         .btn-group.btn-group-toggle(data-toggle='buttons')
                             label.btn.btn-primary.active
-                                input#option1(type='radio', name='state', autocomplete='off')
+                                input#option1(type='radio', name='state', value='0' autocomplete='off')
                                 |  대기
                             label.btn.btn-primary
-                                input#option2(type='radio', name='state', autocomplete='off')
+                                input#option2(type='radio', name='state', value='1' autocomplete='off')
                                 |  진행 중
                             label.btn.btn-primary
-                                input#option3(type='radio', name='state', autocomplete='off')
+                                input#option3(type='radio', name='state', value='2' autocomplete='off')
                                 |  일시중지
                             label.btn.btn-primary
-                                input#option4(type='radio', name='state', autocomplete='off')
+                                input#option4(type='radio', name='state', value='3' autocomplete='off')
                                 |  오류
                     button.btn.btn-primary(type='submit') 바꾸기
