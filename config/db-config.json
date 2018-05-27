@@ -1,7 +1,15 @@
 {
-  "id": "web",
-  "password": "elqlelqlelq",
-  "remoteUrl": "13.124.161.168:27017",
-  "localUrl": "localhost:27017",
-  "state": "remote"
+  "remoteUrl": "13.124.161.168",
+  "localUrl": "localhost",
+  "mongo": {
+    "id": "web",
+    "password": "elqlelqlelq",
+    "port": "27017",
+    "state": "remote"
+  },
+  "ganache": {
+    "port": "8545",
+    "networkId": "5378",
+    "state": "remote"
+  }
 }

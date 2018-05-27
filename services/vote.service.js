@@ -22,6 +22,11 @@ const voteSummaryList = async (voteAddressList) => {
   return resultList;
 };
 
+const isPrivateVote = async (voteAddress) => {
+  const isPrivate = await Vote(voteAddress).methods.isPrivateVote().call();
+  return isPrivate;
+};
+
 const getVoteList = async (isPrivate) => {
     const addressList = await voteAddressList(isPrivate);
     return await voteSummaryList(addressList);
