@@ -10,7 +10,12 @@ const getVoterState = async (voteAddress, voterAddress) => {
     return await Vote(voteAddress).methods.getVoterState(voterAddress).call();
 };
 
+const isOwner = async (voteAddress, voterAddress) => {
+    return await Vote(voteAddress).methods.isOwner(voterAddress).call();
+};
+
 module.exports = {
     getNumVoters,
-    getVoterState
+    getVoterState,
+    isOwner
 };

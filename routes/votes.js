@@ -9,6 +9,7 @@ router.get('/:vote(public|private)', (req, res) => {
     voteService.getVoteList(req.originalUrl === '/private')
         .then((voteSummaryList) => {
             res.render('vote/voteList', {
+                isPrivate: req.originalUrl === '/private' ? 'private' : 'public',
                 vote: voteSummaryList
             });
         })
@@ -31,6 +32,21 @@ router.get('/:vote(public|private)/:address', (req, res) => {
                     voterService.getNumVoters(voteAddress)
                         .then((voterNumber) => {
                             voteDetail.voterNumber = voterNumber;
+
+                            if(req.user) {
+                                voterService.isOwner(voteAddress, req.user.etherAccount)
+                                    .then((isVoteOwner) => {
+                                        console.log(isVoteOwner);
+                                        if(isVoteOwner) {
+                                            res.render('vote/voteDetail', {
+                                                voteDetail: voteDetail,
+                                                owner: isVoteOwner,
+                                                path: req.path
+                                            });
+                                            return;
+                                        }
+                                    })
+                            }
 
                             res.render('vote/voteDetail', {
                                 voteDetail: voteDetail,

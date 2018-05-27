@@ -19,7 +19,7 @@ nav.navbar.navbar-dark.bg-dark.navbar-expand-lg
                 li.nav-item: a.nav-link(href="/register") 회원가입
             else if (user)
                 li.nav-item.navbar-text 환영합니다,
-                    b #{user.username}
+                    a(href="/myInfo"): b #{user.username}
                     | 님!
                 li.nav-item: a.nav-link(href="/logout")
                     b 로그아웃

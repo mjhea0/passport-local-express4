@@ -38,3 +38,20 @@ block content
                     type="button"
                     disabled=voteButtonDisabled
                 ) 투표참여
+            if(voteDetail.owner)
+                form(role='form', action=path, method="post", style='max-width: 300px;')
+                    .form-group
+                        .btn-group.btn-group-toggle(data-toggle='buttons')
+                            label.btn.btn-primary.active
+                                input#option1(type='radio', name='state', autocomplete='off')
+                                |  대기
+                            label.btn.btn-primary
+                                input#option2(type='radio', name='state', autocomplete='off')
+                                |  진행 중
+                            label.btn.btn-primary
+                                input#option3(type='radio', name='state', autocomplete='off')
+                                |  일시중지
+                            label.btn.btn-primary
+                                input#option4(type='radio', name='state', autocomplete='off')
+                                |  오류
+                    button.btn.btn-primary(type='submit') 바꾸기

@@ -59,4 +59,11 @@ router.get('/logout', (req, res, next) => {
 });
 
 
+router.get('/myInfo', (req, res, next) => {
+    if(!req.user) {
+        res.redirect('/login')
+    }
+    res.render('account/myInfo');
+});
+
 module.exports = router;

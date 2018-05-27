@@ -2,3 +2,16 @@ extends ../base/layout
 
 block content
     .container
+        h1.display-5 #{user.username} 님의 정보
+        hr
+        h2 사용하고 계신 계정
+        p #{user.etherAccount}
+        hr
+        h3 주최 투표 목록
+        if(user.deployedVotes)
+            p #{user.deployedVotes}
+        else
+            .text-center
+                p 아직 주최하고 있는 투표가 없네요!
+                | 관리자에게 투표를 신청해보세요!
+        button.btn.btn-primary 투표신청

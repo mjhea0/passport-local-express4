@@ -54,11 +54,9 @@ passport.deserializeUser(Account.deserializeUser());
 
 // mongoose
 if(dbConfig.mongo.state === 'remote') {
-    mongoose.connect(`mongodb://${dbConfig.mongo.id}:${dbConfig.mongo.password}
-    @${dbConfig.remoteUrl}:${dbConfig.mongo.port}/vote`);
+    mongoose.connect(`mongodb://${dbConfig.mongo.id}:${dbConfig.mongo.password}@${dbConfig.remoteUrl}:${dbConfig.mongo.port}/vote`);
 } else {
-    mongoose.connect(`mongodb://${dbConfig.mongo.id}:${dbConfig.mongo.password}
-    @${dbConfig.localUrl}:${dbConfig.mongo.port}/vote`);
+    mongoose.connect(`mongodb://${dbConfig.mongo.id}:${dbConfig.mongo.password}@${dbConfig.localUrl}:${dbConfig.mongo.port}/vote`);
 }
 
 // catch 404 and forward to error handler
