@@ -31,13 +31,14 @@ block content
                                     | 득표수 : #{candidate[2]}
                                 button.btn.btn-success(onclick="window.open('#{candidate[1]}')") 공약보기
             -voteInPath = path + '/vote'
-            .text-center
-                -voteButtonDisabled = voteDetail.summary[2] !== '1'
-                button.btn.btn-primary.btn-lg(
-                    href=voteInPath
-                    type="button"
-                    disabled=voteButtonDisabled
-                ) 투표참여
+            if(user)
+                .text-center
+                    -voteButtonDisabled = voteDetail.summary[2] !== '1'
+                    button.btn.btn-primary.btn-lg(
+                        href=voteInPath
+                        type="button"
+                        disabled=voteButtonDisabled
+                    ) 투표참여
             if(voteDetail.owner)
                 form(role='form', action=path, method="post", style='max-width: 300px;')
                     .form-group
