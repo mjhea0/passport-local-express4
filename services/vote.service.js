@@ -32,10 +32,20 @@ const setVoteState = async (voteAddress, voterAddress, voteState) => {
         .methods.setVoteState(voteState).send({from: voterAddress});
 };
 
+const voting = async (voteAddress, voterAddress, candidateIndex) => {
+
+    const ownerAddress = await Vote(voteAddress).methods.getOwner().call();
+
+    await Vote(voteAddress)
+        .methods.voting(candidateIndex, voterAddress)
+        .send({from: ownerAddress});
+};
+
 module.exports = {
     getVoteList,
     voteAddressList,
     voteSummary,
     voteSummaryList,
-    setVoteState
+    setVoteState,
+    voting
 };

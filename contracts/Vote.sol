@@ -66,6 +66,14 @@ contract Vote is Ownable, Candidatelist, Voterlist {
     }
 
     /**
+     * @dev 투표의 주인 계정의 주소를 반환하는 메소드
+     * @return 투표 계정의 주소
+     */
+    function getOwner() external view returns (address) {
+        return owner;
+    }
+
+    /**
      * @dev 투표를 한 사람의 수을 얻는 메소드
      * @return 투표자의 수
      */
@@ -138,14 +146,25 @@ contract Vote is Ownable, Candidatelist, Voterlist {
      *      계정이 있으면 후보자의 득표 수를 1 증가시키고
      *      voters에 등록한다.
      * @param _candidateIndex 투표할 후보 인덱스
+     * @param _voterAddress 투표를 진행하는 계정의 주소
+     * @return 성공하면 true
      */
-    function voting(uint _candidateIndex) onlyVoterlisted(isPrivate) public {
-        require(endDate >= now && startDate <= now);
+    function voting(
+        uint _candidateIndex,
+        address _voterAddress
+    )
+    onlyVoterlisted(isPrivate)
+    onlyOwner
+    public
+    returns (bool success)
+    {
+//        require(endDate  >= now && startDate <= now);
 
-        if (getVoterState(msg.sender) != uint(VoterState.Voted)) {
+        if (getVoterState(_voterAddress) != uint(VoterState.Voted)) {
             if (voteCandidate(_candidateIndex)) {
-                if (setVoted(msg.sender)) {
+                if (setVoted(_voterAddress)) {
                     numVotedVoters++;
+                    success = true;
                 }
             }
         }

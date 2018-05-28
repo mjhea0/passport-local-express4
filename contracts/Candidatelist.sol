@@ -85,10 +85,10 @@ contract Candidatelist is Ownable {
      * @return 성공하면 true
      */
     function voteCandidate(uint _candidateIndex) internal returns(bool success) {
-        require(_candidateIndex < candidates.length);
-
-        candidates[_candidateIndex].numVote++;
-        success = true;
+        if(_candidateIndex < candidates.length) {
+            candidates[_candidateIndex].numVote++;
+            success = true;
+        }
     }
 
     //    /**

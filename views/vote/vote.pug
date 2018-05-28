@@ -5,4 +5,22 @@ block content
         if(!user)
             p 로그인이 필요합니다!
         else
-            
+            h1.display-4 #{voteDetail.summary[0]}
+            hr
+            br
+            form(role='form', action=path, method="post")
+                .card-deck
+                    -val = 0
+                    each candidate in voteDetail.candidateList
+                        label
+                            input(type='radio', name='candidate', value=val autocomplete='off')
+                            .card(style='width: 13rem;')
+                                .card-body
+                                    h5.card-title #{candidate[0]}
+                                    p.card-text 득표수 : #{candidate[2]}
+                                    -onClick = "window.open('" + candidate[1] + "')"
+                                    button.btn.btn-success(onclick=onClick) 공약보기
+                        -val = val+1
+
+                .text-center
+                    button.btn.btn-danger.btn-lg(type='submit') 투표

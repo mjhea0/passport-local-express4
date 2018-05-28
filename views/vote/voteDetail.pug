@@ -21,24 +21,38 @@ block content
                 | 기간 : #{voteDate}
             hr.my-4
             h3 후보자 목록
+            -voterNumber = 0
             p
                 .card-deck
                     each candidate in voteDetail.candidateList
+                        -voterNumber += parseInt(candidate[2])
                         .card(style='width: 15rem;')
                             .card-body
                                 h5.card-title #{candidate[0]}
                                 p.card-text
                                     | 득표수 : #{candidate[2]}
-                                button.btn.btn-success(onclick="window.open('#{candidate[1]}')") 공약보기
-            -voteInPath = path + '/vote'
+                                -onClick = "window.open('" + candidate[1] + "')"
+                                button.btn.btn-success(onclick=onClick) 공약보기
+            if(voteDetail.summary[2] !== '0')
+                h4 총 투표자 수 : #{voterNumber}
             if(user)
-                .text-center
-                    -voteButtonDisabled = voteDetail.summary[2] !== '1'
-                    button.btn.btn-primary.btn-lg(
-                        href=voteInPath
-                        type="button"
-                        disabled=voteButtonDisabled
-                    ) 투표참여
+                if(voteDetail.voterState !== '2')
+                    .text-center
+                        -voteInPath = path + '/vote'
+                        -voteButtonDisabled = voteDetail.summary[2] !== '1'
+                        a.btn.btn-primary.btn-lg.active(
+                            href=voteInPath
+                            role="button"
+                            aria-pressed="true"
+                            disabled=voteButtonDisabled
+                        ) 투표참여
+                else
+                    .text-center
+                        button.btn.btn-primary.btn-lg.active(
+                        role="button"
+                        aria-pressed="true"
+                        disabled
+                        ) 이미 투표에 참여하셨습니다!
             if(voteDetail.owner)
                 form(role='form', action=path, method="post", style='max-width: 300px;')
                     .form-group

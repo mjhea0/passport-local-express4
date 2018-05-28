@@ -29,11 +29,11 @@ router.get('/:vote(public|private)/:address', (req, res) => {
                 .then((candidateList) => {
                     voteDetail.candidateList = candidateList;
 
-                    voterService.getNumVoters(voteAddress)
-                        .then((voterNumber) => {
-                            voteDetail.voterNumber = voterNumber;
+                    if (req.user) {
+                        voterService.getVoterState(voteAddress, req.user.etherAccount)
+                            .then((voteState) => {
+                                voteDetail.voterState = voteState;
 
-                            if(req.user) {
                                 voterService.isOwner(voteAddress, req.user.etherAccount)
                                     .then((isVoteOwner) => {
                                         voteDetail.owner = isVoteOwner;
@@ -41,14 +41,14 @@ router.get('/:vote(public|private)/:address', (req, res) => {
                                             voteDetail: voteDetail,
                                             path: req.path
                                         });
-                                    })
-                            } else {
-                                res.render('vote/voteDetail', {
-                                    voteDetail: voteDetail,
-                                    path: req.path
-                                });
-                            }
-                        })
+                                    });
+                            });
+                    } else {
+                        res.render('vote/voteDetail', {
+                            voteDetail: voteDetail,
+                            path: req.path
+                        });
+                    }
                 })
         })
         .catch((err) => {
@@ -57,12 +57,15 @@ router.get('/:vote(public|private)/:address', (req, res) => {
 });
 
 router.post('/:vote(public|private)/:address', (req, res) => {
+    if (!req.user) {
+        res.redirect('/login');
+    }
     const voteAddress = req.params.address;
     const voterAddress = req.user.etherAccount;
     const state = req.body.state;
     voteService.setVoteState(voteAddress, voterAddress, state)
         .then((success) => {
-            if(success) {
+            if (success) {
                 res.redirect(req.path)
             } else {
                 res.send("실패");
@@ -74,9 +77,62 @@ router.post('/:vote(public|private)/:address', (req, res) => {
 });
 
 router.get('/:vote(public|private)/:address/vote', (req, res) => {
-    const voteAddress = req.params.address;
     const user = req.user;
-    // voterService.getVoterState()
+
+    if (!user) {
+        res.redirect('/login');
+    }
+
+    const voteAddress = req.params.address;
+    let voteDetail = {};
+    voteService.voteSummary(voteAddress)
+        .then((summary) => {
+            voteDetail.summary = summary;
+
+            voterService.getVoterState(voteAddress, user.etherAccount)
+                .then((voteState) => {
+                    if (voteState !== '2') {
+                        candidateService.getCandidateList(voteAddress)
+                            .then((candidateList) => {
+                                voteDetail.candidateList = candidateList;
+                                res.render('vote/vote', {
+                                    voteDetail: voteDetail,
+                                    path: req.path
+                                });
+                            })
+                    } else {
+                        res.redirect(req.path.substring(0, req.path.length - 5));
+                    }
+                })
+        })
+        .catch((err) => {
+            res.send(err.toString());
+        });
+});
+
+router.post('/:vote(public|private)/:address/vote', (req, res) => {
+    if (!req.user) {
+        res.redirect('/login');
+    }
+
+    const voteAddress = req.params.address;
+    const voterAddress = req.user.etherAccount;
+    const candidate = req.body.candidate;
+
+    voterService.getVoterState(voteAddress, voterAddress)
+        .then((state) => {
+            if(state !== '2') {
+                voteService.voting(voteAddress, voterAddress, candidate)
+                    .then(() => {
+                        res.redirect(req.path.substring(0, req.path.length - 5));
+                    });
+            } else {
+                alert("이미 참여하신 투표입니다.");
+            }
+        })
+        .catch((err) => {
+            res.send(err.toString());
+        });
 });
 
 module.exports = router;
