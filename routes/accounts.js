@@ -5,7 +5,7 @@ const router = express.Router();
 const accountService = require('../services/account.service');
 
 router.get('/register', (req, res) => {
-    res.render('account/register', { });
+    res.render('account/register');
 });
 
 router.post('/register', async (req, res, next) => {
@@ -20,7 +20,7 @@ router.post('/register', async (req, res, next) => {
             etherAccount : ethAccount.address
         }), password, (err, account) => {
         if (err) {
-            return res.render('register', { error : err.message });
+            return res.render('account/register', { error : err.message });
         }
 
         passport.authenticate('local')(req, res, () => {
@@ -33,7 +33,6 @@ router.post('/register', async (req, res, next) => {
         });
     });
 });
-
 
 router.get('/login', (req, res) => {
     res.render('account/login', { error : req.flash('error')});

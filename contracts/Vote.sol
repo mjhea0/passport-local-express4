@@ -156,7 +156,6 @@ contract Vote is Ownable, Candidatelist, Voterlist {
     onlyVoterlisted(isPrivate)
     onlyOwner
     public
-    returns (bool success)
     {
 //        require(endDate  >= now && startDate <= now);
 
@@ -164,7 +163,6 @@ contract Vote is Ownable, Candidatelist, Voterlist {
             if (voteCandidate(_candidateIndex)) {
                 if (setVoted(_voterAddress)) {
                     numVotedVoters++;
-                    success = true;
                 }
             }
         }

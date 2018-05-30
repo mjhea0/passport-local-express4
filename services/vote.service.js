@@ -8,6 +8,10 @@ const voteAddressList = async (isPrivate) => {
     return await factory.methods.getDeployedVotes(isPrivate).call();
 };
 
+const getNumVotedVoters = async (voteAddress) => {
+    return await Vote(voteAddress).methods.getNumVotedVoters().call();
+};
+
 const voteSummary = async (voteAddress) => {
     const summary = await Vote(voteAddress)
         .methods.getVoteSummary()
@@ -33,9 +37,8 @@ const setVoteState = async (voteAddress, voterAddress, voteState) => {
 };
 
 const voting = async (voteAddress, voterAddress, candidateIndex) => {
-
     const ownerAddress = await Vote(voteAddress).methods.getOwner().call();
-
+    console.log(ownerAddress);
     await Vote(voteAddress)
         .methods.voting(candidateIndex, voterAddress)
         .send({from: ownerAddress});
@@ -43,6 +46,7 @@ const voting = async (voteAddress, voterAddress, candidateIndex) => {
 
 module.exports = {
     getVoteList,
+    getNumVotedVoters,
     voteAddressList,
     voteSummary,
     voteSummaryList,

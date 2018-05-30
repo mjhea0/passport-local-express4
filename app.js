@@ -6,12 +6,11 @@ const logger = require('morgan');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const flash = require('connect-flash');
 
-const dbConfig = require('./config/db-config.json');
+const mongo = require('./mongo/mongo');
 const routes = require('./routes/index');
 const accountRoutes = require('./routes/accounts');
 const voteRoutes = require('./routes/votes');
@@ -53,11 +52,7 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 // mongoose
-if(dbConfig.mongo.state === 'remote') {
-    mongoose.connect(`mongodb://${dbConfig.mongo.id}:${dbConfig.mongo.password}@${dbConfig.remoteUrl}:${dbConfig.mongo.port}/vote`);
-} else {
-    mongoose.connect(`mongodb://${dbConfig.mongo.id}:${dbConfig.mongo.password}@${dbConfig.localUrl}:${dbConfig.mongo.port}/vote`);
-}
+mongo.connection.on('error', (err) => console.error(err.message));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

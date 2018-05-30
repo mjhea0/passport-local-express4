@@ -16,11 +16,10 @@ block content
                             input(type='radio', name='candidate', value=val autocomplete='off')
                             .card(style='width: 13rem;')
                                 .card-body
-                                    h5.card-title #{candidate[0]}
+                                    h5.card-title
+                                        b #{val+1}
+                                        | #{": " + candidate[0]}
                                     p.card-text 득표수 : #{candidate[2]}
                                     -onClick = "window.open('" + candidate[1] + "')"
                                     button.btn.btn-success(onclick=onClick) 공약보기
                         -val = val+1
-
-                .text-center
-                    button.btn.btn-danger.btn-lg(type='submit') 투표

@@ -1,7 +1,1 @@
-{
-  "factory": "0x42cfced734efa9f0f387fd042cc0304ec6ca3f5e",
-  "test_public": "0xeef1df289562e7609fa326bcba357c7d7a32df92",
-  "test_private": "0xc2892dfdfc9e2b98516203b6317c86e169465335",
-  "test_public_address": "0x276dc36fdceb10b4963e6628dade2617b6dbff0a",
-  "test_private_address": "0x99da50d6d332859630a417cb9999a22588d6007b"
-}
+{"factory":"0x608632be7305bec3a033c0fc08d1d470a5d2248d","test_public":"0x60f85a36db4185f1a9a334154a9349dcac13f928","test_private":"0x937fe46d88546856384ce51871d015d057c6ab80","test_public_address":"0xf9a5ba9e3d35e06fdd3da1188a291ddf1c9e7609","test_private_address":"0xd01eeefd04362dd794a527383b78e37c4035b5c2"}

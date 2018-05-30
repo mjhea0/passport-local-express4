@@ -19,23 +19,29 @@ block content
                 br
                 -voteDate = new Date(voteDetail.summary[3] * 1000).toLocaleString() + " ~ " + new Date(voteDetail.summary[4] * 1000).toLocaleString();
                 | 기간 : #{voteDate}
+            if(voteDetail.summary[2] !== '0')
+                h4 총 투표자 수 : #{voteDetail.voterNumber}
             hr.my-4
+            if(voteDetail.resultName)
+                h1.text-center
+                    b #{voteDetail.resultName.join(',')}
+                    | 님이 당선되셨습니다!
             h3 후보자 목록
-            -voterNumber = 0
             p
+                -val = 1
                 .card-deck
                     each candidate in voteDetail.candidateList
-                        -voterNumber += parseInt(candidate[2])
                         .card(style='width: 15rem;')
                             .card-body
-                                h5.card-title #{candidate[0]}
+                                h5.card-title
+                                    b #{val}
+                                    | #{": " + candidate[0]}
                                 p.card-text
                                     | 득표수 : #{candidate[2]}
                                 -onClick = "window.open('" + candidate[1] + "')"
                                 button.btn.btn-success(onclick=onClick) 공약보기
-            if(voteDetail.summary[2] !== '0')
-                h4 총 투표자 수 : #{voterNumber}
-            if(user)
+                        -val += 1
+            if(user && !voteDetail.owner)
                 if(voteDetail.voterState !== '2')
                     .text-center
                         -voteInPath = path + '/vote'
@@ -68,5 +74,5 @@ block content
                                 |  일시중지
                             label.btn.btn-primary
                                 input#option4(type='radio', name='state', value='3' autocomplete='off')
-                                |  오류
+                                |  종료
                     button.btn.btn-primary(type='submit') 바꾸기
