@@ -1,7 +1,7 @@
 {
-  "factory": "0xe5bba05f6958a849593f30f1fadf0ffeb30a7496",
-  "test_public": "0xf4304c34390e968bb2d0b0b859fbc12c6090ad0a",
-  "test_private": "0x61f3e293c38734bcf11ca3038093112803b0d3f7",
-  "test_public_address": "0x89b5d9b494ec0d151302d9586c3049c57898f06c",
-  "test_private_address": "0x9330f297aaf99999396acb74dd6e8a8226e2c559"
+  "factory": "0x42cfced734efa9f0f387fd042cc0304ec6ca3f5e",
+  "test_public": "0xeef1df289562e7609fa326bcba357c7d7a32df92",
+  "test_private": "0xc2892dfdfc9e2b98516203b6317c86e169465335",
+  "test_public_address": "0x276dc36fdceb10b4963e6628dade2617b6dbff0a",
+  "test_private_address": "0x99da50d6d332859630a417cb9999a22588d6007b"
 }
