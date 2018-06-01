@@ -23,15 +23,15 @@ module.exports = (deployer, network, accounts) =>
             accounts[2],
             timeUtil.dateStringToTimestamp('11/11/2018 08:30:00'),
             timeUtil.dateStringToTimestamp('11/13/2018 22:00:00'),
-            true
+            false
         );
 
         const deployedPublicVotes = await deployedVoteFactory.getDeployedVotes.call(false);
-        const deployedPrivateVotes = await deployedVoteFactory.getDeployedVotes.call(true);
-        // console.log('퍼블릭 : ' + deployedPublicVotes);
-        // console.log('프라이빗 : ' + deployedPrivateVotes);
+        // const deployedQkxeoVotes = await deployedVoteFactory.getDeployedVotes.call(false);
+        console.log('지방선거 : ' + deployedPublicVotes[0]);
+        console.log('밭대선거 : ' + deployedPublicVotes[1]);
 
-        // 퍼블릭 투표에 후보자 추가
+        // 지방선거 투표에 후보자 추가
         const deployedPublicVote = await Vote.at(deployedPublicVotes[0]);
         const candidateList = ['허태정', '박성효', '남충희', '김윤기'];
         const candidateCommitment = [
@@ -50,8 +50,8 @@ module.exports = (deployer, network, accounts) =>
             // await console.log(addedCandidate);
         }
 
-        // 프라이빗 투표에 후보자 추가
-        const deployedPrivateVote = await Vote.at(deployedPrivateVotes[0]);
+        // 밭대선거 투표에 후보자 추가
+        const deployedPrivateVote = await Vote.at(deployedPublicVotes[1]);
         const privateCandidateList = ['악센트', '라우드', '비포유'];
         const privateCandidateCommitment = [
             'https://www.facebook.com/496324237400491/photos/pcb.500330310333217/500330110333237/?type=3&theater',
@@ -73,10 +73,10 @@ module.exports = (deployer, network, accounts) =>
             if (err) throw 'error opening file: ' + err;
             const jsonObj = {
                 factory: deployedVoteFactory.address,
-                test_public: deployedPublicVotes[0],
-                test_private: deployedPrivateVotes[0],
-                test_public_address: accounts[1],
-                test_private_address: accounts[2]
+                test_wlwlqkd_contract: deployedPublicVotes[0],
+                test_qkxeo_conract: deployedPublicVotes[1],
+                test_wlqkd_address: accounts[1],
+                test_qkxeo_address: accounts[2]
             };
             fs.writeFile('./config/contract-address.json', new Buffer.from(JSON.stringify(jsonObj)), 'utf8', (err) => {
                 if (err) throw 'error writing file: ' + err;
