@@ -3,6 +3,7 @@ const passport = require('passport');
 const Account = require('../models/account');
 const router = express.Router();
 const accountService = require('../services/account.service');
+const mailer = require('../util/mail');
 
 router.get('/register', (req, res) => {
     res.render('account/register');
@@ -16,11 +17,11 @@ router.post('/register', async (req, res, next) => {
 
     Account.register(new Account(
         {
-            username : username,
-            etherAccount : ethAccount.address
+            username: username,
+            etherAccount: ethAccount.address
         }), password, (err, account) => {
         if (err) {
-            return res.render('account/register', { error : err.message });
+            return res.render('account/register', {error: err.message});
         }
 
         passport.authenticate('local')(req, res, () => {
@@ -35,10 +36,13 @@ router.post('/register', async (req, res, next) => {
 });
 
 router.get('/login', (req, res) => {
-    res.render('account/login', { error : req.flash('error')});
+    res.render('account/login', {error: req.flash('error')});
 });
 
-router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res, next) => {
+router.post('/login', passport.authenticate('local', {
+    failureRedirect: '/login',
+    failureFlash: true
+}), (req, res, next) => {
     req.session.save((err) => {
         if (err) {
             return next(err);
@@ -59,10 +63,40 @@ router.get('/logout', (req, res, next) => {
 
 
 router.get('/myInfo', (req, res, next) => {
-    if(!req.user) {
+    if (!req.user) {
         res.redirect('/login')
     }
     res.render('account/myInfo');
 });
+
+
+router.get('/voterequest', (req, res, next) => {
+    if (!req.user) {
+        res.redirect('/login')
+    }
+    res.render('account/voteCreate');
+});
+
+
+router.post('/requestresult', (req, res, next) => {
+
+    console.log('접근');
+    if (!req.user) {
+        res.redirect('/login')
+    }
+    let to = req.body.votetitle;
+    let title = req.body.votetitle;
+    let content = req.body.votecontent;
+
+    mailer('already setting', to, title, content, function (err) {
+        if (err) {
+            console.log('메일발송에러' + err);
+        } else {
+            res.send('메일 발송 완료');
+
+        }
+    });
+});
+
 
 module.exports = router;

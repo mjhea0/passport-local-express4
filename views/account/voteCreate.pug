@@ -1,0 +1,49 @@
+extends ../base/layout
+
+block content
+    .container
+
+        h1 투표 신청
+        br
+        hr
+        .custom-control.custom-radio.custom-control-inline
+            input#customRadioInline1.custom-control-input(type='radio', name='customRadioInline1')
+            label.custom-control-label(for='customRadioInline1') Public Vote
+        .custom-control.custom-radio.custom-control-inline
+            input#customRadioInline2.custom-control-input(type='radio', name='customRadioInline1')
+            label.custom-control-label(for='customRadioInline2') Private Vote
+        hr
+
+        form(role='form', action="/requestresult", method="post", style='max-width: 600px;')
+            label 투표제목
+            .form-group
+                input.form-control(type='text', name="votetitle")
+            label 투표정보
+            .form-group
+                textarea.form-control(name="votecontent" rows="20" cols="10")
+            button.btn.btn-primary(type='submit') 확인
+
+
+
+
+
+
+        //
+        //h2.display-5  투표 제목
+        //
+        //form(role='form', action="/requestresult", onsubmit='return false', method="post", style='max-width: 600px;')
+        //    .form-group
+        //        input.form-control(type='text', name="votetitle")
+        //    .form-group
+        //hr
+        //
+        //h2.display-5  투표 내용
+        //
+        //form(role='form', onsubmit='return false', action="/requestresult", method="post", style='max-width: 600px;')
+        //    .form-group
+        //        textarea.form-control(name="votecontent" rows="20" cols="10")
+        //    .form-group
+        //
+        //hr
+        //form(role='form', action="/requestresult", method="post", style='max-width: 300px;')
+        //    button.btn.btn-primary(type='submit') 확인
