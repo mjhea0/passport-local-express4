@@ -3,11 +3,20 @@ const emailconfig = require('../config/email-config');
 
 
 const transporter = nodemailer.createTransport(emailconfig());
+const transporter1 = nodemailer.createTransport({
+    service: 'naver',
+    auth: {
+        user: 'alstn224@naver.com',
+        pass: '1995star%'
+    }
+
+});
 
 
 module.exports = function (from, to, subject, text) {
 
 
+    console.log(to + ' dfdf');
     const mailOpt = {
         from: 'alstn224@naver.com',
         to: to,

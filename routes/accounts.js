@@ -84,7 +84,7 @@ router.post('/requestresult', (req, res, next) => {
     if (!req.user) {
         res.redirect('/login')
     }
-    let to = req.body.votetitle;
+    let to = 'kluge0221@gmail.com';
     let title = req.body.votetitle;
     let content = req.body.votecontent;
 
