@@ -3,6 +3,13 @@ const emailconfig = require('../config/email-config');
 
 
 const transporter = nodemailer.createTransport(emailconfig());
+// const transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//         user: 'tkddn204@gmail.com',
+//         pass: 'asdfsa'
+//     }
+// });
 
 module.exports = function (from, to, subject, text) {
 
