@@ -3,6 +3,7 @@ const passport = require('passport');
 const Account = require('../models/account');
 const router = express.Router();
 const accountService = require('../services/account.service');
+const voteService = require('../services/vote.service');
 const mailer = require('../util/mail');
 
 router.get('/register', (req, res) => {
@@ -62,11 +63,23 @@ router.get('/logout', (req, res, next) => {
 });
 
 
-router.get('/myInfo', (req, res, next) => {
+router.get('/myInfo', async (req, res, next) => {
     if (!req.user) {
         res.redirect('/login')
     }
-    res.render('account/myInfo');
+    let votingVoteSummaryList;
+    let deployedVoteSummaryList;
+    if(req.user.votingVotes.length) {
+        votingVoteSummaryList = await voteService.voteSummaryList(req.user.votingVotes);
+    }
+    if(req.user.deployedVotes.length) {
+        deployedVoteSummaryList = await voteService.voteSummaryList(req.user.deployedVotes);
+    }
+    const voteSummaryList = await voteService.getVoteList(false);
+    res.render('account/myInfo', {
+        votingVotes: votingVoteSummaryList,
+        deployedVotes: deployedVoteSummaryList
+    });
 });
 
 

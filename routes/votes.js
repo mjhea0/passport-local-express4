@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Account = require('../models/account');
 const voteService = require('../services/vote.service');
 const candidateService = require('../services/candidate.service');
 const voterService = require('../services/voter.service');
@@ -12,7 +13,7 @@ router.get('/:vote(public|private)', async (req, res) => {
             isPrivate: req.originalUrl === '/private' ? 'private' : 'public',
             vote: voteSummaryList
         });
-    } catch(err) {
+    } catch (err) {
         res.send(err.toString());
     }
 });
@@ -26,7 +27,7 @@ router.get('/:vote(public|private)/:address', async (req, res) => {
         voteDetail.summary = await voteService.voteSummary(voteAddress);
         voteDetail.candidateList = await candidateService.getCandidateList(voteAddress);
         voteDetail.voterNumber = await voteService.getNumVotedVoters(voteAddress);
-        if(voteDetail.summary[2] === '3') {
+        if (voteDetail.summary[2] === '3') {
             const candidateList = voteDetail.candidateList.slice(0);
             candidateList.sort((a, b) => b[2] - a[2]);
             const max = candidateList[0][2];
@@ -61,7 +62,7 @@ router.post('/:vote(public|private)/:address', async (req, res) => {
         const state = req.body.state;
 
         const isVoteOwner = await voterService.isOwner(voteAddress, voterAddress);
-        if(isVoteOwner) {
+        if (isVoteOwner) {
             await voteService.setVoteState(voteAddress, voterAddress, state);
         }
         res.redirect(req.path);
@@ -83,10 +84,10 @@ router.post('/:vote(public|private)/:address/modify', async (req, res) => {
         const endVoteDate = Date.parse(req.body.endDate) / 1000;
 
         const isVoteOwner = await voterService.isOwner(voteAddress, voterAddress);
-        if(isVoteOwner) {
-            if(voteDescription)
+        if (isVoteOwner) {
+            if (voteDescription)
                 await voteService.setVoteDescription(voteAddress, voterAddress, voteDescription);
-            if(startVoteDate && endVoteDate)
+            if (startVoteDate && endVoteDate)
                 await voteService.setVoteDate(
                     voteAddress, voterAddress, startVoteDate, endVoteDate);
         }
@@ -133,18 +134,23 @@ router.post('/:vote(public|private)/:address/vote', async (req, res) => {
         const candidate = req.body.candidate;
 
         let state = await voterService.getVoterState(voteAddress, voterAddress);
-        if(state !== '2') {
+        if (state !== '2') {
             await voteService.voting(voteAddress, voterAddress, candidate);
             state = await voterService.getVoterState(voteAddress, voterAddress);
-            if(state === '2') {
-                res.redirect(req.path.substring(0, req.path.length - 5));
+            if (state === '2') {
+                Account.findOneAndUpdate({username: req.user.username}, {
+                    $push: {votingVotes: voteAddress}
+                }, { upsert: true }, (err, data) => {
+                    if(err) res.send(err.toString());
+                    else res.redirect(req.path.substring(0, req.path.length - 5));
+                });
             } else {
                 res.send('투표 실패');
             }
         } else {
             alert("이미 참여하신 투표입니다.");
         }
-    }  catch (err) {
+    } catch (err) {
         res.send(err.toString());
     }
 });
