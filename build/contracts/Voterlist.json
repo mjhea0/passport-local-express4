@@ -120,22 +120,22 @@
   ],
   "bytecode": "0x608060405260008054600160a060020a033316600160a060020a031990911617905561036c806100306000396000f3006080604052600436106100775763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166309689ab2811461007c57806321c237b2146100b157806325bd79eb146100d257806345a5c089146100f95780638da5cb5b1461011a578063f2fde38b1461014b575b600080fd5b34801561008857600080fd5b5061009d600160a060020a036004351661016e565b604080519115158252519081900360200190f35b3480156100bd57600080fd5b5061009d600160a060020a03600435166101ed565b3480156100de57600080fd5b506100e7610266565b60408051918252519081900360200190f35b34801561010557600080fd5b506100e7600160a060020a036004351661026c565b34801561012657600080fd5b5061012f610299565b60408051600160a060020a039092168252519081900360200190f35b34801561015757600080fd5b5061016c600160a060020a03600435166102a8565b005b6000805433600160a060020a0390811691161461018a57600080fd5b6001600160a060020a03831660009081526001602052604090205460ff1660028111156101b357fe5b14156101e85750600160a060020a0381166000908152600160208190526040909120805460ff19169055600280546000190190555b919050565b6000805433600160a060020a0390811691161461020957600080fd5b600160a060020a03821660009081526001602052604081205460ff16600281111561023057fe5b14156101e85750600160a060020a03166000908152600160208190526040909120805460ff191682179055600280548201905590565b60025490565b600160a060020a03811660009081526001602052604081205460ff16600281111561029357fe5b92915050565b600054600160a060020a031681565b60005433600160a060020a039081169116146102c357600080fd5b600160a060020a03811615156102d857600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a723058208cf78aa4ca1b066034bc799cf52092d91ee4b9fe59fbf146b60688d80a191aad0029",
   "deployedBytecode": "0x6080604052600436106100775763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166309689ab2811461007c57806321c237b2146100b157806325bd79eb146100d257806345a5c089146100f95780638da5cb5b1461011a578063f2fde38b1461014b575b600080fd5b34801561008857600080fd5b5061009d600160a060020a036004351661016e565b604080519115158252519081900360200190f35b3480156100bd57600080fd5b5061009d600160a060020a03600435166101ed565b3480156100de57600080fd5b506100e7610266565b60408051918252519081900360200190f35b34801561010557600080fd5b506100e7600160a060020a036004351661026c565b34801561012657600080fd5b5061012f610299565b60408051600160a060020a039092168252519081900360200190f35b34801561015757600080fd5b5061016c600160a060020a03600435166102a8565b005b6000805433600160a060020a0390811691161461018a57600080fd5b6001600160a060020a03831660009081526001602052604090205460ff1660028111156101b357fe5b14156101e85750600160a060020a0381166000908152600160208190526040909120805460ff19169055600280546000190190555b919050565b6000805433600160a060020a0390811691161461020957600080fd5b600160a060020a03821660009081526001602052604081205460ff16600281111561023057fe5b14156101e85750600160a060020a03166000908152600160208190526040909120805460ff191682179055600280548201905590565b60025490565b600160a060020a03811660009081526001602052604081205460ff16600281111561029357fe5b92915050565b600054600160a060020a031681565b60005433600160a060020a039081169116146102c357600080fd5b600160a060020a03811615156102d857600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a723058208cf78aa4ca1b066034bc799cf52092d91ee4b9fe59fbf146b60688d80a191aad0029",
-  "sourceMap": "135:3175:4:-;;;501:5:6;:18;;-1:-1:-1;;;;;509:10:6;501:18;-1:-1:-1;;;;;;501:18:6;;;;;;135:3175:4;;;;;;",
-  "deployedSourceMap": "135:3175:4:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2184:289;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2184:289:4;-1:-1:-1;;;;;2184:289:4;;;;;;;;;;;;;;;;;;;;;;;1675:281;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1675:281:4;-1:-1:-1;;;;;1675:281:4;;;;;2613:87;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2613:87:4;;;;;;;;;;;;;;;;;;;;2835:125;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2835:125:4;-1:-1:-1;;;;;2835:125:4;;;;;238:20:6;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:6;;;;;;;;-1:-1:-1;;;;;238:20:6;;;;;;;;;;;;;;832:174;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;832:174:6;-1:-1:-1;;;;;832:174:6;;;;;;;2184:289:4;2270:12;653:5:6;;639:10;-1:-1:-1;;;;;639:19:6;;;653:5;;639:19;631:28;;;;;;2324:19:4;-1:-1:-1;;;;;2299:21:4;;;;;;:6;:21;;;;;;;;:44;;;;;;;;;2295:171;;;-1:-1:-1;;;;;;2360:21:4;;2384:15;2360:21;;;:6;:21;;;;;;;;:39;;-1:-1:-1;;2360:39:4;;;2414:9;:11;;-1:-1:-1;;2414:11:4;;;2295:171;2184:289;;;:::o;1675:281::-;1753:12;653:5:6;;639:10;-1:-1:-1;;;;;639:19:6;;;653:5;;639:19;631:28;;;;;;-1:-1:-1;;;;;1782:21:4;;1807:15;1782:21;;;:6;:21;;;;;;;;:40;;;;;;;;;1778:171;;;-1:-1:-1;;;;;;1839:21:4;;;;;1863:19;1839:21;;;;;;;;:43;;-1:-1:-1;;1839:43:4;;;;;1897:9;:11;;;;;;1863:19;1675:281::o;2613:87::-;2683:9;;2613:87;:::o;2835:125::-;-1:-1:-1;;;;;2930:21:4;;2901:4;2930:21;;;:6;:21;;;;;;;;2925:27;;;;;;;;2918:34;2835:125;-1:-1:-1;;2835:125:4:o;238:20:6:-;;;-1:-1:-1;;;;;238:20:6;;:::o;832:174::-;653:5;;639:10;-1:-1:-1;;;;;639:19:6;;;653:5;;639:19;631:28;;;;;;-1:-1:-1;;;;;908:22:6;;;;900:31;;;;;;963:5;;;942:37;;-1:-1:-1;;;;;942:37:6;;;;963:5;;;942:37;;;985:5;:16;;-1:-1:-1;;985:16:6;-1:-1:-1;;;;;985:16:6;;;;;;;;;;832:174::o",
+  "sourceMap": "135:3175:3:-;;;501:5:5;:18;;-1:-1:-1;;;;;509:10:5;501:18;-1:-1:-1;;;;;;501:18:5;;;;;;135:3175:3;;;;;;",
+  "deployedSourceMap": "135:3175:3:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2184:289;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2184:289:3;-1:-1:-1;;;;;2184:289:3;;;;;;;;;;;;;;;;;;;;;;;1675:281;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1675:281:3;-1:-1:-1;;;;;1675:281:3;;;;;2613:87;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2613:87:3;;;;;;;;;;;;;;;;;;;;2835:125;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2835:125:3;-1:-1:-1;;;;;2835:125:3;;;;;238:20:5;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:5;;;;;;;;-1:-1:-1;;;;;238:20:5;;;;;;;;;;;;;;832:174;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;832:174:5;-1:-1:-1;;;;;832:174:5;;;;;;;2184:289:3;2270:12;653:5:5;;639:10;-1:-1:-1;;;;;639:19:5;;;653:5;;639:19;631:28;;;;;;2324:19:3;-1:-1:-1;;;;;2299:21:3;;;;;;:6;:21;;;;;;;;:44;;;;;;;;;2295:171;;;-1:-1:-1;;;;;;2360:21:3;;2384:15;2360:21;;;:6;:21;;;;;;;;:39;;-1:-1:-1;;2360:39:3;;;2414:9;:11;;-1:-1:-1;;2414:11:3;;;2295:171;2184:289;;;:::o;1675:281::-;1753:12;653:5:5;;639:10;-1:-1:-1;;;;;639:19:5;;;653:5;;639:19;631:28;;;;;;-1:-1:-1;;;;;1782:21:3;;1807:15;1782:21;;;:6;:21;;;;;;;;:40;;;;;;;;;1778:171;;;-1:-1:-1;;;;;;1839:21:3;;;;;1863:19;1839:21;;;;;;;;:43;;-1:-1:-1;;1839:43:3;;;;;1897:9;:11;;;;;;1863:19;1675:281::o;2613:87::-;2683:9;;2613:87;:::o;2835:125::-;-1:-1:-1;;;;;2930:21:3;;2901:4;2930:21;;;:6;:21;;;;;;;;2925:27;;;;;;;;2918:34;2835:125;-1:-1:-1;;2835:125:3:o;238:20:5:-;;;-1:-1:-1;;;;;238:20:5;;:::o;832:174::-;653:5;;639:10;-1:-1:-1;;;;;639:19:5;;;653:5;;639:19;631:28;;;;;;-1:-1:-1;;;;;908:22:5;;;;900:31;;;;;;963:5;;;942:37;;-1:-1:-1;;;;;942:37:5;;;;963:5;;;942:37;;;985:5;:16;;-1:-1:-1;;985:16:5;-1:-1:-1;;;;;985:16:5;;;;;;;;;;832:174::o",
   "source": "pragma solidity ^0.4.21;\r\n\r\nimport \"openzeppelin-solidity/contracts/ownership/Ownable.sol\";\r\n\r\n/**\r\n * @title 투표자리스트\r\n */\r\ncontract Voterlist is Ownable {\r\n    mapping(address => VoterState) internal voters;\r\n    uint private numVoters;\r\n\r\n    /**\r\n     * @dev 투표자의 현재 상태\r\n     *      None : 투표에 참여할 수 없는 상태\r\n     *      Voteable : 투표에 참여할 수 있는 상태\r\n     *      Voted : 투표를 하고 난 상태\r\n     */\r\n    enum VoterState {\r\n        None, Voteable, Voted\r\n    }\r\n\r\n    /**\r\n     * @dev 투표자 리스트 검사 모디파이어\r\n     *      프리베이트 투표일 경우 투표자리스트에 있는 사람인지 검사\r\n     */\r\n    modifier onlyVoterlisted(bool isPrivate) {\r\n        if (isPrivate)\r\n            require(voters[msg.sender] == VoterState.Voteable);\r\n        _;\r\n    }\r\n//\r\n//    /**\r\n//     * @dev 투표자 상태 설정\r\n//     * @param _voterAddress 설정할 투표자\r\n//     * @param _voterState 설정할 투표자 상태\r\n//     * @return success 성공하면 true, 실패하면 false\r\n//     */\r\n//    function setVoterState(\r\n//        address _voterAddress,\r\n//        uint _voterState\r\n//    )\r\n//        public\r\n//        onlyOwner\r\n//        returns (bool success)\r\n//    {\r\n//        require(uint(VoterState.Voted) >= _voterState);\r\n//        voters[_voterAddress] = VoterState(_voterState);\r\n//        success = true;\r\n//    }\r\n\r\n    /**\r\n     * @dev 투표자리스트에 투표자를 추가하는 메소드\r\n     * @param _voterAddress 투표자의 주소\r\n     * @return success 명단에 넣어지면 true, 이미 있거나 실패하면 false\r\n     */\r\n    function addVoterToVoterlist(address _voterAddress) public onlyOwner returns (bool success) {\r\n        if (voters[_voterAddress] == VoterState.None) {\r\n            voters[_voterAddress] = VoterState.Voteable;\r\n            numVoters++;\r\n            success = true;\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev 투표자리스트에 투표자를 제거하는 메소드\r\n     * @param _voterAddress 투표자의 주소\r\n     * @return success 투표자가 없으면 삭제하고 true, 있으면 false\r\n     */\r\n    function setVoterStateNoneFromVoters(address _voterAddress) public onlyOwner returns (bool success) {\r\n        if (voters[_voterAddress] == VoterState.Voteable) {\r\n            voters[_voterAddress] = VoterState.None;\r\n            numVoters--;\r\n            success = true;\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @dev 프리베이트일 경우, 투표자의 총 수을 얻는 메소드\r\n     * @return 투표자의 수\r\n     */\r\n    function getNumVoters() external view returns(uint) {\r\n        return numVoters;\r\n    }\r\n\r\n    /**\r\n     * @dev 투표자의 상태를 얻는 메소드\r\n     * @return 투표자의 상태를 정수로 반환\r\n     */\r\n    function getVoterState(address _voterAddress) public view returns(uint) {\r\n        return uint(voters[_voterAddress]);\r\n    }\r\n\r\n    /**\r\n     * @dev 투표자를 투표한 상태로 설정\r\n     * @param _voterAddress 설정할 투표자\r\n     * @return success 성공하면 true, 실패하면 false\r\n     */\r\n    function setVoted(address _voterAddress) internal returns (bool success) {\r\n        voters[_voterAddress] = VoterState.Voted;\r\n        success = true;\r\n    }\r\n}\r\n",
   "sourcePath": "C:\\Users\\tkddn\\Projects\\Capstone\\prototype\\contracts\\Voterlist.sol",
   "ast": {
     "absolutePath": "/C/Users/tkddn/Projects/Capstone/prototype/contracts/Voterlist.sol",
     "exportedSymbols": {
       "Voterlist": [
-        728
+        657
       ]
     },
-    "id": 729,
+    "id": 658,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 591,
+        "id": 520,
         "literals": [
           "solidity",
           "^",
@@ -143,16 +143,16 @@
           ".21"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:4"
+        "src": "0:24:3"
       },
       {
         "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
         "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
-        "id": 592,
+        "id": 521,
         "nodeType": "ImportDirective",
-        "scope": 729,
-        "sourceUnit": 879,
-        "src": "28:63:4",
+        "scope": 658,
+        "sourceUnit": 808,
+        "src": "28:63:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -162,75 +162,75 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 593,
+              "id": 522,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 878,
-              "src": "157:7:4",
+              "referencedDeclaration": 807,
+              "src": "157:7:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$878",
+                "typeIdentifier": "t_contract$_Ownable_$807",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 594,
+            "id": 523,
             "nodeType": "InheritanceSpecifier",
-            "src": "157:7:4"
+            "src": "157:7:3"
           }
         ],
         "contractDependencies": [
-          878
+          807
         ],
         "contractKind": "contract",
         "documentation": "@title 투표자리스트\r",
         "fullyImplemented": true,
-        "id": 728,
+        "id": 657,
         "linearizedBaseContracts": [
-          728,
-          878
+          657,
+          807
         ],
         "name": "Voterlist",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 598,
+            "id": 527,
             "name": "voters",
             "nodeType": "VariableDeclaration",
-            "scope": 728,
-            "src": "172:46:4",
+            "scope": 657,
+            "src": "172:46:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
               "typeString": "mapping(address => enum Voterlist.VoterState)"
             },
             "typeName": {
-              "id": 597,
+              "id": 526,
               "keyType": {
-                "id": 595,
+                "id": 524,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "180:7:4",
+                "src": "180:7:3",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "172:30:4",
+              "src": "172:30:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                 "typeString": "mapping(address => enum Voterlist.VoterState)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 596,
+                "id": 525,
                 "name": "VoterState",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 604,
-                "src": "191:10:4",
+                "referencedDeclaration": 533,
+                "src": "191:10:3",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_enum$_VoterState_$604",
+                  "typeIdentifier": "t_enum$_VoterState_$533",
                   "typeString": "enum Voterlist.VoterState"
                 }
               }
@@ -240,11 +240,11 @@
           },
           {
             "constant": false,
-            "id": 600,
+            "id": 529,
             "name": "numVoters",
             "nodeType": "VariableDeclaration",
-            "scope": 728,
-            "src": "225:22:4",
+            "scope": 657,
+            "src": "225:22:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -252,10 +252,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 599,
+              "id": 528,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "225:4:4",
+              "src": "225:4:3",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -266,55 +266,55 @@
           },
           {
             "canonicalName": "Voterlist.VoterState",
-            "id": 604,
+            "id": 533,
             "members": [
               {
-                "id": 601,
+                "id": 530,
                 "name": "None",
                 "nodeType": "EnumValue",
-                "src": "510:4:4"
+                "src": "510:4:3"
               },
               {
-                "id": 602,
+                "id": 531,
                 "name": "Voteable",
                 "nodeType": "EnumValue",
-                "src": "516:8:4"
+                "src": "516:8:3"
               },
               {
-                "id": 603,
+                "id": 532,
                 "name": "Voted",
                 "nodeType": "EnumValue",
-                "src": "526:5:4"
+                "src": "526:5:3"
               }
             ],
             "name": "VoterState",
             "nodeType": "EnumDefinition",
-            "src": "483:55:4"
+            "src": "483:55:3"
           },
           {
             "body": {
-              "id": 621,
+              "id": 550,
               "nodeType": "Block",
-              "src": "756:109:4",
+              "src": "756:109:3",
               "statements": [
                 {
                   "condition": {
                     "argumentTypes": null,
-                    "id": 608,
+                    "id": 537,
                     "name": "isPrivate",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 606,
-                    "src": "771:9:4",
+                    "referencedDeclaration": 535,
+                    "src": "771:9:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": null,
-                  "id": 619,
+                  "id": 548,
                   "nodeType": "IfStatement",
-                  "src": "767:78:4",
+                  "src": "767:78:3",
                   "trueBody": {
                     "expression": {
                       "argumentTypes": null,
@@ -322,10 +322,10 @@
                         {
                           "argumentTypes": null,
                           "commonType": {
-                            "typeIdentifier": "t_enum$_VoterState_$604",
+                            "typeIdentifier": "t_enum$_VoterState_$533",
                             "typeString": "enum Voterlist.VoterState"
                           },
-                          "id": 616,
+                          "id": 545,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -334,34 +334,34 @@
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 610,
+                              "id": 539,
                               "name": "voters",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 598,
-                              "src": "803:6:4",
+                              "referencedDeclaration": 527,
+                              "src": "803:6:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                                 "typeString": "mapping(address => enum Voterlist.VoterState)"
                               }
                             },
-                            "id": 613,
+                            "id": 542,
                             "indexExpression": {
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 611,
+                                "id": 540,
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 893,
-                                "src": "810:3:4",
+                                "referencedDeclaration": 822,
+                                "src": "810:3:3",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
                                   "typeString": "msg"
                                 }
                               },
-                              "id": 612,
+                              "id": 541,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -369,7 +369,7 @@
                               "memberName": "sender",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": null,
-                              "src": "810:10:4",
+                              "src": "810:10:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -380,9 +380,9 @@
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "803:18:4",
+                            "src": "803:18:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_enum$_VoterState_$604",
+                              "typeIdentifier": "t_enum$_VoterState_$533",
                               "typeString": "enum Voterlist.VoterState"
                             }
                           },
@@ -392,18 +392,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 614,
+                              "id": 543,
                               "name": "VoterState",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 604,
-                              "src": "825:10:4",
+                              "referencedDeclaration": 533,
+                              "src": "825:10:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_enum$_VoterState_$604_$",
+                                "typeIdentifier": "t_type$_t_enum$_VoterState_$533_$",
                                 "typeString": "type(enum Voterlist.VoterState)"
                               }
                             },
-                            "id": 615,
+                            "id": 544,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -411,13 +411,13 @@
                             "memberName": "Voteable",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "825:19:4",
+                            "src": "825:19:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_enum$_VoterState_$604",
+                              "typeIdentifier": "t_enum$_VoterState_$533",
                               "typeString": "enum Voterlist.VoterState"
                             }
                           },
-                          "src": "803:41:4",
+                          "src": "803:41:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -431,21 +431,21 @@
                             "typeString": "bool"
                           }
                         ],
-                        "id": 609,
+                        "id": 538,
                         "name": "require",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          896,
-                          897
+                          825,
+                          826
                         ],
-                        "referencedDeclaration": 896,
-                        "src": "795:7:4",
+                        "referencedDeclaration": 825,
+                        "src": "795:7:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                           "typeString": "function (bool) pure"
                         }
                       },
-                      "id": 617,
+                      "id": 546,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -453,39 +453,39 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "795:50:4",
+                      "src": "795:50:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 618,
+                    "id": 547,
                     "nodeType": "ExpressionStatement",
-                    "src": "795:50:4"
+                    "src": "795:50:3"
                   }
                 },
                 {
-                  "id": 620,
+                  "id": 549,
                   "nodeType": "PlaceholderStatement",
-                  "src": "856:1:4"
+                  "src": "856:1:3"
                 }
               ]
             },
             "documentation": "@dev 투표자 리스트 검사 모디파이어\r\n     프리베이트 투표일 경우 투표자리스트에 있는 사람인지 검사\r",
-            "id": 622,
+            "id": 551,
             "name": "onlyVoterlisted",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 607,
+              "id": 536,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 606,
+                  "id": 535,
                   "name": "isPrivate",
                   "nodeType": "VariableDeclaration",
-                  "scope": 622,
-                  "src": "740:14:4",
+                  "scope": 551,
+                  "src": "740:14:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -493,10 +493,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 605,
+                    "id": 534,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "740:4:4",
+                    "src": "740:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -506,25 +506,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "739:16:4"
+              "src": "739:16:3"
             },
-            "src": "715:150:4",
+            "src": "715:150:3",
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 653,
+              "id": 582,
               "nodeType": "Block",
-              "src": "1767:189:4",
+              "src": "1767:189:3",
               "statements": [
                 {
                   "condition": {
                     "argumentTypes": null,
                     "commonType": {
-                      "typeIdentifier": "t_enum$_VoterState_$604",
+                      "typeIdentifier": "t_enum$_VoterState_$533",
                       "typeString": "enum Voterlist.VoterState"
                     },
-                    "id": 636,
+                    "id": 565,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -533,26 +533,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 631,
+                        "id": 560,
                         "name": "voters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 598,
-                        "src": "1782:6:4",
+                        "referencedDeclaration": 527,
+                        "src": "1782:6:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                           "typeString": "mapping(address => enum Voterlist.VoterState)"
                         }
                       },
-                      "id": 633,
+                      "id": 562,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 632,
+                        "id": 561,
                         "name": "_voterAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 624,
-                        "src": "1789:13:4",
+                        "referencedDeclaration": 553,
+                        "src": "1789:13:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -563,9 +563,9 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "1782:21:4",
+                      "src": "1782:21:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_VoterState_$604",
+                        "typeIdentifier": "t_enum$_VoterState_$533",
                         "typeString": "enum Voterlist.VoterState"
                       }
                     },
@@ -575,18 +575,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 634,
+                        "id": 563,
                         "name": "VoterState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 604,
-                        "src": "1807:10:4",
+                        "referencedDeclaration": 533,
+                        "src": "1807:10:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_VoterState_$604_$",
+                          "typeIdentifier": "t_type$_t_enum$_VoterState_$533_$",
                           "typeString": "type(enum Voterlist.VoterState)"
                         }
                       },
-                      "id": 635,
+                      "id": 564,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -594,31 +594,31 @@
                       "memberName": "None",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "1807:15:4",
+                      "src": "1807:15:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_VoterState_$604",
+                        "typeIdentifier": "t_enum$_VoterState_$533",
                         "typeString": "enum Voterlist.VoterState"
                       }
                     },
-                    "src": "1782:40:4",
+                    "src": "1782:40:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": null,
-                  "id": 652,
+                  "id": 581,
                   "nodeType": "IfStatement",
-                  "src": "1778:171:4",
+                  "src": "1778:171:3",
                   "trueBody": {
-                    "id": 651,
+                    "id": 580,
                     "nodeType": "Block",
-                    "src": "1824:125:4",
+                    "src": "1824:125:3",
                     "statements": [
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 642,
+                          "id": 571,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -627,26 +627,26 @@
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 637,
+                              "id": 566,
                               "name": "voters",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 598,
-                              "src": "1839:6:4",
+                              "referencedDeclaration": 527,
+                              "src": "1839:6:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                                 "typeString": "mapping(address => enum Voterlist.VoterState)"
                               }
                             },
-                            "id": 639,
+                            "id": 568,
                             "indexExpression": {
                               "argumentTypes": null,
-                              "id": 638,
+                              "id": 567,
                               "name": "_voterAddress",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 624,
-                              "src": "1846:13:4",
+                              "referencedDeclaration": 553,
+                              "src": "1846:13:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -657,9 +657,9 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
-                            "src": "1839:21:4",
+                            "src": "1839:21:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_enum$_VoterState_$604",
+                              "typeIdentifier": "t_enum$_VoterState_$533",
                               "typeString": "enum Voterlist.VoterState"
                             }
                           },
@@ -669,18 +669,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 640,
+                              "id": 569,
                               "name": "VoterState",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 604,
-                              "src": "1863:10:4",
+                              "referencedDeclaration": 533,
+                              "src": "1863:10:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_enum$_VoterState_$604_$",
+                                "typeIdentifier": "t_type$_t_enum$_VoterState_$533_$",
                                 "typeString": "type(enum Voterlist.VoterState)"
                               }
                             },
-                            "id": 641,
+                            "id": 570,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -688,26 +688,26 @@
                             "memberName": "Voteable",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "1863:19:4",
+                            "src": "1863:19:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_enum$_VoterState_$604",
+                              "typeIdentifier": "t_enum$_VoterState_$533",
                               "typeString": "enum Voterlist.VoterState"
                             }
                           },
-                          "src": "1839:43:4",
+                          "src": "1839:43:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_VoterState_$604",
+                            "typeIdentifier": "t_enum$_VoterState_$533",
                             "typeString": "enum Voterlist.VoterState"
                           }
                         },
-                        "id": 643,
+                        "id": 572,
                         "nodeType": "ExpressionStatement",
-                        "src": "1839:43:4"
+                        "src": "1839:43:3"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 645,
+                          "id": 574,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -715,15 +715,15 @@
                           "nodeType": "UnaryOperation",
                           "operator": "++",
                           "prefix": false,
-                          "src": "1897:11:4",
+                          "src": "1897:11:3",
                           "subExpression": {
                             "argumentTypes": null,
-                            "id": 644,
+                            "id": 573,
                             "name": "numVoters",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 600,
-                            "src": "1897:9:4",
+                            "referencedDeclaration": 529,
+                            "src": "1897:9:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -734,26 +734,26 @@
                             "typeString": "uint256"
                           }
                         },
-                        "id": 646,
+                        "id": 575,
                         "nodeType": "ExpressionStatement",
-                        "src": "1897:11:4"
+                        "src": "1897:11:3"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 649,
+                          "id": 578,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
                             "argumentTypes": null,
-                            "id": 647,
+                            "id": 576,
                             "name": "success",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 629,
-                            "src": "1923:7:4",
+                            "referencedDeclaration": 558,
+                            "src": "1923:7:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -764,14 +764,14 @@
                           "rightHandSide": {
                             "argumentTypes": null,
                             "hexValue": "74727565",
-                            "id": 648,
+                            "id": 577,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "bool",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "1933:4:4",
+                            "src": "1933:4:3",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
@@ -779,15 +779,15 @@
                             },
                             "value": "true"
                           },
-                          "src": "1923:14:4",
+                          "src": "1923:14:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "id": 650,
+                        "id": 579,
                         "nodeType": "ExpressionStatement",
-                        "src": "1923:14:4"
+                        "src": "1923:14:3"
                       }
                     ]
                   }
@@ -795,44 +795,44 @@
               ]
             },
             "documentation": "@dev 투표자리스트에 투표자를 추가하는 메소드\r\n@param _voterAddress 투표자의 주소\r\n@return success 명단에 넣어지면 true, 이미 있거나 실패하면 false\r",
-            "id": 654,
+            "id": 583,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 627,
+                "id": 556,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 626,
+                  "id": 555,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 852,
-                  "src": "1734:9:4",
+                  "referencedDeclaration": 781,
+                  "src": "1734:9:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "1734:9:4"
+                "src": "1734:9:3"
               }
             ],
             "name": "addVoterToVoterlist",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 625,
+              "id": 554,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 624,
+                  "id": 553,
                   "name": "_voterAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 654,
-                  "src": "1704:21:4",
+                  "scope": 583,
+                  "src": "1704:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -840,10 +840,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 623,
+                    "id": 552,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1704:7:4",
+                    "src": "1704:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -853,20 +853,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1703:23:4"
+              "src": "1703:23:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 630,
+              "id": 559,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 629,
+                  "id": 558,
                   "name": "success",
                   "nodeType": "VariableDeclaration",
-                  "scope": 654,
-                  "src": "1753:12:4",
+                  "scope": 583,
+                  "src": "1753:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -874,10 +874,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 628,
+                    "id": 557,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1753:4:4",
+                    "src": "1753:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -887,28 +887,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1752:14:4"
+              "src": "1752:14:3"
             },
-            "scope": 728,
-            "src": "1675:281:4",
+            "scope": 657,
+            "src": "1675:281:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 685,
+              "id": 614,
               "nodeType": "Block",
-              "src": "2284:189:4",
+              "src": "2284:189:3",
               "statements": [
                 {
                   "condition": {
                     "argumentTypes": null,
                     "commonType": {
-                      "typeIdentifier": "t_enum$_VoterState_$604",
+                      "typeIdentifier": "t_enum$_VoterState_$533",
                       "typeString": "enum Voterlist.VoterState"
                     },
-                    "id": 668,
+                    "id": 597,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -917,26 +917,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 663,
+                        "id": 592,
                         "name": "voters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 598,
-                        "src": "2299:6:4",
+                        "referencedDeclaration": 527,
+                        "src": "2299:6:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                           "typeString": "mapping(address => enum Voterlist.VoterState)"
                         }
                       },
-                      "id": 665,
+                      "id": 594,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 664,
+                        "id": 593,
                         "name": "_voterAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 656,
-                        "src": "2306:13:4",
+                        "referencedDeclaration": 585,
+                        "src": "2306:13:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -947,9 +947,9 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "2299:21:4",
+                      "src": "2299:21:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_VoterState_$604",
+                        "typeIdentifier": "t_enum$_VoterState_$533",
                         "typeString": "enum Voterlist.VoterState"
                       }
                     },
@@ -959,18 +959,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 666,
+                        "id": 595,
                         "name": "VoterState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 604,
-                        "src": "2324:10:4",
+                        "referencedDeclaration": 533,
+                        "src": "2324:10:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_VoterState_$604_$",
+                          "typeIdentifier": "t_type$_t_enum$_VoterState_$533_$",
                           "typeString": "type(enum Voterlist.VoterState)"
                         }
                       },
-                      "id": 667,
+                      "id": 596,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -978,31 +978,31 @@
                       "memberName": "Voteable",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "2324:19:4",
+                      "src": "2324:19:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_VoterState_$604",
+                        "typeIdentifier": "t_enum$_VoterState_$533",
                         "typeString": "enum Voterlist.VoterState"
                       }
                     },
-                    "src": "2299:44:4",
+                    "src": "2299:44:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": null,
-                  "id": 684,
+                  "id": 613,
                   "nodeType": "IfStatement",
-                  "src": "2295:171:4",
+                  "src": "2295:171:3",
                   "trueBody": {
-                    "id": 683,
+                    "id": 612,
                     "nodeType": "Block",
-                    "src": "2345:121:4",
+                    "src": "2345:121:3",
                     "statements": [
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 674,
+                          "id": 603,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1011,26 +1011,26 @@
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 669,
+                              "id": 598,
                               "name": "voters",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 598,
-                              "src": "2360:6:4",
+                              "referencedDeclaration": 527,
+                              "src": "2360:6:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                                 "typeString": "mapping(address => enum Voterlist.VoterState)"
                               }
                             },
-                            "id": 671,
+                            "id": 600,
                             "indexExpression": {
                               "argumentTypes": null,
-                              "id": 670,
+                              "id": 599,
                               "name": "_voterAddress",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 656,
-                              "src": "2367:13:4",
+                              "referencedDeclaration": 585,
+                              "src": "2367:13:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -1041,9 +1041,9 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
-                            "src": "2360:21:4",
+                            "src": "2360:21:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_enum$_VoterState_$604",
+                              "typeIdentifier": "t_enum$_VoterState_$533",
                               "typeString": "enum Voterlist.VoterState"
                             }
                           },
@@ -1053,18 +1053,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 672,
+                              "id": 601,
                               "name": "VoterState",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 604,
-                              "src": "2384:10:4",
+                              "referencedDeclaration": 533,
+                              "src": "2384:10:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_enum$_VoterState_$604_$",
+                                "typeIdentifier": "t_type$_t_enum$_VoterState_$533_$",
                                 "typeString": "type(enum Voterlist.VoterState)"
                               }
                             },
-                            "id": 673,
+                            "id": 602,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1072,26 +1072,26 @@
                             "memberName": "None",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "2384:15:4",
+                            "src": "2384:15:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_enum$_VoterState_$604",
+                              "typeIdentifier": "t_enum$_VoterState_$533",
                               "typeString": "enum Voterlist.VoterState"
                             }
                           },
-                          "src": "2360:39:4",
+                          "src": "2360:39:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_VoterState_$604",
+                            "typeIdentifier": "t_enum$_VoterState_$533",
                             "typeString": "enum Voterlist.VoterState"
                           }
                         },
-                        "id": 675,
+                        "id": 604,
                         "nodeType": "ExpressionStatement",
-                        "src": "2360:39:4"
+                        "src": "2360:39:3"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 677,
+                          "id": 606,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1099,15 +1099,15 @@
                           "nodeType": "UnaryOperation",
                           "operator": "--",
                           "prefix": false,
-                          "src": "2414:11:4",
+                          "src": "2414:11:3",
                           "subExpression": {
                             "argumentTypes": null,
-                            "id": 676,
+                            "id": 605,
                             "name": "numVoters",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 600,
-                            "src": "2414:9:4",
+                            "referencedDeclaration": 529,
+                            "src": "2414:9:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1118,26 +1118,26 @@
                             "typeString": "uint256"
                           }
                         },
-                        "id": 678,
+                        "id": 607,
                         "nodeType": "ExpressionStatement",
-                        "src": "2414:11:4"
+                        "src": "2414:11:3"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 681,
+                          "id": 610,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
                             "argumentTypes": null,
-                            "id": 679,
+                            "id": 608,
                             "name": "success",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 661,
-                            "src": "2440:7:4",
+                            "referencedDeclaration": 590,
+                            "src": "2440:7:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -1148,14 +1148,14 @@
                           "rightHandSide": {
                             "argumentTypes": null,
                             "hexValue": "74727565",
-                            "id": 680,
+                            "id": 609,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "bool",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "2450:4:4",
+                            "src": "2450:4:3",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
@@ -1163,15 +1163,15 @@
                             },
                             "value": "true"
                           },
-                          "src": "2440:14:4",
+                          "src": "2440:14:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "id": 682,
+                        "id": 611,
                         "nodeType": "ExpressionStatement",
-                        "src": "2440:14:4"
+                        "src": "2440:14:3"
                       }
                     ]
                   }
@@ -1179,44 +1179,44 @@
               ]
             },
             "documentation": "@dev 투표자리스트에 투표자를 제거하는 메소드\r\n@param _voterAddress 투표자의 주소\r\n@return success 투표자가 없으면 삭제하고 true, 있으면 false\r",
-            "id": 686,
+            "id": 615,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 659,
+                "id": 588,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 658,
+                  "id": 587,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 852,
-                  "src": "2251:9:4",
+                  "referencedDeclaration": 781,
+                  "src": "2251:9:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "2251:9:4"
+                "src": "2251:9:3"
               }
             ],
             "name": "setVoterStateNoneFromVoters",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 657,
+              "id": 586,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 656,
+                  "id": 585,
                   "name": "_voterAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 686,
-                  "src": "2221:21:4",
+                  "scope": 615,
+                  "src": "2221:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1224,10 +1224,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 655,
+                    "id": 584,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2221:7:4",
+                    "src": "2221:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1237,20 +1237,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2220:23:4"
+              "src": "2220:23:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 662,
+              "id": 591,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 661,
+                  "id": 590,
                   "name": "success",
                   "nodeType": "VariableDeclaration",
-                  "scope": 686,
-                  "src": "2270:12:4",
+                  "scope": 615,
+                  "src": "2270:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1258,10 +1258,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 660,
+                    "id": 589,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2270:4:4",
+                    "src": "2270:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1271,43 +1271,43 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2269:14:4"
+              "src": "2269:14:3"
             },
-            "scope": 728,
-            "src": "2184:289:4",
+            "scope": 657,
+            "src": "2184:289:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 693,
+              "id": 622,
               "nodeType": "Block",
-              "src": "2665:35:4",
+              "src": "2665:35:3",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 691,
+                    "id": 620,
                     "name": "numVoters",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 600,
-                    "src": "2683:9:4",
+                    "referencedDeclaration": 529,
+                    "src": "2683:9:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 690,
-                  "id": 692,
+                  "functionReturnParameters": 619,
+                  "id": 621,
                   "nodeType": "Return",
-                  "src": "2676:16:4"
+                  "src": "2676:16:3"
                 }
               ]
             },
             "documentation": "@dev 프리베이트일 경우, 투표자의 총 수을 얻는 메소드\r\n@return 투표자의 수\r",
-            "id": 694,
+            "id": 623,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1315,23 +1315,23 @@
             "name": "getNumVoters",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 687,
+              "id": 616,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2634:2:4"
+              "src": "2634:2:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 690,
+              "id": 619,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 689,
+                  "id": 618,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 694,
-                  "src": "2659:4:4",
+                  "scope": 623,
+                  "src": "2659:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1339,10 +1339,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 688,
+                    "id": 617,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2659:4:4",
+                    "src": "2659:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1352,19 +1352,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2658:6:4"
+              "src": "2658:6:3"
             },
-            "scope": 728,
-            "src": "2613:87:4",
+            "scope": 657,
+            "src": "2613:87:3",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 707,
+              "id": 636,
               "nodeType": "Block",
-              "src": "2907:53:4",
+              "src": "2907:53:3",
               "statements": [
                 {
                   "expression": {
@@ -1374,26 +1374,26 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 702,
+                          "id": 631,
                           "name": "voters",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 598,
-                          "src": "2930:6:4",
+                          "referencedDeclaration": 527,
+                          "src": "2930:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                             "typeString": "mapping(address => enum Voterlist.VoterState)"
                           }
                         },
-                        "id": 704,
+                        "id": 633,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 703,
+                          "id": 632,
                           "name": "_voterAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 696,
-                          "src": "2937:13:4",
+                          "referencedDeclaration": 625,
+                          "src": "2937:13:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -1404,9 +1404,9 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "2930:21:4",
+                        "src": "2930:21:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_VoterState_$604",
+                          "typeIdentifier": "t_enum$_VoterState_$533",
                           "typeString": "enum Voterlist.VoterState"
                         }
                       }
@@ -1414,24 +1414,24 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_enum$_VoterState_$604",
+                          "typeIdentifier": "t_enum$_VoterState_$533",
                           "typeString": "enum Voterlist.VoterState"
                         }
                       ],
-                      "id": 701,
+                      "id": 630,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "2925:4:4",
+                      "src": "2925:4:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_uint256_$",
                         "typeString": "type(uint256)"
                       },
                       "typeName": "uint"
                     },
-                    "id": 705,
+                    "id": 634,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1439,21 +1439,21 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2925:27:4",
+                    "src": "2925:27:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 700,
-                  "id": 706,
+                  "functionReturnParameters": 629,
+                  "id": 635,
                   "nodeType": "Return",
-                  "src": "2918:34:4"
+                  "src": "2918:34:3"
                 }
               ]
             },
             "documentation": "@dev 투표자의 상태를 얻는 메소드\r\n@return 투표자의 상태를 정수로 반환\r",
-            "id": 708,
+            "id": 637,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1461,16 +1461,16 @@
             "name": "getVoterState",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 697,
+              "id": 626,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 696,
+                  "id": 625,
                   "name": "_voterAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 708,
-                  "src": "2858:21:4",
+                  "scope": 637,
+                  "src": "2858:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1478,10 +1478,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 695,
+                    "id": 624,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2858:7:4",
+                    "src": "2858:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1491,20 +1491,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2857:23:4"
+              "src": "2857:23:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 700,
+              "id": 629,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 699,
+                  "id": 628,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 708,
-                  "src": "2901:4:4",
+                  "scope": 637,
+                  "src": "2901:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1512,10 +1512,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 698,
+                    "id": 627,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2901:4:4",
+                    "src": "2901:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1525,24 +1525,24 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2900:6:4"
+              "src": "2900:6:3"
             },
-            "scope": 728,
-            "src": "2835:125:4",
+            "scope": 657,
+            "src": "2835:125:3",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 726,
+              "id": 655,
               "nodeType": "Block",
-              "src": "3223:84:4",
+              "src": "3223:84:3",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 720,
+                    "id": 649,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1551,26 +1551,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 715,
+                        "id": 644,
                         "name": "voters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 598,
-                        "src": "3234:6:4",
+                        "referencedDeclaration": 527,
+                        "src": "3234:6:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                           "typeString": "mapping(address => enum Voterlist.VoterState)"
                         }
                       },
-                      "id": 717,
+                      "id": 646,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 716,
+                        "id": 645,
                         "name": "_voterAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 710,
-                        "src": "3241:13:4",
+                        "referencedDeclaration": 639,
+                        "src": "3241:13:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1581,9 +1581,9 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "3234:21:4",
+                      "src": "3234:21:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_VoterState_$604",
+                        "typeIdentifier": "t_enum$_VoterState_$533",
                         "typeString": "enum Voterlist.VoterState"
                       }
                     },
@@ -1593,18 +1593,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 718,
+                        "id": 647,
                         "name": "VoterState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 604,
-                        "src": "3258:10:4",
+                        "referencedDeclaration": 533,
+                        "src": "3258:10:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_VoterState_$604_$",
+                          "typeIdentifier": "t_type$_t_enum$_VoterState_$533_$",
                           "typeString": "type(enum Voterlist.VoterState)"
                         }
                       },
-                      "id": 719,
+                      "id": 648,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1612,38 +1612,38 @@
                       "memberName": "Voted",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "3258:16:4",
+                      "src": "3258:16:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_VoterState_$604",
+                        "typeIdentifier": "t_enum$_VoterState_$533",
                         "typeString": "enum Voterlist.VoterState"
                       }
                     },
-                    "src": "3234:40:4",
+                    "src": "3234:40:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_VoterState_$604",
+                      "typeIdentifier": "t_enum$_VoterState_$533",
                       "typeString": "enum Voterlist.VoterState"
                     }
                   },
-                  "id": 721,
+                  "id": 650,
                   "nodeType": "ExpressionStatement",
-                  "src": "3234:40:4"
+                  "src": "3234:40:3"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 724,
+                    "id": 653,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 722,
+                      "id": 651,
                       "name": "success",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 713,
-                      "src": "3285:7:4",
+                      "referencedDeclaration": 642,
+                      "src": "3285:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -1654,14 +1654,14 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 723,
+                      "id": 652,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "bool",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "3295:4:4",
+                      "src": "3295:4:3",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1669,20 +1669,20 @@
                       },
                       "value": "true"
                     },
-                    "src": "3285:14:4",
+                    "src": "3285:14:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 725,
+                  "id": 654,
                   "nodeType": "ExpressionStatement",
-                  "src": "3285:14:4"
+                  "src": "3285:14:3"
                 }
               ]
             },
             "documentation": "@dev 투표자를 투표한 상태로 설정\r\n@param _voterAddress 설정할 투표자\r\n@return success 성공하면 true, 실패하면 false\r",
-            "id": 727,
+            "id": 656,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1690,16 +1690,16 @@
             "name": "setVoted",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 711,
+              "id": 640,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 710,
+                  "id": 639,
                   "name": "_voterAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 727,
-                  "src": "3168:21:4",
+                  "scope": 656,
+                  "src": "3168:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1707,10 +1707,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 709,
+                    "id": 638,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3168:7:4",
+                    "src": "3168:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1720,20 +1720,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3167:23:4"
+              "src": "3167:23:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 714,
+              "id": 643,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 713,
+                  "id": 642,
                   "name": "success",
                   "nodeType": "VariableDeclaration",
-                  "scope": 727,
-                  "src": "3209:12:4",
+                  "scope": 656,
+                  "src": "3209:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1741,10 +1741,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 712,
+                    "id": 641,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3209:4:4",
+                    "src": "3209:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1754,33 +1754,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3208:14:4"
+              "src": "3208:14:3"
             },
-            "scope": 728,
-            "src": "3150:157:4",
+            "scope": 657,
+            "src": "3150:157:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 729,
-        "src": "135:3175:4"
+        "scope": 658,
+        "src": "135:3175:3"
       }
     ],
-    "src": "0:3312:4"
+    "src": "0:3312:3"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/tkddn/Projects/Capstone/prototype/contracts/Voterlist.sol",
     "exportedSymbols": {
       "Voterlist": [
-        728
+        657
       ]
     },
-    "id": 729,
+    "id": 658,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 591,
+        "id": 520,
         "literals": [
           "solidity",
           "^",
@@ -1788,16 +1788,16 @@
           ".21"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:4"
+        "src": "0:24:3"
       },
       {
         "absolutePath": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
         "file": "openzeppelin-solidity/contracts/ownership/Ownable.sol",
-        "id": 592,
+        "id": 521,
         "nodeType": "ImportDirective",
-        "scope": 729,
-        "sourceUnit": 879,
-        "src": "28:63:4",
+        "scope": 658,
+        "sourceUnit": 808,
+        "src": "28:63:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -1807,75 +1807,75 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 593,
+              "id": 522,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 878,
-              "src": "157:7:4",
+              "referencedDeclaration": 807,
+              "src": "157:7:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$878",
+                "typeIdentifier": "t_contract$_Ownable_$807",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 594,
+            "id": 523,
             "nodeType": "InheritanceSpecifier",
-            "src": "157:7:4"
+            "src": "157:7:3"
           }
         ],
         "contractDependencies": [
-          878
+          807
         ],
         "contractKind": "contract",
         "documentation": "@title 투표자리스트\r",
         "fullyImplemented": true,
-        "id": 728,
+        "id": 657,
         "linearizedBaseContracts": [
-          728,
-          878
+          657,
+          807
         ],
         "name": "Voterlist",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 598,
+            "id": 527,
             "name": "voters",
             "nodeType": "VariableDeclaration",
-            "scope": 728,
-            "src": "172:46:4",
+            "scope": 657,
+            "src": "172:46:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
               "typeString": "mapping(address => enum Voterlist.VoterState)"
             },
             "typeName": {
-              "id": 597,
+              "id": 526,
               "keyType": {
-                "id": 595,
+                "id": 524,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "180:7:4",
+                "src": "180:7:3",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "172:30:4",
+              "src": "172:30:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                 "typeString": "mapping(address => enum Voterlist.VoterState)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 596,
+                "id": 525,
                 "name": "VoterState",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 604,
-                "src": "191:10:4",
+                "referencedDeclaration": 533,
+                "src": "191:10:3",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_enum$_VoterState_$604",
+                  "typeIdentifier": "t_enum$_VoterState_$533",
                   "typeString": "enum Voterlist.VoterState"
                 }
               }
@@ -1885,11 +1885,11 @@
           },
           {
             "constant": false,
-            "id": 600,
+            "id": 529,
             "name": "numVoters",
             "nodeType": "VariableDeclaration",
-            "scope": 728,
-            "src": "225:22:4",
+            "scope": 657,
+            "src": "225:22:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1897,10 +1897,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 599,
+              "id": 528,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "225:4:4",
+              "src": "225:4:3",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1911,55 +1911,55 @@
           },
           {
             "canonicalName": "Voterlist.VoterState",
-            "id": 604,
+            "id": 533,
             "members": [
               {
-                "id": 601,
+                "id": 530,
                 "name": "None",
                 "nodeType": "EnumValue",
-                "src": "510:4:4"
+                "src": "510:4:3"
               },
               {
-                "id": 602,
+                "id": 531,
                 "name": "Voteable",
                 "nodeType": "EnumValue",
-                "src": "516:8:4"
+                "src": "516:8:3"
               },
               {
-                "id": 603,
+                "id": 532,
                 "name": "Voted",
                 "nodeType": "EnumValue",
-                "src": "526:5:4"
+                "src": "526:5:3"
               }
             ],
             "name": "VoterState",
             "nodeType": "EnumDefinition",
-            "src": "483:55:4"
+            "src": "483:55:3"
           },
           {
             "body": {
-              "id": 621,
+              "id": 550,
               "nodeType": "Block",
-              "src": "756:109:4",
+              "src": "756:109:3",
               "statements": [
                 {
                   "condition": {
                     "argumentTypes": null,
-                    "id": 608,
+                    "id": 537,
                     "name": "isPrivate",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 606,
-                    "src": "771:9:4",
+                    "referencedDeclaration": 535,
+                    "src": "771:9:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": null,
-                  "id": 619,
+                  "id": 548,
                   "nodeType": "IfStatement",
-                  "src": "767:78:4",
+                  "src": "767:78:3",
                   "trueBody": {
                     "expression": {
                       "argumentTypes": null,
@@ -1967,10 +1967,10 @@
                         {
                           "argumentTypes": null,
                           "commonType": {
-                            "typeIdentifier": "t_enum$_VoterState_$604",
+                            "typeIdentifier": "t_enum$_VoterState_$533",
                             "typeString": "enum Voterlist.VoterState"
                           },
-                          "id": 616,
+                          "id": 545,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1979,34 +1979,34 @@
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 610,
+                              "id": 539,
                               "name": "voters",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 598,
-                              "src": "803:6:4",
+                              "referencedDeclaration": 527,
+                              "src": "803:6:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                                 "typeString": "mapping(address => enum Voterlist.VoterState)"
                               }
                             },
-                            "id": 613,
+                            "id": 542,
                             "indexExpression": {
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 611,
+                                "id": 540,
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 893,
-                                "src": "810:3:4",
+                                "referencedDeclaration": 822,
+                                "src": "810:3:3",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
                                   "typeString": "msg"
                                 }
                               },
-                              "id": 612,
+                              "id": 541,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -2014,7 +2014,7 @@
                               "memberName": "sender",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": null,
-                              "src": "810:10:4",
+                              "src": "810:10:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -2025,9 +2025,9 @@
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "803:18:4",
+                            "src": "803:18:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_enum$_VoterState_$604",
+                              "typeIdentifier": "t_enum$_VoterState_$533",
                               "typeString": "enum Voterlist.VoterState"
                             }
                           },
@@ -2037,18 +2037,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 614,
+                              "id": 543,
                               "name": "VoterState",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 604,
-                              "src": "825:10:4",
+                              "referencedDeclaration": 533,
+                              "src": "825:10:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_enum$_VoterState_$604_$",
+                                "typeIdentifier": "t_type$_t_enum$_VoterState_$533_$",
                                 "typeString": "type(enum Voterlist.VoterState)"
                               }
                             },
-                            "id": 615,
+                            "id": 544,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2056,13 +2056,13 @@
                             "memberName": "Voteable",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "825:19:4",
+                            "src": "825:19:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_enum$_VoterState_$604",
+                              "typeIdentifier": "t_enum$_VoterState_$533",
                               "typeString": "enum Voterlist.VoterState"
                             }
                           },
-                          "src": "803:41:4",
+                          "src": "803:41:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -2076,21 +2076,21 @@
                             "typeString": "bool"
                           }
                         ],
-                        "id": 609,
+                        "id": 538,
                         "name": "require",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [
-                          896,
-                          897
+                          825,
+                          826
                         ],
-                        "referencedDeclaration": 896,
-                        "src": "795:7:4",
+                        "referencedDeclaration": 825,
+                        "src": "795:7:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                           "typeString": "function (bool) pure"
                         }
                       },
-                      "id": 617,
+                      "id": 546,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2098,39 +2098,39 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "795:50:4",
+                      "src": "795:50:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 618,
+                    "id": 547,
                     "nodeType": "ExpressionStatement",
-                    "src": "795:50:4"
+                    "src": "795:50:3"
                   }
                 },
                 {
-                  "id": 620,
+                  "id": 549,
                   "nodeType": "PlaceholderStatement",
-                  "src": "856:1:4"
+                  "src": "856:1:3"
                 }
               ]
             },
             "documentation": "@dev 투표자 리스트 검사 모디파이어\r\n     프리베이트 투표일 경우 투표자리스트에 있는 사람인지 검사\r",
-            "id": 622,
+            "id": 551,
             "name": "onlyVoterlisted",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 607,
+              "id": 536,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 606,
+                  "id": 535,
                   "name": "isPrivate",
                   "nodeType": "VariableDeclaration",
-                  "scope": 622,
-                  "src": "740:14:4",
+                  "scope": 551,
+                  "src": "740:14:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2138,10 +2138,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 605,
+                    "id": 534,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "740:4:4",
+                    "src": "740:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2151,25 +2151,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "739:16:4"
+              "src": "739:16:3"
             },
-            "src": "715:150:4",
+            "src": "715:150:3",
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 653,
+              "id": 582,
               "nodeType": "Block",
-              "src": "1767:189:4",
+              "src": "1767:189:3",
               "statements": [
                 {
                   "condition": {
                     "argumentTypes": null,
                     "commonType": {
-                      "typeIdentifier": "t_enum$_VoterState_$604",
+                      "typeIdentifier": "t_enum$_VoterState_$533",
                       "typeString": "enum Voterlist.VoterState"
                     },
-                    "id": 636,
+                    "id": 565,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2178,26 +2178,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 631,
+                        "id": 560,
                         "name": "voters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 598,
-                        "src": "1782:6:4",
+                        "referencedDeclaration": 527,
+                        "src": "1782:6:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                           "typeString": "mapping(address => enum Voterlist.VoterState)"
                         }
                       },
-                      "id": 633,
+                      "id": 562,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 632,
+                        "id": 561,
                         "name": "_voterAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 624,
-                        "src": "1789:13:4",
+                        "referencedDeclaration": 553,
+                        "src": "1789:13:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -2208,9 +2208,9 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "1782:21:4",
+                      "src": "1782:21:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_VoterState_$604",
+                        "typeIdentifier": "t_enum$_VoterState_$533",
                         "typeString": "enum Voterlist.VoterState"
                       }
                     },
@@ -2220,18 +2220,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 634,
+                        "id": 563,
                         "name": "VoterState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 604,
-                        "src": "1807:10:4",
+                        "referencedDeclaration": 533,
+                        "src": "1807:10:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_VoterState_$604_$",
+                          "typeIdentifier": "t_type$_t_enum$_VoterState_$533_$",
                           "typeString": "type(enum Voterlist.VoterState)"
                         }
                       },
-                      "id": 635,
+                      "id": 564,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2239,31 +2239,31 @@
                       "memberName": "None",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "1807:15:4",
+                      "src": "1807:15:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_VoterState_$604",
+                        "typeIdentifier": "t_enum$_VoterState_$533",
                         "typeString": "enum Voterlist.VoterState"
                       }
                     },
-                    "src": "1782:40:4",
+                    "src": "1782:40:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": null,
-                  "id": 652,
+                  "id": 581,
                   "nodeType": "IfStatement",
-                  "src": "1778:171:4",
+                  "src": "1778:171:3",
                   "trueBody": {
-                    "id": 651,
+                    "id": 580,
                     "nodeType": "Block",
-                    "src": "1824:125:4",
+                    "src": "1824:125:3",
                     "statements": [
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 642,
+                          "id": 571,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2272,26 +2272,26 @@
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 637,
+                              "id": 566,
                               "name": "voters",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 598,
-                              "src": "1839:6:4",
+                              "referencedDeclaration": 527,
+                              "src": "1839:6:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                                 "typeString": "mapping(address => enum Voterlist.VoterState)"
                               }
                             },
-                            "id": 639,
+                            "id": 568,
                             "indexExpression": {
                               "argumentTypes": null,
-                              "id": 638,
+                              "id": 567,
                               "name": "_voterAddress",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 624,
-                              "src": "1846:13:4",
+                              "referencedDeclaration": 553,
+                              "src": "1846:13:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -2302,9 +2302,9 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
-                            "src": "1839:21:4",
+                            "src": "1839:21:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_enum$_VoterState_$604",
+                              "typeIdentifier": "t_enum$_VoterState_$533",
                               "typeString": "enum Voterlist.VoterState"
                             }
                           },
@@ -2314,18 +2314,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 640,
+                              "id": 569,
                               "name": "VoterState",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 604,
-                              "src": "1863:10:4",
+                              "referencedDeclaration": 533,
+                              "src": "1863:10:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_enum$_VoterState_$604_$",
+                                "typeIdentifier": "t_type$_t_enum$_VoterState_$533_$",
                                 "typeString": "type(enum Voterlist.VoterState)"
                               }
                             },
-                            "id": 641,
+                            "id": 570,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2333,26 +2333,26 @@
                             "memberName": "Voteable",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "1863:19:4",
+                            "src": "1863:19:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_enum$_VoterState_$604",
+                              "typeIdentifier": "t_enum$_VoterState_$533",
                               "typeString": "enum Voterlist.VoterState"
                             }
                           },
-                          "src": "1839:43:4",
+                          "src": "1839:43:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_VoterState_$604",
+                            "typeIdentifier": "t_enum$_VoterState_$533",
                             "typeString": "enum Voterlist.VoterState"
                           }
                         },
-                        "id": 643,
+                        "id": 572,
                         "nodeType": "ExpressionStatement",
-                        "src": "1839:43:4"
+                        "src": "1839:43:3"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 645,
+                          "id": 574,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2360,15 +2360,15 @@
                           "nodeType": "UnaryOperation",
                           "operator": "++",
                           "prefix": false,
-                          "src": "1897:11:4",
+                          "src": "1897:11:3",
                           "subExpression": {
                             "argumentTypes": null,
-                            "id": 644,
+                            "id": 573,
                             "name": "numVoters",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 600,
-                            "src": "1897:9:4",
+                            "referencedDeclaration": 529,
+                            "src": "1897:9:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2379,26 +2379,26 @@
                             "typeString": "uint256"
                           }
                         },
-                        "id": 646,
+                        "id": 575,
                         "nodeType": "ExpressionStatement",
-                        "src": "1897:11:4"
+                        "src": "1897:11:3"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 649,
+                          "id": 578,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
                             "argumentTypes": null,
-                            "id": 647,
+                            "id": 576,
                             "name": "success",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 629,
-                            "src": "1923:7:4",
+                            "referencedDeclaration": 558,
+                            "src": "1923:7:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -2409,14 +2409,14 @@
                           "rightHandSide": {
                             "argumentTypes": null,
                             "hexValue": "74727565",
-                            "id": 648,
+                            "id": 577,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "bool",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "1933:4:4",
+                            "src": "1933:4:3",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
@@ -2424,15 +2424,15 @@
                             },
                             "value": "true"
                           },
-                          "src": "1923:14:4",
+                          "src": "1923:14:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "id": 650,
+                        "id": 579,
                         "nodeType": "ExpressionStatement",
-                        "src": "1923:14:4"
+                        "src": "1923:14:3"
                       }
                     ]
                   }
@@ -2440,44 +2440,44 @@
               ]
             },
             "documentation": "@dev 투표자리스트에 투표자를 추가하는 메소드\r\n@param _voterAddress 투표자의 주소\r\n@return success 명단에 넣어지면 true, 이미 있거나 실패하면 false\r",
-            "id": 654,
+            "id": 583,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 627,
+                "id": 556,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 626,
+                  "id": 555,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 852,
-                  "src": "1734:9:4",
+                  "referencedDeclaration": 781,
+                  "src": "1734:9:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "1734:9:4"
+                "src": "1734:9:3"
               }
             ],
             "name": "addVoterToVoterlist",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 625,
+              "id": 554,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 624,
+                  "id": 553,
                   "name": "_voterAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 654,
-                  "src": "1704:21:4",
+                  "scope": 583,
+                  "src": "1704:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2485,10 +2485,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 623,
+                    "id": 552,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1704:7:4",
+                    "src": "1704:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2498,20 +2498,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1703:23:4"
+              "src": "1703:23:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 630,
+              "id": 559,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 629,
+                  "id": 558,
                   "name": "success",
                   "nodeType": "VariableDeclaration",
-                  "scope": 654,
-                  "src": "1753:12:4",
+                  "scope": 583,
+                  "src": "1753:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2519,10 +2519,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 628,
+                    "id": 557,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1753:4:4",
+                    "src": "1753:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2532,28 +2532,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1752:14:4"
+              "src": "1752:14:3"
             },
-            "scope": 728,
-            "src": "1675:281:4",
+            "scope": 657,
+            "src": "1675:281:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 685,
+              "id": 614,
               "nodeType": "Block",
-              "src": "2284:189:4",
+              "src": "2284:189:3",
               "statements": [
                 {
                   "condition": {
                     "argumentTypes": null,
                     "commonType": {
-                      "typeIdentifier": "t_enum$_VoterState_$604",
+                      "typeIdentifier": "t_enum$_VoterState_$533",
                       "typeString": "enum Voterlist.VoterState"
                     },
-                    "id": 668,
+                    "id": 597,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2562,26 +2562,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 663,
+                        "id": 592,
                         "name": "voters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 598,
-                        "src": "2299:6:4",
+                        "referencedDeclaration": 527,
+                        "src": "2299:6:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                           "typeString": "mapping(address => enum Voterlist.VoterState)"
                         }
                       },
-                      "id": 665,
+                      "id": 594,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 664,
+                        "id": 593,
                         "name": "_voterAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 656,
-                        "src": "2306:13:4",
+                        "referencedDeclaration": 585,
+                        "src": "2306:13:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -2592,9 +2592,9 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "2299:21:4",
+                      "src": "2299:21:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_VoterState_$604",
+                        "typeIdentifier": "t_enum$_VoterState_$533",
                         "typeString": "enum Voterlist.VoterState"
                       }
                     },
@@ -2604,18 +2604,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 666,
+                        "id": 595,
                         "name": "VoterState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 604,
-                        "src": "2324:10:4",
+                        "referencedDeclaration": 533,
+                        "src": "2324:10:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_VoterState_$604_$",
+                          "typeIdentifier": "t_type$_t_enum$_VoterState_$533_$",
                           "typeString": "type(enum Voterlist.VoterState)"
                         }
                       },
-                      "id": 667,
+                      "id": 596,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2623,31 +2623,31 @@
                       "memberName": "Voteable",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "2324:19:4",
+                      "src": "2324:19:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_VoterState_$604",
+                        "typeIdentifier": "t_enum$_VoterState_$533",
                         "typeString": "enum Voterlist.VoterState"
                       }
                     },
-                    "src": "2299:44:4",
+                    "src": "2299:44:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": null,
-                  "id": 684,
+                  "id": 613,
                   "nodeType": "IfStatement",
-                  "src": "2295:171:4",
+                  "src": "2295:171:3",
                   "trueBody": {
-                    "id": 683,
+                    "id": 612,
                     "nodeType": "Block",
-                    "src": "2345:121:4",
+                    "src": "2345:121:3",
                     "statements": [
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 674,
+                          "id": 603,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2656,26 +2656,26 @@
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
-                              "id": 669,
+                              "id": 598,
                               "name": "voters",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 598,
-                              "src": "2360:6:4",
+                              "referencedDeclaration": 527,
+                              "src": "2360:6:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                                 "typeString": "mapping(address => enum Voterlist.VoterState)"
                               }
                             },
-                            "id": 671,
+                            "id": 600,
                             "indexExpression": {
                               "argumentTypes": null,
-                              "id": 670,
+                              "id": 599,
                               "name": "_voterAddress",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 656,
-                              "src": "2367:13:4",
+                              "referencedDeclaration": 585,
+                              "src": "2367:13:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -2686,9 +2686,9 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
-                            "src": "2360:21:4",
+                            "src": "2360:21:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_enum$_VoterState_$604",
+                              "typeIdentifier": "t_enum$_VoterState_$533",
                               "typeString": "enum Voterlist.VoterState"
                             }
                           },
@@ -2698,18 +2698,18 @@
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 672,
+                              "id": 601,
                               "name": "VoterState",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 604,
-                              "src": "2384:10:4",
+                              "referencedDeclaration": 533,
+                              "src": "2384:10:3",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_enum$_VoterState_$604_$",
+                                "typeIdentifier": "t_type$_t_enum$_VoterState_$533_$",
                                 "typeString": "type(enum Voterlist.VoterState)"
                               }
                             },
-                            "id": 673,
+                            "id": 602,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2717,26 +2717,26 @@
                             "memberName": "None",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "2384:15:4",
+                            "src": "2384:15:3",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_enum$_VoterState_$604",
+                              "typeIdentifier": "t_enum$_VoterState_$533",
                               "typeString": "enum Voterlist.VoterState"
                             }
                           },
-                          "src": "2360:39:4",
+                          "src": "2360:39:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_enum$_VoterState_$604",
+                            "typeIdentifier": "t_enum$_VoterState_$533",
                             "typeString": "enum Voterlist.VoterState"
                           }
                         },
-                        "id": 675,
+                        "id": 604,
                         "nodeType": "ExpressionStatement",
-                        "src": "2360:39:4"
+                        "src": "2360:39:3"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 677,
+                          "id": 606,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2744,15 +2744,15 @@
                           "nodeType": "UnaryOperation",
                           "operator": "--",
                           "prefix": false,
-                          "src": "2414:11:4",
+                          "src": "2414:11:3",
                           "subExpression": {
                             "argumentTypes": null,
-                            "id": 676,
+                            "id": 605,
                             "name": "numVoters",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 600,
-                            "src": "2414:9:4",
+                            "referencedDeclaration": 529,
+                            "src": "2414:9:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2763,26 +2763,26 @@
                             "typeString": "uint256"
                           }
                         },
-                        "id": 678,
+                        "id": 607,
                         "nodeType": "ExpressionStatement",
-                        "src": "2414:11:4"
+                        "src": "2414:11:3"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 681,
+                          "id": 610,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
                             "argumentTypes": null,
-                            "id": 679,
+                            "id": 608,
                             "name": "success",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 661,
-                            "src": "2440:7:4",
+                            "referencedDeclaration": 590,
+                            "src": "2440:7:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -2793,14 +2793,14 @@
                           "rightHandSide": {
                             "argumentTypes": null,
                             "hexValue": "74727565",
-                            "id": 680,
+                            "id": 609,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "bool",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "2450:4:4",
+                            "src": "2450:4:3",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
@@ -2808,15 +2808,15 @@
                             },
                             "value": "true"
                           },
-                          "src": "2440:14:4",
+                          "src": "2440:14:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "id": 682,
+                        "id": 611,
                         "nodeType": "ExpressionStatement",
-                        "src": "2440:14:4"
+                        "src": "2440:14:3"
                       }
                     ]
                   }
@@ -2824,44 +2824,44 @@
               ]
             },
             "documentation": "@dev 투표자리스트에 투표자를 제거하는 메소드\r\n@param _voterAddress 투표자의 주소\r\n@return success 투표자가 없으면 삭제하고 true, 있으면 false\r",
-            "id": 686,
+            "id": 615,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 659,
+                "id": 588,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 658,
+                  "id": 587,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 852,
-                  "src": "2251:9:4",
+                  "referencedDeclaration": 781,
+                  "src": "2251:9:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "2251:9:4"
+                "src": "2251:9:3"
               }
             ],
             "name": "setVoterStateNoneFromVoters",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 657,
+              "id": 586,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 656,
+                  "id": 585,
                   "name": "_voterAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 686,
-                  "src": "2221:21:4",
+                  "scope": 615,
+                  "src": "2221:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2869,10 +2869,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 655,
+                    "id": 584,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2221:7:4",
+                    "src": "2221:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2882,20 +2882,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2220:23:4"
+              "src": "2220:23:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 662,
+              "id": 591,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 661,
+                  "id": 590,
                   "name": "success",
                   "nodeType": "VariableDeclaration",
-                  "scope": 686,
-                  "src": "2270:12:4",
+                  "scope": 615,
+                  "src": "2270:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2903,10 +2903,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 660,
+                    "id": 589,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2270:4:4",
+                    "src": "2270:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2916,43 +2916,43 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2269:14:4"
+              "src": "2269:14:3"
             },
-            "scope": 728,
-            "src": "2184:289:4",
+            "scope": 657,
+            "src": "2184:289:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 693,
+              "id": 622,
               "nodeType": "Block",
-              "src": "2665:35:4",
+              "src": "2665:35:3",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 691,
+                    "id": 620,
                     "name": "numVoters",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 600,
-                    "src": "2683:9:4",
+                    "referencedDeclaration": 529,
+                    "src": "2683:9:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 690,
-                  "id": 692,
+                  "functionReturnParameters": 619,
+                  "id": 621,
                   "nodeType": "Return",
-                  "src": "2676:16:4"
+                  "src": "2676:16:3"
                 }
               ]
             },
             "documentation": "@dev 프리베이트일 경우, 투표자의 총 수을 얻는 메소드\r\n@return 투표자의 수\r",
-            "id": 694,
+            "id": 623,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2960,23 +2960,23 @@
             "name": "getNumVoters",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 687,
+              "id": 616,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2634:2:4"
+              "src": "2634:2:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 690,
+              "id": 619,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 689,
+                  "id": 618,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 694,
-                  "src": "2659:4:4",
+                  "scope": 623,
+                  "src": "2659:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2984,10 +2984,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 688,
+                    "id": 617,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2659:4:4",
+                    "src": "2659:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2997,19 +2997,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2658:6:4"
+              "src": "2658:6:3"
             },
-            "scope": 728,
-            "src": "2613:87:4",
+            "scope": 657,
+            "src": "2613:87:3",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 707,
+              "id": 636,
               "nodeType": "Block",
-              "src": "2907:53:4",
+              "src": "2907:53:3",
               "statements": [
                 {
                   "expression": {
@@ -3019,26 +3019,26 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 702,
+                          "id": 631,
                           "name": "voters",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 598,
-                          "src": "2930:6:4",
+                          "referencedDeclaration": 527,
+                          "src": "2930:6:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                             "typeString": "mapping(address => enum Voterlist.VoterState)"
                           }
                         },
-                        "id": 704,
+                        "id": 633,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 703,
+                          "id": 632,
                           "name": "_voterAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 696,
-                          "src": "2937:13:4",
+                          "referencedDeclaration": 625,
+                          "src": "2937:13:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -3049,9 +3049,9 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "2930:21:4",
+                        "src": "2930:21:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_VoterState_$604",
+                          "typeIdentifier": "t_enum$_VoterState_$533",
                           "typeString": "enum Voterlist.VoterState"
                         }
                       }
@@ -3059,24 +3059,24 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_enum$_VoterState_$604",
+                          "typeIdentifier": "t_enum$_VoterState_$533",
                           "typeString": "enum Voterlist.VoterState"
                         }
                       ],
-                      "id": 701,
+                      "id": 630,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "2925:4:4",
+                      "src": "2925:4:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_uint256_$",
                         "typeString": "type(uint256)"
                       },
                       "typeName": "uint"
                     },
-                    "id": 705,
+                    "id": 634,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3084,21 +3084,21 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2925:27:4",
+                    "src": "2925:27:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 700,
-                  "id": 706,
+                  "functionReturnParameters": 629,
+                  "id": 635,
                   "nodeType": "Return",
-                  "src": "2918:34:4"
+                  "src": "2918:34:3"
                 }
               ]
             },
             "documentation": "@dev 투표자의 상태를 얻는 메소드\r\n@return 투표자의 상태를 정수로 반환\r",
-            "id": 708,
+            "id": 637,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3106,16 +3106,16 @@
             "name": "getVoterState",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 697,
+              "id": 626,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 696,
+                  "id": 625,
                   "name": "_voterAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 708,
-                  "src": "2858:21:4",
+                  "scope": 637,
+                  "src": "2858:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3123,10 +3123,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 695,
+                    "id": 624,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2858:7:4",
+                    "src": "2858:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3136,20 +3136,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2857:23:4"
+              "src": "2857:23:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 700,
+              "id": 629,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 699,
+                  "id": 628,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 708,
-                  "src": "2901:4:4",
+                  "scope": 637,
+                  "src": "2901:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3157,10 +3157,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 698,
+                    "id": 627,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2901:4:4",
+                    "src": "2901:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3170,24 +3170,24 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2900:6:4"
+              "src": "2900:6:3"
             },
-            "scope": 728,
-            "src": "2835:125:4",
+            "scope": 657,
+            "src": "2835:125:3",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 726,
+              "id": 655,
               "nodeType": "Block",
-              "src": "3223:84:4",
+              "src": "3223:84:3",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 720,
+                    "id": 649,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3196,26 +3196,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 715,
+                        "id": 644,
                         "name": "voters",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 598,
-                        "src": "3234:6:4",
+                        "referencedDeclaration": 527,
+                        "src": "3234:6:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$604_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_enum$_VoterState_$533_$",
                           "typeString": "mapping(address => enum Voterlist.VoterState)"
                         }
                       },
-                      "id": 717,
+                      "id": 646,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 716,
+                        "id": 645,
                         "name": "_voterAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 710,
-                        "src": "3241:13:4",
+                        "referencedDeclaration": 639,
+                        "src": "3241:13:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -3226,9 +3226,9 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "3234:21:4",
+                      "src": "3234:21:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_VoterState_$604",
+                        "typeIdentifier": "t_enum$_VoterState_$533",
                         "typeString": "enum Voterlist.VoterState"
                       }
                     },
@@ -3238,18 +3238,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 718,
+                        "id": 647,
                         "name": "VoterState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 604,
-                        "src": "3258:10:4",
+                        "referencedDeclaration": 533,
+                        "src": "3258:10:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_VoterState_$604_$",
+                          "typeIdentifier": "t_type$_t_enum$_VoterState_$533_$",
                           "typeString": "type(enum Voterlist.VoterState)"
                         }
                       },
-                      "id": 719,
+                      "id": 648,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -3257,38 +3257,38 @@
                       "memberName": "Voted",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "3258:16:4",
+                      "src": "3258:16:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_VoterState_$604",
+                        "typeIdentifier": "t_enum$_VoterState_$533",
                         "typeString": "enum Voterlist.VoterState"
                       }
                     },
-                    "src": "3234:40:4",
+                    "src": "3234:40:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_VoterState_$604",
+                      "typeIdentifier": "t_enum$_VoterState_$533",
                       "typeString": "enum Voterlist.VoterState"
                     }
                   },
-                  "id": 721,
+                  "id": 650,
                   "nodeType": "ExpressionStatement",
-                  "src": "3234:40:4"
+                  "src": "3234:40:3"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 724,
+                    "id": 653,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 722,
+                      "id": 651,
                       "name": "success",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 713,
-                      "src": "3285:7:4",
+                      "referencedDeclaration": 642,
+                      "src": "3285:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -3299,14 +3299,14 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 723,
+                      "id": 652,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "bool",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "3295:4:4",
+                      "src": "3295:4:3",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -3314,20 +3314,20 @@
                       },
                       "value": "true"
                     },
-                    "src": "3285:14:4",
+                    "src": "3285:14:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 725,
+                  "id": 654,
                   "nodeType": "ExpressionStatement",
-                  "src": "3285:14:4"
+                  "src": "3285:14:3"
                 }
               ]
             },
             "documentation": "@dev 투표자를 투표한 상태로 설정\r\n@param _voterAddress 설정할 투표자\r\n@return success 성공하면 true, 실패하면 false\r",
-            "id": 727,
+            "id": 656,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -3335,16 +3335,16 @@
             "name": "setVoted",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 711,
+              "id": 640,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 710,
+                  "id": 639,
                   "name": "_voterAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 727,
-                  "src": "3168:21:4",
+                  "scope": 656,
+                  "src": "3168:21:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3352,10 +3352,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 709,
+                    "id": 638,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3168:7:4",
+                    "src": "3168:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3365,20 +3365,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3167:23:4"
+              "src": "3167:23:3"
             },
             "payable": false,
             "returnParameters": {
-              "id": 714,
+              "id": 643,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 713,
+                  "id": 642,
                   "name": "success",
                   "nodeType": "VariableDeclaration",
-                  "scope": 727,
-                  "src": "3209:12:4",
+                  "scope": 656,
+                  "src": "3209:12:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3386,10 +3386,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 712,
+                    "id": 641,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3209:4:4",
+                    "src": "3209:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -3399,20 +3399,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3208:14:4"
+              "src": "3208:14:3"
             },
-            "scope": 728,
-            "src": "3150:157:4",
+            "scope": 657,
+            "src": "3150:157:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 729,
-        "src": "135:3175:4"
+        "scope": 658,
+        "src": "135:3175:3"
       }
     ],
-    "src": "0:3312:4"
+    "src": "0:3312:3"
   },
   "compiler": {
     "name": "solc",
@@ -3420,5 +3420,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-05-30T10:30:00.667Z"
+  "updatedAt": "2018-06-07T04:48:09.564Z"
 }

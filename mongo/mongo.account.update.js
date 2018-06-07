@@ -13,7 +13,7 @@ Account.findOne({
     account.deployedVotes = [contractAddress.test_wlqkd_contract];
     account.save((err) => {
         if (err) return console.log(err.message);
-        console.info("퍼블릭 완료");
+        console.info("지방선거 완료");
     })
 });
 
@@ -25,7 +25,7 @@ Account.findOne({
     account.deployedVotes = [contractAddress.test_qkxeo_contract];
     account.save((err) => {
         if (err) return console.log(err.message);
-        console.info("프라이빗 완료");
+        console.info("한밭대 완료");
     })
 });
 

@@ -134,7 +134,7 @@ contract Vote is Ownable, Candidatelist, Voterlist {
      * @return success 성공하면 true, 실패하면 false
      */
     function setDate(uint _startDate, uint _endDate) public onlyOwner returns (bool success){
-        require(now <= _startDate && _startDate <= _endDate && now <= _endDate);
+//        require(now <= _startDate && _startDate <= _endDate && now <= _endDate);
 
         startDate = _startDate;
         endDate = _endDate;

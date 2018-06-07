@@ -31,9 +31,16 @@ const getVoteList = async (isPrivate) => {
     return await voteSummaryList(addressList);
 };
 
+const setVoteDescription = async (voteAddress, voterAddress, voteDescription) => {
+    await Vote(voteAddress).methods.setVoteDescription(voteDescription).send({from: voterAddress});
+};
+
 const setVoteState = async (voteAddress, voterAddress, voteState) => {
-    return await Vote(voteAddress)
-        .methods.setVoteState(voteState).send({from: voterAddress});
+    await Vote(voteAddress).methods.setVoteState(voteState).send({from: voterAddress});
+};
+
+const setVoteDate = async (voteAddress, voterAddress, startDate, endDate) => {
+    await Vote(voteAddress).methods.setDate(startDate, endDate).send({from: voterAddress});
 };
 
 const voting = async (voteAddress, voterAddress, candidateIndex) => {
@@ -50,6 +57,8 @@ module.exports = {
     voteAddressList,
     voteSummary,
     voteSummaryList,
+    setVoteDescription,
     setVoteState,
+    setVoteDate,
     voting
 };

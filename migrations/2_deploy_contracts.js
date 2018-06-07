@@ -73,8 +73,8 @@ module.exports = (deployer, network, accounts) =>
             if (err) throw 'error opening file: ' + err;
             const jsonObj = {
                 factory: deployedVoteFactory.address,
-                test_wlwlqkd_contract: deployedPublicVotes[0],
-                test_qkxeo_conract: deployedPublicVotes[1],
+                test_wlqkd_contract: deployedPublicVotes[0],
+                test_qkxeo_contract: deployedPublicVotes[1],
                 test_wlqkd_address: accounts[1],
                 test_qkxeo_address: accounts[2]
             };

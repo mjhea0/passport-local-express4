@@ -62,15 +62,35 @@ router.post('/:vote(public|private)/:address', async (req, res) => {
 
         const isVoteOwner = await voterService.isOwner(voteAddress, voterAddress);
         if(isVoteOwner) {
-            const success = await voteService.setVoteState(voteAddress, voterAddress, state);
-            if (success) {
-                res.redirect(req.path)
-            } else {
-                res.send("실패");
-            }
-        } else {
-            res.redirect(req.path);
+            await voteService.setVoteState(voteAddress, voterAddress, state);
         }
+        res.redirect(req.path);
+    } catch (err) {
+        res.send(err.toString());
+    }
+});
+
+router.post('/:vote(public|private)/:address/modify', async (req, res) => {
+
+    if (!req.user) res.redirect('/login');
+
+    try {
+        const voteAddress = req.params.address;
+        const voterAddress = req.user.etherAccount;
+
+        const voteDescription = req.body.voteDescription;
+        const startVoteDate = Date.parse(req.body.startDate) / 1000;
+        const endVoteDate = Date.parse(req.body.endDate) / 1000;
+
+        const isVoteOwner = await voterService.isOwner(voteAddress, voterAddress);
+        if(isVoteOwner) {
+            if(voteDescription)
+                await voteService.setVoteDescription(voteAddress, voterAddress, voteDescription);
+            if(startVoteDate && endVoteDate)
+                await voteService.setVoteDate(
+                    voteAddress, voterAddress, startVoteDate, endVoteDate);
+        }
+        res.redirect(req.path.substring(0, req.path.length - 7));
     } catch (err) {
         res.send(err.toString());
     }

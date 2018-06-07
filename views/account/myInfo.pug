@@ -7,8 +7,10 @@ block content
         h2 사용하고 계신 계정
         p #{user.etherAccount}
         hr
-        h3 주최 투표 목록
+        h3 내가 참여한 투표 목록
+        hr
         if(user.deployedVotes)
+            h3 주최 투표 목록
             p #{user.deployedVotes}
         else
             .text-center

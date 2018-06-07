@@ -6,6 +6,7 @@ const Account = new Schema({
     username: String,
     password: String,
     etherAccount: String,
+    votingVotes: [String],
     deployedVotes: [String]
 });
 

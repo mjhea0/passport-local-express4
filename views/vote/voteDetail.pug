@@ -5,9 +5,11 @@ block content
         if (!voteDetail)
             p 해당 주소의 투표가 존재하지 않습니다!
         else
+            -startVoteDate = new Date(voteDetail.summary[3] * 1000).toLocaleString();
+            -endVoteDate = new Date(voteDetail.summary[4] * 1000).toLocaleString();
             h1.display-4 #{voteDetail.summary[0]}
             if (voteDetail.summary[5])
-                small (비밀투표)
+                small (인원이 한정된 투표)
             h5.my-1 상태:
                 case voteDetail.summary[2]
                     when '0': b.text-muted 대기
@@ -17,8 +19,7 @@ block content
                     default: b.text-danger 오류
             p.lead #{voteDetail.summary[1]}
                 br
-                -voteDate = new Date(voteDetail.summary[3] * 1000).toLocaleString() + " ~ " + new Date(voteDetail.summary[4] * 1000).toLocaleString();
-                | 기간 : #{voteDate}
+                | 기간 : #{startVoteDate} ~ #{endVoteDate}
             if(voteDetail.summary[2] !== '0')
                 h4 총 투표자 수 : #{voteDetail.voterNumber}
             hr.my-4
@@ -60,19 +61,53 @@ block content
                         disabled
                         ) 이미 투표에 참여하셨습니다!
             if(voteDetail.owner)
-                form(role='form', action=path, method="post", style='max-width: 300px;')
-                    .form-group
-                        .btn-group.btn-group-toggle(data-toggle='buttons')
-                            label.btn.btn-primary.active
-                                input#option1(type='radio', name='state', value='0' autocomplete='off')
-                                |  대기
-                            label.btn.btn-primary
-                                input#option2(type='radio', name='state', value='1' autocomplete='off')
-                                |  진행 중
-                            label.btn.btn-primary
-                                input#option3(type='radio', name='state', value='2' autocomplete='off')
-                                |  일시중지
-                            label.btn.btn-primary
-                                input#option4(type='radio', name='state', value='3' autocomplete='off')
-                                |  종료
-                    button.btn.btn-primary(type='submit') 바꾸기
+                button.btn.btn-default(
+                    data-target='#modifyForm'
+                    data-toggle='collapse'
+                    aria-expanded="false"
+                    aria-controls="modifyForm") 투표 정보 수정하기
+                #modifyForm.collapse(style='margin: 30px;')
+                    form(role='form', action=path, method="post", style='max-width: 300px;')
+                        .form-group
+                            label(for='voteState') 투표 상태 변경
+                            #voteState.btn-group.btn-group-toggle(data-toggle='buttons')
+                                label.btn.btn-secondary
+                                    input#option1(type='radio', name='state', value='0' autocomplete='off')
+                                    |  대기
+                                label.btn.btn-primary
+                                    input#option2(type='radio', name='state', value='1' autocomplete='off')
+                                    |  진행 중
+                                label.btn.btn-success
+                                    input#option3(type='radio', name='state', value='2' autocomplete='off')
+                                    |  일시중지
+                                label.btn.btn-danger
+                                    input#option4(type='radio', name='state', value='3' autocomplete='off')
+                                    |  종료
+                        button.btn.btn-default(type='submit') 바꾸기
+                    br
+                    br
+                    form(role='form', action=path+'/modify', method="post", style='max-width: 300px;')
+                        fieldset(disabled)
+                            .form-group
+                                label(for='voteTitle') 투표 제목(변경 불가)
+                                input#voteTitle.form-control(type='text', placeholder=voteDetail.summary[0])
+                        .form-group
+                            label(for='voteDescription') 투표 설명
+                            textarea#voteDescription.form-control(rows='3' name='voteDescription') #{voteDetail.summary[1]}
+                        .form-group
+                            span
+                                label(for='startDateTimePicker') 투표 시작 날짜
+                                input#startDateTimePicker(width='312' name='startDate' value=startVoteDate)
+                                br
+                                label(for='endDateTimePicker') 투표 종료 날짜
+                                input#endDateTimePicker(width='312' name='endDate' value=endVoteDate)
+                            script.
+                                $('#startDateTimePicker').datetimepicker({
+                                    uiLibrary: 'bootstrap4',
+                                    format: 'yyyy-m-dd HH:MM'
+                                });
+                                $('#endDateTimePicker').datetimepicker({
+                                    uiLibrary: 'bootstrap4',
+                                    format: 'yyyy-m-dd HH:MM'
+                                });
+                        button.btn.btn-default(type='submit') 정보 변경
