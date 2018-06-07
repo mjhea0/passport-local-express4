@@ -1,7 +1,1 @@
-{
-  "factory": "0xb04d093ed02d42523e45a6fbd2660f61b7c4cb32",
-  "test_wlqkd_contract": "0x96d01793a149f0227375f11ad204395431dbaef0",
-  "test_qkxeo_contract": "0x62d24c30d66c05dd987322ddbefaedc90b19030d",
-  "test_wlqkd_address": "0xf9a5ba9e3d35e06fdd3da1188a291ddf1c9e7609",
-  "test_qkxeo_address": "0xd01eeefd04362dd794a527383b78e37c4035b5c2"
-}
+{"factory":"0xc8b9068b2960cb449e1e5c2becc32c4815388402","test_wlqkd_contract":"0x3411b976a2870a1f21a506fa21b36f28e00ebbf1","test_qkxeo_contract":"0x7ca2e0274a1b6334fb697886e57e7eb90f5f4534","test_wlqkd_address":"0x182be40196f0b30882d30e43257a864ffcbc7226","test_qkxeo_address":"0x4590f130a8d0a7bfd851fe5d4692c1e988087f11"}

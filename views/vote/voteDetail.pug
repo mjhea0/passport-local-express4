@@ -39,8 +39,25 @@ block content
                                     | #{": " + candidate[0]}
                                 p.card-text
                                     | 득표수 : #{candidate[2]}
-                                -onClick = "window.open('" + candidate[1] + "')"
-                                button.btn.btn-success(onclick=onClick) 공약보기
+                                if(candidate[1].includes("http"))
+                                    -onClick = "window.open('" + candidate[1] + "')"
+                                    button.btn.btn-success(onclick=onClick) 공약보기
+                                else
+                                    button.btn.btn-primary(type='button', data-toggle='modal', data-target='#commitmentModal')
+                                        | 공약보기
+                                    // Modal
+                                    #commitmentModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modalCenterTitle', aria-hidden='true')
+                                        .modal-dialog.modal-dialog-centered(role='document')
+                                            .modal-content
+                                                .modal-header
+                                                    h5#modalLongTitle.modal-title #{candidate[0]}의 공약
+                                                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                                        span(aria-hidden='true') ×
+                                                .modal-body
+                                                    | #{candidate[1]}
+                                                .modal-footer
+                                                    button.btn.btn-secondary(type='button', data-dismiss='modal') 닫기
+
                         -val += 1
             if(user && !voteDetail.owner)
                 if(voteDetail.voterState !== '2')

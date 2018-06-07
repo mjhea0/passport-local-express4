@@ -35,10 +35,10 @@ module.exports = (deployer, network, accounts) =>
         const deployedPublicVote = await Vote.at(deployedPublicVotes[0]);
         const candidateList = ['허태정', '박성효', '남충희', '김윤기'];
         const candidateCommitment = [
-            'http://policy.nec.go.kr/skin/doc.html?fn=jd_20180613001.pdf&rs=/preview/html/20180525/',
-            'http://policy.nec.go.kr/skin/doc.html?fn=jd_20180613002.pdf&rs=/preview/html/20180525/',
-            'http://policy.nec.go.kr/skin/doc.html?fn=jd_20180613003.pdf&rs=/preview/html/20180525/',
-            'http://policy.nec.go.kr/skin/doc.html?fn=jd_20180613005.pdf&rs=/preview/html/20180525/'
+            'http://policy.nec.go.kr/skin/doc.html?fn=20180602153429870_1.pdf&rs=/preview/html/201806/',
+            'http://policy.nec.go.kr/skin/doc.html?fn=20180601163602545_1.pdf&rs=/preview/html/201806/',
+            'http://policy.nec.go.kr/skin/doc.html?fn=20180603213658679_1.pdf&rs=/preview/html/201806/',
+            'http://policy.nec.go.kr/skin/doc.html?fn=20180601163653030_1.pdf&rs=/preview/html/201806/'
         ];
         for (let i = 0; i < candidateList.length; i++) {
             await deployedPublicVote.addCandidate(
@@ -50,7 +50,7 @@ module.exports = (deployer, network, accounts) =>
             // await console.log(addedCandidate);
         }
 
-        // 밭대선거 투표에 후보자 추가
+        // 한밭대선거 투표에 후보자 추가
         const deployedPrivateVote = await Vote.at(deployedPublicVotes[1]);
         const privateCandidateList = ['악센트', '라우드', '비포유'];
         const privateCandidateCommitment = [

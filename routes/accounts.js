@@ -90,8 +90,7 @@ router.get('/voterequest', (req, res, next) => {
     res.render('account/voteCreate');
 });
 
-
-router.post('/requestresult', (req, res, next) => {
+router.post('/voteCreate', (req, res, next) => {
 
     console.log('접근');
     if (!req.user) {
@@ -106,9 +105,14 @@ router.post('/requestresult', (req, res, next) => {
             console.log('메일발송에러' + err);
         } else {
             res.send('메일 발송 완료');
-
         }
     });
+
+    res.redirect('/requestresult');
+});
+
+router.get('/requestresult', (req, res, next) => {
+    res.render('account/voteRequestResult');
 });
 
 
