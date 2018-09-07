@@ -1,4 +1,4 @@
-const Account = require('../models/account');
+const Account = require('./models/account');
 const mongo = require('./mongo');
 const contractAddress = require('../config/contract-address.json');
 

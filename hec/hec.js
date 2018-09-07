@@ -6,9 +6,9 @@ class Hec {
     /**
      * 공개키와 비밀키 파일들을 만드는 API
      *
-     * @param {string} o
-     * @param {int} p
-     * @param {int} L
+     * @param {string} o 선거 컨트렉트 주소
+     * @param {int} p 후보자의 수(소수)
+     * @param {int} L 레벨
      */
     static createKeys(o, p=13, L=3) {
         const command = `./createKeys o=${o} p=${p} L=${L}`;
@@ -22,8 +22,8 @@ class Hec {
     /**
      * 후보자 벡터 파일들을 만드는 API
      *
-     * @param {string} 선거 컨트렉트 주소
-     * @param {int} 후보자의 수
+     * @param {string} o 선거 컨트렉트 주소
+     * @param {int} t 후보자의 수
      */
     static encryptCandidateList(o, t) {
         const command = `./encrypt_candidate_list o=${o} t=${t}`;
@@ -38,8 +38,8 @@ class Hec {
      * 투표를 최종 집계하는 API
      * 집계 결과를 반환함
      *
-     * @param {string} 선거 컨트렉트 주소
-     * @param {int} 후보자의 수
+     * @param {string} o 선거 컨트렉트 주소
+     * @param {int} n 후보자의 수
      * @return {Array} 집계 결과
      */
     static tally(o, n) {
@@ -55,7 +55,7 @@ class Hec {
     /**
      * 집계 결과를 반환하는 메소드
      *
-     * @param {} o 선거 컨트렉트 주소
+     * @param {string} o 선거 컨트렉트 주소
      */
     static getResult(o) {
         // 결과 파일 읽고 배열로 변환

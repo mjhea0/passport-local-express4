@@ -46,7 +46,7 @@ app.use(function(req, res, next) {
 app.use('/', [routes, accountRoutes, voteRoutes]);
 
 // passport config
-const Account = require('./models/account');
+const Account = require('./mongo/models/account');
 passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());

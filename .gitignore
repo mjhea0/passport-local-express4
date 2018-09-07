@@ -13,4 +13,6 @@ config/email-config.js
 package-lock.json
 
 # custom
-build/*
+build/
+ethereum/build/
+hec/data/*

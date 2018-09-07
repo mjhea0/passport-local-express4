@@ -1,6 +1,6 @@
 const express = require('express');
 const passport = require('passport');
-const Account = require('../models/account');
+const Account = require('../mongo/models/account');
 const router = express.Router();
 const accountService = require('../services/account.service');
 const voteService = require('../services/election.service');

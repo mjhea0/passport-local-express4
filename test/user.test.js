@@ -1,6 +1,6 @@
 const should = require("should");
 const mongoose = require('mongoose');
-const Account = require("../models/account.js");
+const Account = require("../mongo/models/account.js");
 
 describe('Account', () => {
 
