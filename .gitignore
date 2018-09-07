@@ -11,3 +11,6 @@ npm-debug.log
 *.html
 config/email-config.js
 package-lock.json
+
+# custom
+build/*
