@@ -62,9 +62,9 @@ module.exports = (deployer, network, accounts) =>
             // IPFS에 저장합니다
             const publicKeyFilePath = "./hec/data/publicKey/" + deployedPublicElections[0] + ".bin";
             const fileSize = fs.statSync(publicKeyFilePath).size;
-            if(fileSize > 0) {
+            if (fileSize > 0) {
                 const publicKeyFile = fs.readFileSync(publicKeyFilePath);
-                setTimeout(() => {
+                setTimeout(() =>
                     ipfs.files.add(new Buffer.from(publicKeyFile), async (err, res) => {
                         if (err) {
                             console.log(err);
@@ -76,8 +76,8 @@ module.exports = (deployer, network, accounts) =>
                             publicKeyFileHash,
                             {from: accounts[1]}
                         );
-                    });
-                }, 0);
+                    }), 30000
+                );
             }
             console.error("failed: file size 0");
         });
