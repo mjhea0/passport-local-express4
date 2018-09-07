@@ -4,16 +4,10 @@ mixin voteItem(vote, isFinite)
     href=voteHref
     )
         .d-flex.w-100.justify-content-between
-            h5.mb-1 #{vote[0]}
+            h5.mb-1 #{vote['electionName']}
             small
-                -voteDate = new Date(vote[3] * 1000).toLocaleString() + " ~ " + new Date(vote[4] * 1000).toLocaleString();
+                -voteDate = new Date(vote['startDate'] * 1000).toLocaleString() + " ~ " + new Date(vote['endDate'] * 1000).toLocaleString();
                 | 기간 : #{voteDate}
         p.mb-1
-            h5
-                case vote[2]
-                    when '0': b.text-muted 대기
-                    when '1': b.text-primary 진행 중
-                    when '2': b.text-success 일시중지
-                    when '3': b.text-danger 종료
-                    default: b.text-danger 오류
-            | #{vote[1]}
+            h5 #{vote['electionState']}
+            | #{vote['electionDescription']}
