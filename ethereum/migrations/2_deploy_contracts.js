@@ -1,4 +1,5 @@
 const fs = require('fs');
+const sync = require('sync');
 const timeUtil = require('../../util/time.util');
 const ElectionFactory = artifacts.require('./ElectionFactory.sol');
 const Election = artifacts.require('./Election.sol');
@@ -64,7 +65,7 @@ module.exports = (deployer, network, accounts) =>
             const fileSize = fs.statSync(publicKeyFilePath).size;
             if (fileSize > 0) {
                 const publicKeyFile = fs.readFileSync(publicKeyFilePath);
-                setTimeout(() =>
+                sync(() =>
                     ipfs.files.add(new Buffer.from(publicKeyFile), async (err, res) => {
                         if (err) {
                             console.log(err);
@@ -76,7 +77,7 @@ module.exports = (deployer, network, accounts) =>
                             publicKeyFileHash,
                             {from: accounts[1]}
                         );
-                    }), 30000
+                    })
                 );
             }
             console.error("failed: file size 0");
