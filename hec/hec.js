@@ -8,10 +8,11 @@ class Hec {
      * @param {string} o 선거 컨트렉트 주소
      * @param {int} p 후보자의 수(소수)
      * @param {int} L 레벨
+     * @param {string} dir 실행 파일의 디렉토리
      * @param {function} cb exec 처리가 끝난 후의 콜백 함수
      */
-    static async createKeys(o, p=13, L=3, cb) {
-        const command = `./hec/createKeys o=${o} p=${p} L=${L} dir=hec/data`;
+    static async createKeys(o, p=13, L=3, dir='data', cb) {
+        const command = `./createKeys o=${o} p=${p} L=${L} dir=${dir}`;
         console.debug(command);
         await exec(command, async (error, stdout, stderr) => {
             if(error) console.error(stderr);
