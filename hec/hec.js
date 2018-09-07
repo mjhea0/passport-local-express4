@@ -10,13 +10,13 @@ class Hec {
      * @param {int} L 레벨
      * @param {function} cb exec 처리가 끝난 후의 콜백 함수
      */
-    static createKeys(o, p=13, L=3, cb) {
+    static async createKeys(o, p=13, L=3, cb) {
         const command = `./hec/createKeys o=${o} p=${p} L=${L} dir=hec/data`;
         console.debug(command);
-        exec(command, function callback(error, stdout, stderr){
+        await exec(command, async (error, stdout, stderr) => {
             if(error) console.error(stderr);
             console.debug(stdout);
-            cb();
+            await cb();
         });
     }
 
