@@ -1,10 +1,12 @@
 {
-  "name": "passport-local-express4",
-  "version": "0.0.0",
+  "name": "prototype",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "compile": "truffle.cmd compile",
-    "migration": "truffle.cmd migration --reset",
+    "compile": "truffle compile",
+    "migration": "truffle migration --reset",
+    "windows-compile": "truffle.cmd compile",
+    "windows-migration": "truffle.cmd migration --reset",
     "start": "nodemon ./bin/www",
     "test": "make test"
   },
@@ -30,6 +32,7 @@
     "debug": "^3.1.0",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "ipfs-api": "^24.0.1",
     "mongoose": "^5.1.2",
     "morgan": "^1.9.0",
     "nodemailer": "^4.6.5",

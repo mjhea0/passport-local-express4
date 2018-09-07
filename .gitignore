@@ -15,4 +15,7 @@ package-lock.json
 # custom
 build/
 ethereum/build/
-hec/data/*
+hec/data/candidate/*
+hec/data/publicKey/*
+hec/data/secretKey/*
+hec/data/result/*

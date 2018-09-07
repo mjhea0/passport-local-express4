@@ -1,6 +1,6 @@
-const web3 = require('../ethereum/web3');
+const web3 = require('../web3');
 
-const Election = require('../ethereum/election');
+const Election = require('../election');
 
 module.exports = {
     addVoterToVoterList: async (electionAddress, ownerAddress, voterAddress) =>

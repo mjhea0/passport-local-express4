@@ -2,8 +2,8 @@ const express = require('express');
 const passport = require('passport');
 const Account = require('../mongo/models/account');
 const router = express.Router();
-const accountService = require('../services/account.service');
-const voteService = require('../services/election.service');
+const accountApi = require('../ethereum/api/account.api');
+const electionApi = require('../ethereum/api/election.api');
 const mailer = require('../util/mail');
 
 router.get('/register', (req, res) => {
@@ -14,7 +14,7 @@ router.post('/register', async (req, res, next) => {
     const {username, password} = req.body;
 
     // 계정을 만듦
-    const ethAccount = await accountService.makeNewAccount(password);
+    const ethAccount = await accountApi.makeNewAccount(password);
 
     Account.register(new Account(
         {
@@ -70,12 +70,12 @@ router.get('/myInfo', async (req, res, next) => {
     let votingVoteSummaryList;
     let deployedVoteSummaryList;
     if(req.user.votingVotes.length) {
-        votingVoteSummaryList = await voteService.voteSummaryList(req.user.votingVotes);
+        votingVoteSummaryList = await electionApi.voteSummaryList(req.user.votingVotes);
     }
     if(req.user.deployedVotes.length) {
-        deployedVoteSummaryList = await voteService.voteSummaryList(req.user.deployedVotes);
+        deployedVoteSummaryList = await electionApi.voteSummaryList(req.user.deployedVotes);
     }
-    const voteSummaryList = await voteService.getVoteList(false);
+    const voteSummaryList = await electionApi.getVoteList(false);
     res.render('account/myInfo', {
         votingVotes: votingVoteSummaryList,
         deployedVotes: deployedVoteSummaryList

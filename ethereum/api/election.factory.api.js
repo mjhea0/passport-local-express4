@@ -1,5 +1,5 @@
-const web3 = require('../ethereum/web3');
-const ElectionFactory = require('../ethereum/factory');
+const web3 = require('../web3');
+const ElectionFactory = require('../factory');
 
 module.exports = {
     getDeployedElections: async (isFinite) =>

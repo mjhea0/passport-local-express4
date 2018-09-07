@@ -1,5 +1,5 @@
-mixin voteItem(vote, isPrivate)
-    -voteHref='/' + isPrivate + '/' + vote[6]
+mixin voteItem(vote, isFinite)
+    -voteHref='/' + isFinite + '/' + vote[6]
     a.list-group-item.list-group-item-action.flex-column.align-items-start(
     href=voteHref
     )

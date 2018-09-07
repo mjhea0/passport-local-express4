@@ -13,7 +13,7 @@ const flash = require('connect-flash');
 const mongo = require('./mongo/mongo');
 const routes = require('./routes/index');
 const accountRoutes = require('./routes/accounts');
-const voteRoutes = require('./routes/votes');
+const voteRoutes = require('./routes/elections');
 
 const app = express();
 

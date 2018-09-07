@@ -2,20 +2,21 @@ const exec = require('child_process').exec;
 const fs = require('fs');
 
 class Hec {
-
     /**
      * 공개키와 비밀키 파일들을 만드는 API
      *
      * @param {string} o 선거 컨트렉트 주소
      * @param {int} p 후보자의 수(소수)
      * @param {int} L 레벨
+     * @param {function} cb exec 처리가 끝난 후의 콜백 함수
      */
-    static createKeys(o, p=13, L=3) {
+    static createKeys(o, p=13, L=3, cb) {
         const command = `./createKeys o=${o} p=${p} L=${L}`;
         console.debug(command);
         exec(command, function callback(error, stdout, stderr){
             if(error) console.error(stderr);
             console.debug(stdout);
+            cb();
         });
     }
 
@@ -24,13 +25,15 @@ class Hec {
      *
      * @param {string} o 선거 컨트렉트 주소
      * @param {int} t 후보자의 수
+     * @param {function} cb exec 처리가 끝난 후의 콜백 함수
      */
-    static encryptCandidateList(o, t) {
+    static encryptCandidateList(o, t, cb) {
         const command = `./encrypt_candidate_list o=${o} t=${t}`;
         console.debug(command);
         exec(command, function callback(error, stdout, stderr){
             if(error) console.error(stderr);
             console.debug(stdout);
+            cb();
         });
     }
 
@@ -41,14 +44,16 @@ class Hec {
      * @param {string} o 선거 컨트렉트 주소
      * @param {int} n 후보자의 수
      * @return {Array} 집계 결과
+     * @param {function} cb exec 처리가 끝난 후의 콜백 함수
      */
-    static tally(o, n) {
+    static tally(o, n, cb) {
         const command = `./tally o=${o} n=${n} d=data/candidate`;
         console.debug(command);
 
         exec(command, (error, stdout, stderr) => {
             if(error) console.error(stderr);
             console.debug(stdout);
+            cb();
         });
     }
 
