@@ -3,7 +3,7 @@ const passport = require('passport');
 const Account = require('../models/account');
 const router = express.Router();
 const accountService = require('../services/account.service');
-const voteService = require('../services/vote.service');
+const voteService = require('../services/election.service');
 const mailer = require('../util/mail');
 
 router.get('/register', (req, res) => {

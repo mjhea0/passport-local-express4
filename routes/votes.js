@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Account = require('../models/account');
-const voteService = require('../services/vote.service');
+const voteService = require('../services/election.service');
 const candidateService = require('../services/candidate.service');
 const voterService = require('../services/voter.service');
 

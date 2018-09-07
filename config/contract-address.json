@@ -1,1 +1,7 @@
-{"factory":"0xc8b9068b2960cb449e1e5c2becc32c4815388402","test_wlqkd_contract":"0x3411b976a2870a1f21a506fa21b36f28e00ebbf1","test_qkxeo_contract":"0x7ca2e0274a1b6334fb697886e57e7eb90f5f4534","test_wlqkd_address":"0x182be40196f0b30882d30e43257a864ffcbc7226","test_qkxeo_address":"0x4590f130a8d0a7bfd851fe5d4692c1e988087f11"}
+{
+  "factory": "0xa71496e7ebc6003362450025aaef2e2a3f8583d7",
+  "test_wlqkd_contract": "0x4841fb61bfbf0d57f10ae6729be09f5eccfe1041",
+  "test_qkxeo_contract": "0x842eb87a20844d87c2278a2629feba2b69d59690",
+  "test_wlqkd_address": "0x26e44105b7cb52bf59d77fe134e93c28c0fb6c7a",
+  "test_qkxeo_address": "0xed09463d7c243a0c58e74c063ecd581025db1a3f"
+}

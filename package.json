@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "truffle": "truffle.cmd migration --reset",
+    "compile": "truffle.cmd compile",
+    "migration": "truffle.cmd migration --reset",
     "start": "nodemon ./bin/www",
     "test": "make test"
   },

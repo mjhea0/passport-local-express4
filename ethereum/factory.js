@@ -1,8 +1,7 @@
 const web3 = require('./web3');
 const contractAddress = require('../config/contract-address');
+const ElectionFactory = require('../build/contracts/ElectionFactory.json');
 
-const VoteFactory = require('../build/contracts/VoteFactory.json');
-
-const instance = new web3.eth.Contract(VoteFactory.abi, contractAddress.factory);
+const instance = new web3.eth.Contract(ElectionFactory.abi, contractAddress.factory);
 
 module.exports = instance;

@@ -1,16 +1,16 @@
 const web3 = require('../ethereum/web3');
 
-const Vote = require('../ethereum/vote');
-
-const getVoterState = async (voteAddress, voterAddress) => {
-    return await Vote(voteAddress).methods.getVoterState(voterAddress).call();
-};
-
-const isOwner = async (voteAddress, voterAddress) => {
-    return await Vote(voteAddress).methods.isOwner(voterAddress).call();
-};
+const Election = require('../ethereum/election');
 
 module.exports = {
-    getVoterState,
-    isOwner
+    addVoterToVoterList: async (electionAddress, ownerAddress, voterAddress) =>
+        await Election(electionAddress).methods.addVoterToVoterList(voterAddress)
+            .send({from: ownerAddress}),
+    removeVoterFromVoterList: async (electionAddress, ownerAddress, voterAddress) =>
+        await Election(electionAddress).methods.removeVoterFromVoterList(voterAddress)
+            .send({from: ownerAddress}),
+    getVoterCount: async (electionAddress) =>
+        await Election(electionAddress).methods.getVoterCount().call(),
+    getVoterState: async (electionAddress, voterAddress) =>
+        await Election(electionAddress).methods.getVoterState(voterAddress).call()
 };

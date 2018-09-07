@@ -1,6 +1,6 @@
 const web3 = require('../ethereum/web3');
 
-const Vote = require('../ethereum/vote');
+const Vote = require('../ethereum/election');
 
 
 const makeNewAccount = async (password) => {
