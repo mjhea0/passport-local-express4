@@ -10,6 +10,6 @@
   "ganache": {
     "port": "8545",
     "networkId": "5378",
-    "state": "local"
+    "state": "remote"
   }
 }
