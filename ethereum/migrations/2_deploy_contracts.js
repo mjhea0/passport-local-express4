@@ -5,11 +5,6 @@ const Election = artifacts.require('./Election.sol');
 const hec = require('../../hec/hec.js');
 const ipfs = require('../../ipfs/ipfs.js');
 
-function sleep(milliseconds) {
-    const startTime = new Date().getTime();
-    while (new Date().getTime() < startTime + milliseconds);
-}
-
 module.exports = (deployer, network, accounts) =>
     deployer.then(async () => {
         await deployer.deploy(ElectionFactory);
@@ -69,12 +64,13 @@ module.exports = (deployer, network, accounts) =>
             const fileSize = fs.statSync(publicKeyFilePath).size;
             if (fileSize > 0) {
                 const publicKeyFile = fs.readFileSync(publicKeyFilePath);
-                await ipfs.files.add(new Buffer.from(publicKeyFile), async (err, res) => {
+                let buffer = new Buffer.from(publicKeyFile);
+                await ipfs.files.add(buffer, async (err, res) => {
                     if (err) {
                         console.log(err);
                         return;
                     }
-                    console.debug(res);
+                    console.log("ipfs result: "+res);
                     const publicKeyFileHash = res[0].hash;
                     await deployedHanbatElection.setPublicKeyOfHe(
                         publicKeyFileHash,
@@ -85,5 +81,4 @@ module.exports = (deployer, network, accounts) =>
                 console.error("failed: file size 0");
             }
         });
-        sleep(10000);
     });

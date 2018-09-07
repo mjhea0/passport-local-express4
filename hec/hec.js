@@ -17,7 +17,7 @@ class Hec {
 
         let out;
         try {
-            out = execSync(command);
+            out = execSync(command).toString();
         } catch (error) {
             console.log("error!");
             console.error(stderr);
