@@ -5,7 +5,7 @@ module.exports = {
     getElectionList: async (req, res) => {
         try {
             const voteSummaryList = await electionApi.getElectionSummaryList(req.originalUrl === '/private');
-            res.render('vote/voteList', {
+            res.render('election/electionList', {
                 isFinite: req.originalUrl === '/finite' ? 'finite' : 'public',
                 vote: voteSummaryList
             });
