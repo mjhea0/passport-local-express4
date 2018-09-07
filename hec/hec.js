@@ -15,14 +15,15 @@ class Hec {
         const command = `./createKeys o=${o} p=${p} L=${L} dir=${dir}`;
         console.debug(command);
 
-        const { stdout, stderr } = execSync(command);
-
-        if(stderr) {
+        let out;
+        try {
+            out = execSync(command)
+        } catch (error) {
             console.log("error!");
             console.error(stderr);
             return;
         }
-        console.debug(stdout);
+        console.debug(out);
 
         await cb();
     }
