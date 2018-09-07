@@ -15,8 +15,8 @@ class Hec {
         const command = `./createKeys o=${o} p=${p} L=${L} dir=${dir}`;
         console.debug(command);
 
-        const { error, stdout, stderr } = await exec(command);
-        if(error) {
+        const { stdout, stderr } = await exec(command);
+        if(stderr) {
             console.error(stderr);
             return;
         }
