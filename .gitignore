@@ -19,3 +19,7 @@ hec/data/candidate/*
 hec/data/publicKey/*
 hec/data/secretKey/*
 hec/data/result/*
+hec/createKeys
+hec/encrypt_candidate_list
+hec/tally
+

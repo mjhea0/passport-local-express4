@@ -11,7 +11,7 @@ class Hec {
      * @param {function} cb exec 처리가 끝난 후의 콜백 함수
      */
     static createKeys(o, p=13, L=3, cb) {
-        const command = `./createKeys o=${o} p=${p} L=${L}`;
+        const command = `./hec/createKeys o=${o} p=${p} L=${L} dir=hec/data`;
         console.debug(command);
         exec(command, function callback(error, stdout, stderr){
             if(error) console.error(stderr);
@@ -28,7 +28,7 @@ class Hec {
      * @param {function} cb exec 처리가 끝난 후의 콜백 함수
      */
     static encryptCandidateList(o, t, cb) {
-        const command = `./encrypt_candidate_list o=${o} t=${t}`;
+        const command = `./hec/encrypt_candidate_list o=${o} t=${t}`;
         console.debug(command);
         exec(command, function callback(error, stdout, stderr){
             if(error) console.error(stderr);
@@ -47,7 +47,7 @@ class Hec {
      * @param {function} cb exec 처리가 끝난 후의 콜백 함수
      */
     static tally(o, n, cb) {
-        const command = `./tally o=${o} n=${n} d=data/candidate`;
+        const command = `./hec/tally o=${o} n=${n} d=hec/data/candidate`;
         console.debug(command);
 
         exec(command, (error, stdout, stderr) => {
@@ -66,7 +66,7 @@ class Hec {
         // 결과 파일 읽고 배열로 변환
         let resultFile;
         try {
-            resultFile = fs.readFileSync(`data/result/${o}.txt`, 'utf8');
+            resultFile = fs.readFileSync(`hec/data/result/${o}.txt`, 'utf8');
         } catch (error) {
             console.debug("file not found");
             return undefined;

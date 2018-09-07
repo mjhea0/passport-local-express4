@@ -1,9 +1,10 @@
+const path = require('path');
 const dbConfig = require('./config/db-config.json');
 
 module.exports = {
     contracts_directory: "./ethereum/contracts",
     migrations_directory: "./ethereum/migrations",
-    contracts_build_directory: "./ethereum/build",
+    contracts_build_directory: path.join(__dirname, "./ethereum/build/contracts"),
     test_directory: "./ethereum/test",
     networks: {
         development: {

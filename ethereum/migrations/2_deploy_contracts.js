@@ -15,7 +15,7 @@ module.exports = (deployer, network, accounts) =>
             // IPFS에 저장합니다
             const publicKeyFilePath = "../../hec/data/publicKey/" + accounts[1] + ".bin";
             const publicKeyFile = fs.readFileSync(publicKeyFilePath);
-            ipfs.files.add(new Buffer.from(publicKeyFile), async (err, file) => {
+            await ipfs.files.add(new Buffer.from(publicKeyFile), async (err, file) => {
                 if (err) console.log(err);
                 console.debug(file);
                 const publicKeyFileHash = file[0].hash;
