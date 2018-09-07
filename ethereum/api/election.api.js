@@ -49,7 +49,7 @@ const vote = async (electionAddress, voterAddress, candidateIndex) => {
 };
 
 const getElectionSummaryList = async (isFiniteElection) => {
-    const electionAddressList = await Factory.getDeployedElections(isFiniteElection);
+    const electionAddressList = await Factory.methods.getDeployedElections(isFiniteElection).call();
     const electionSummaryList = await electionAddressList.map(
         async (electionAddress) => {
             const rawSummary = await getElectionSummary(electionAddress);
