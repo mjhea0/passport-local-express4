@@ -64,16 +64,20 @@ module.exports = (deployer, network, accounts) =>
             const fileSize = fs.statSync(publicKeyFilePath).size;
             if(fileSize > 0) {
                 const publicKeyFile = fs.readFileSync(publicKeyFilePath);
-                await ipfs.files.add(new Buffer.from(publicKeyFile), async (err, file) => {
-                    if (err) console.log(err);
-                    console.debug(file);
-                    const publicKeyFileHash = file[0].hash;
-                    await deployedHanbatElection.setPublicKeyOfHe(
-                        publicKeyFileHash,
-                        {from: accounts[1]}
-                    );
-                });
-                return;
+                setTimeout(() => {
+                    ipfs.files.add(new Buffer.from(publicKeyFile), async (err, res) => {
+                        if (err) {
+                            console.log(err);
+                            return;
+                        }
+                        console.debug(res);
+                        const publicKeyFileHash = res[0].hash;
+                        await deployedHanbatElection.setPublicKeyOfHe(
+                            publicKeyFileHash,
+                            {from: accounts[1]}
+                        );
+                    });
+                }, 0);
             }
             console.error("failed: file size 0");
         });
