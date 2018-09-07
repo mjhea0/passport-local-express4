@@ -60,17 +60,22 @@ module.exports = (deployer, network, accounts) =>
         // hec에 저장한 후
         await hec.createKeys(deployedPublicElections[0], 10007, 7, 'hec/data', async () => {
             // IPFS에 저장합니다
-            const publicKeyFilePath = "../../hec/data/publicKey/" + deployedPublicElections[0] + ".bin";
-            const publicKeyFile = fs.readFileSync(publicKeyFilePath);
-            await ipfs.files.add(new Buffer.from(publicKeyFile), async (err, file) => {
-                if (err) console.log(err);
-                console.debug(file);
-                const publicKeyFileHash = file[0].hash;
-                await deployedHanbatElection.setPublicKeyOfHe(
-                    publicKeyFileHash,
-                    {from: accounts[1]}
-                );
-            });
+            const publicKeyFilePath = "./hec/data/publicKey/" + deployedPublicElections[0] + ".bin";
+            const fileSize = fs.statSync(publicKeyFilePath).size;
+            if(fileSize > 0) {
+                const publicKeyFile = fs.readFileSync(publicKeyFilePath);
+                await ipfs.files.add(new Buffer.from(publicKeyFile), async (err, file) => {
+                    if (err) console.log(err);
+                    console.debug(file);
+                    const publicKeyFileHash = file[0].hash;
+                    await deployedHanbatElection.setPublicKeyOfHe(
+                        publicKeyFileHash,
+                        {from: accounts[1]}
+                    );
+                });
+                return;
+            }
+            console.error("failed: file size 0");
         });
 
     });
