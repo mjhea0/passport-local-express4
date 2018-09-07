@@ -14,11 +14,15 @@ class Hec {
     static async createKeys(o, p=13, L=3, dir='data', cb) {
         const command = `./createKeys o=${o} p=${p} L=${L} dir=${dir}`;
         console.debug(command);
-        await exec(command, async (error, stdout, stderr) => {
-            if(error) console.error(stderr);
-            console.debug(stdout);
-            await cb();
-        });
+
+        const { error, stdout, stderr } = await exec(command);
+        if(error) {
+            console.error(stderr);
+            return;
+        }
+        console.debug(stdout);
+
+        await cb();
     }
 
     /**
