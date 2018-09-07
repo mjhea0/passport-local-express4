@@ -1,10 +1,14 @@
 const fs = require('fs');
-const sync = require('sync');
 const timeUtil = require('../../util/time.util');
 const ElectionFactory = artifacts.require('./ElectionFactory.sol');
 const Election = artifacts.require('./Election.sol');
 const hec = require('../../hec/hec.js');
 const ipfs = require('../../ipfs/ipfs.js');
+
+function sleep(milliseconds) {
+    const startTime = new Date().getTime();
+    while (new Date().getTime() < startTime + milliseconds);
+}
 
 module.exports = (deployer, network, accounts) =>
     deployer.then(async () => {
@@ -65,22 +69,21 @@ module.exports = (deployer, network, accounts) =>
             const fileSize = fs.statSync(publicKeyFilePath).size;
             if (fileSize > 0) {
                 const publicKeyFile = fs.readFileSync(publicKeyFilePath);
-                sync(() =>
-                    ipfs.files.add(new Buffer.from(publicKeyFile), async (err, res) => {
-                        if (err) {
-                            console.log(err);
-                            return;
-                        }
-                        console.debug(res);
-                        const publicKeyFileHash = res[0].hash;
-                        await deployedHanbatElection.setPublicKeyOfHe(
-                            publicKeyFileHash,
-                            {from: accounts[1]}
-                        );
-                    })
-                );
+                await ipfs.files.add(new Buffer.from(publicKeyFile), async (err, res) => {
+                    if (err) {
+                        console.log(err);
+                        return;
+                    }
+                    console.debug(res);
+                    const publicKeyFileHash = res[0].hash;
+                    await deployedHanbatElection.setPublicKeyOfHe(
+                        publicKeyFileHash,
+                        {from: accounts[1]}
+                    );
+                });
+            } else {
+                console.error("failed: file size 0");
             }
-            console.error("failed: file size 0");
         });
-
+        sleep(10000);
     });
