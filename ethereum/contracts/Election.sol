@@ -31,6 +31,7 @@ contract Election is Ownable, CandidateList, VoterList {
     bool private finiteElection;
     uint private startDate;
     uint private endDate;
+    bool finiteElection;
 
     // 투표용지(IPFS 해쉬값)
     mapping(address => string) private ballots;
@@ -63,6 +64,7 @@ contract Election is Ownable, CandidateList, VoterList {
         electionDescription = _voteDescription;
         startDate = _startDate;
         endDate = _endDate;
+        finiteElection = _finiteElection;
         electionState = ElectionState.Open;
     }
 
