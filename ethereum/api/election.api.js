@@ -37,6 +37,9 @@ const setElectionState = async (electionAddress, voterAddress, electionState) =>
 const setElectionDate = async (electionAddress, voterAddress, startDate, endDate) =>
     await Election(electionAddress).methods.setElectionDate(startDate, endDate).send({from: voterAddress});
 
+const setPublicKeyOfHe = async (electionAddress, voterAddress, publickKeyOfHe) =>
+    await Election(electionAddress).methods.setPublicKeyOfHe(publickKeyOfHe).send({from: voterAddress});
+
 const vote = async (electionAddress, voterAddress, candidateIndex) => {
     const ownerAddress = await Election(electionAddress).methods.getOwner().call();
     // console.log(ownerAddress);
@@ -74,6 +77,7 @@ module.exports = {
     setElectionDescription,
     setElectionState,
     setElectionDate,
+    setPublicKeyOfHe,
     vote,
     // Custom Methods
     getElectionSummaryList

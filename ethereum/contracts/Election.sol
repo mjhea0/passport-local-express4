@@ -46,7 +46,6 @@ contract Election is Ownable, CandidateList, VoterList {
      * @param _owner 선거개설자의 주소
      * @param _startDate 선거의 시작 날짜(timestamp)
      * @param _endDate 선거의 종료 날짜(timestamp)
-     * @param _publicKeyOfHe 선거의 동형암호 공개키(IPFS 해쉬값)
      * @param _finiteElection 유권자가 한정된 선거인지 아닌지
      */
     constructor(
@@ -55,7 +54,6 @@ contract Election is Ownable, CandidateList, VoterList {
         address _owner,
         uint _startDate,
         uint _endDate,
-        string _publicKeyOfHe,
         bool _finiteElection
     )
     public
@@ -65,8 +63,6 @@ contract Election is Ownable, CandidateList, VoterList {
         electionDescription = _voteDescription;
         startDate = _startDate;
         endDate = _endDate;
-        publicKeyOfHe = _publicKeyOfHe;
-        finiteElection = _finiteElection;
         electionState = ElectionState.Open;
     }
 
@@ -160,6 +156,14 @@ contract Election is Ownable, CandidateList, VoterList {
     function setElectionDate(uint _startDate, uint _endDate) public onlyOwner {
         startDate = _startDate;
         endDate = _endDate;
+    }
+
+    /**
+     * @dev 동형암호 공개키의 IPFS 해쉬값을 설정하는 메소드
+     * @param _publicKeyOfHe 변경할 동형암호 공개키(IPFS 해쉬값)
+     */
+    function setPublicKeyOfHe(string _publicKeyOfHe) public onlyOwner {
+        publicKeyOfHe = _publicKeyOfHe;
     }
 
     /**

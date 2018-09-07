@@ -41,7 +41,6 @@ contract ElectionFactory is Ownable {
      * @param _electionOwner 선거개설자의 주소
      * @param _startDate 선거 시작 날짜(timestamp)
      * @param _endDate 선거 종료 날짜(timestamp)
-     * @param _publicKeyOfHe 동형암호 공개키(IPFS 해쉬값)
      * @param _finiteElection true면 한정된 유권자만 투표할 수 있는
      *                        선거를 생성
      */
@@ -51,7 +50,6 @@ contract ElectionFactory is Ownable {
         address _electionOwner,
         uint _startDate,
         uint _endDate,
-        string _publicKeyOfHe,
         bool _finiteElection
     )
         public
@@ -63,7 +61,6 @@ contract ElectionFactory is Ownable {
             _electionOwner,
             _startDate,
             _endDate,
-            _publicKeyOfHe,
             _finiteElection
         );
         if(_finiteElection) {
