@@ -37,15 +37,16 @@ module.exports = {
             if (req.user) {
                 const voterAddress = req.user.etherAccount;
                 electionDetail.voterState = await voterApi.getVoterState(electionAddress, voterAddress);
-                const isOwner = await voterApi.isOwner(electionAddress, voterAddress);
+                const isOwner = await electionApi.isOwner(electionAddress, voterAddress);
                 if (isOwner) electionDetail.owner = isOwner;
             }
 
-            res.render('election/voteDetail', {
-                voteDetail: electionDetail,
+            res.render('election/electionDetail', {
+                electionDetail: electionDetail,
                 path: req.path
             });
         } catch (err) {
+            console.log(err);
             res.send(err.toString());
         }
     },
@@ -53,14 +54,16 @@ module.exports = {
 
         if (!req.user) res.redirect('/login');
 
-        try {
-            const voteAddress = req.params.address;
-            const voterAddress = req.user.etherAccount;
-            const state = req.body.state;
+        const electionAddress = req.params.address;
+        const voterAddress = req.user.etherAccount;
 
-            const isVoteOwner = await voterApi.isOwner(voteAddress, voterAddress);
+        try {
+            const isVoteOwner = await electionApi.isOwner(electionAddress, voterAddress);
             if (isVoteOwner) {
-                await electionApi.setVoteState(voteAddress, voterAddress, state);
+                const state = req.body.state;
+                await electionApi.setElectionState(electionAddress, voterAddress, state);
+            } else {
+                res.redirect('/login');
             }
             res.redirect(req.path);
         } catch (err) {
@@ -71,21 +74,24 @@ module.exports = {
 
         if (!req.user) res.redirect('/login');
 
+        const electionAddress = req.params.address;
+        const voterAddress = req.user.etherAccount;
+
         try {
-            const voteAddress = req.params.address;
-            const voterAddress = req.user.etherAccount;
-
-            const voteDescription = req.body.voteDescription;
-            const startVoteDate = Date.parse(req.body.startDate) / 1000;
-            const endVoteDate = Date.parse(req.body.endDate) / 1000;
-
-            const isVoteOwner = await voterApi.isOwner(voteAddress, voterAddress);
+            const isVoteOwner = await electionApi.isOwner(electionAddress, voterAddress);
             if (isVoteOwner) {
-                if (voteDescription)
-                    await electionApi.setVoteDescription(voteAddress, voterAddress, voteDescription);
+
+                const electionDescription = req.body.electionDescription;
+                const startVoteDate = Date.parse(req.body.startDate) / 1000;
+                const endVoteDate = Date.parse(req.body.endDate) / 1000;
+
+                if (electionDescription)
+                    await electionApi.setElectionDescription(electionAddress, voterAddress, electionDescription);
                 if (startVoteDate && endVoteDate)
-                    await electionApi.setVoteDate(
-                        voteAddress, voterAddress, startVoteDate, endVoteDate);
+                    await electionApi.setElectionDate(
+                        electionAddress, voterAddress, startVoteDate, endVoteDate);
+            } else {
+                res.redirect('/login');
             }
             res.redirect(req.path.substring(0, req.path.length - 7));
         } catch (err) {
@@ -106,7 +112,7 @@ module.exports = {
             if (voteState !== '2') {
                 voteDetail.candidateList = await candidateService.getCandidateList(voteAddress);
                 res.render('election/election', {
-                    voteDetail: voteDetail,
+                    electionDetail: voteDetail,
                     path: req.path
                 });
             } else {

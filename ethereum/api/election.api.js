@@ -44,13 +44,15 @@ const getElectionSummary = async (electionAddress) => {
 };
 
 const setElectionDescription = async (electionAddress, voterAddress, electionDescription) =>
-    await Election(electionAddress).methods.setElectionDescription(electionDescription).send({from: voterAddress});
+    await Election(electionAddress).methods.setElectionDescription(electionDescription)
+        .send({from: voterAddress, gas: 1000000});
 
 const setElectionState = async (electionAddress, voterAddress, electionState) =>
     await Election(electionAddress).methods.setElectionState(electionState).send({from: voterAddress});
 
 const setElectionDate = async (electionAddress, voterAddress, startDate, endDate) =>
-    await Election(electionAddress).methods.setElectionDate(startDate, endDate).send({from: voterAddress});
+    await Election(electionAddress).methods.setElectionDate(startDate, endDate)
+        .send({from: voterAddress, gas: 1000000});
 
 const setPublicKeyOfHe = async (electionAddress, voterAddress, publickKeyOfHe) =>
     await Election(electionAddress).methods.setPublicKeyOfHe(publickKeyOfHe).send({from: voterAddress});

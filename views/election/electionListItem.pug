@@ -1,12 +1,19 @@
 mixin voteItem(election, isFinite)
-    -voteHref='/' + isFinite + '/' + election['electionAddress']
+    -voteHref='/' + isFinite + '/' + election.electionAddress
     a.list-group-item.list-group-item-action.flex-column.align-items-start(
     href=voteHref
     )
         .d-flex.w-100.justify-content-between
-            h5.mb-1 #{election['electionName']}
+            h5.mb-1 #{election.electionName}
             small
-                | #{election['showDate']}
+                | #{election.showDate}
         p.mb-1
-            h5 #{election['electionState']}
-            | #{election['electionDescription']}
+            h5
+                case election.electionState
+                    when "대기": b.text-muted 대기
+                    when "진행 중": b.text-primary 진행 중
+                    when "일시중지": b.text-success 일시중지
+                    when "집계 중": b.text-danger 집계 중
+                    when "종료": b.text-danger 종료
+                    default: b.text-danger 오류
+            | #{election.electionDescription}

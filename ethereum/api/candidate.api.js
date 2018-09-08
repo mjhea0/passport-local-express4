@@ -11,8 +11,8 @@ const removeCandidate = async (electionAddress, ownerAddress,
     await Election(electionAddress).methods.removeCandidate(candidateIndex)
     .send({from: ownerAddress});
 
-const getCandidate = async (electionAddress, index) => {
-    const rawCandidate = await Election(electionAddress).methods.getCandidate(index).call();
+const getCandidate = async (election, index) => {
+    const rawCandidate = await election.methods.getCandidate(index).call();
     return {
         "name": rawCandidate["0"],
         "commitment": rawCandidate["1"]
