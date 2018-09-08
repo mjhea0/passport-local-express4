@@ -3,9 +3,9 @@ include electionListItem
 
 block content
     .container
-        if (!vote)
+        if (!electionList)
             p 현재 진행 중인 투표가 없습니다!
         else
             .list-group
-                each val in vote
-                    +voteItem(val, isPrivate)
+                each election in electionList
+                    +voteItem(election, isFinite)

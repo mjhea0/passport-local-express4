@@ -1,13 +1,12 @@
-mixin voteItem(vote, isFinite)
-    -voteHref='/' + isFinite + '/' + vote[6]
+mixin voteItem(election, isFinite)
+    -voteHref='/' + isFinite + '/' + election['owner']
     a.list-group-item.list-group-item-action.flex-column.align-items-start(
     href=voteHref
     )
         .d-flex.w-100.justify-content-between
-            h5.mb-1 #{vote['electionName']}
+            h5.mb-1 #{election['electionName']}
             small
-                -voteDate = new Date(vote['startDate'] * 1000).toLocaleString() + " ~ " + new Date(vote['endDate'] * 1000).toLocaleString();
-                | 기간 : #{voteDate}
+                | #{election['showDate']}
         p.mb-1
-            h5 #{vote['electionState']}
-            | #{vote['electionDescription']}
+            h5 #{election['electionState']}
+            | #{election['electionDescription']}

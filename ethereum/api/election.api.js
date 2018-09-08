@@ -1,6 +1,7 @@
 const web3 = require('../web3');
 const Election = require('../election');
 const Factory = require('../factory');
+const timeUtil = require('../../util/time.util');
 
 const electionState = {
     "0": "대기",
@@ -41,7 +42,7 @@ const vote = async (electionAddress, voterAddress, candidateIndex) => {
     const ownerAddress = await Election(electionAddress).methods.getOwner().call();
     // console.log(ownerAddress);
     return await Election(electionAddress)
-        .methods.vote(candidateIndex, voterAddress)
+        .methods.election(candidateIndex, voterAddress)
         .send({from: ownerAddress});
 };
 
@@ -50,12 +51,15 @@ const getElectionSummaryList = async (isFiniteElection) => {
     const electionSummaryList = await electionAddressList.map(
         async (electionAddress) => {
             const rawSummary = await getElectionSummary(electionAddress);
+            const startDate = timeUtil.timestampToDate(rawSummary['3']);
+            const endDate = timeUtil.timestampToDate(rawSummary['4']);
             return await {
                 electionName: rawSummary['0'],
                 electionDescription: rawSummary['1'],
                 electionState: electionState[rawSummary['2']],
-                startDate: rawSummary['3'],
-                endDate: rawSummary['4'],
+                startDate: startDate,
+                endDate: endDate,
+                showDate: `${startDate} - ${endDate}`,
                 ballotCount: rawSummary['5'],
                 owner: rawSummary['6']
             };

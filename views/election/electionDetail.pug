@@ -62,7 +62,7 @@ block content
             if(user && !voteDetail.owner)
                 if(voteDetail.voterState !== '2')
                     .text-center
-                        -voteInPath = path + '/vote'
+                        -voteInPath = path + '/election'
                         -voteButtonDisabled = voteDetail.summary[2] !== '1'
                         a.btn.btn-primary.btn-lg.active(
                             href=voteInPath

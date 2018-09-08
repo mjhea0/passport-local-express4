@@ -13,5 +13,5 @@ module.exports = router
     .get('/:election(public|finite)/:address', election.getElectionDetail)
     .post('/:election(public|finite)/:address', election.postElectionState)
     .post('/:election(public|finite)/:address/modify', election.postElectionInformation)
-    .get('/:election(public|finite)/:address/vote', election.getVote)
-    .post('/:election(public|finite)/:address/vote', election.postVote);
+    .get('/:election(public|finite)/:address/election', election.getVote)
+    .post('/:election(public|finite)/:address/election', election.postVote);
