@@ -10,7 +10,7 @@ module.exports = (deployer, network, accounts) =>
         await deployer.deploy(ElectionFactory);
         const deployedVoteFactory = await ElectionFactory.deployed();
 
-        const deployedPublicVotes = await deployedVoteFactory.getDeployedElections(false).call(false);
+        const deployedPublicVotes = await deployedVoteFactory.getDeployedElections.call(false);
         // const deployedQkxeoVotes = await deployedVoteFactory.getDeployedVotes.call(false);
         console.log('밭대선거 : ' + deployedPublicVotes[0]);
 
