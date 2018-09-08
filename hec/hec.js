@@ -1,4 +1,4 @@
-const exec = require('child_process').exec;
+const execSync = require('child_process').execSync;
 const fs = require('fs');
 
 class Hec {
@@ -13,11 +13,16 @@ class Hec {
     static async createKeys(o, p=13, L=3, cb) {
         const command = `./hec/createKeys o=${o} p=${p} L=${L} dir=hec/data`;
         console.debug(command);
-        await exec(command, async (error, stdout, stderr) => {
-            if(error) console.error(stderr);
-            console.debug(stdout);
-            await cb();
-        });
+        const { stdout, stderr } = execSync(command);
+
+        if(stderr) {
+            console.log("error!");
+            console.error(stderr);
+            return;
+        }
+        console.debug(stdout);
+
+        await cb();
     }
 
     /**
