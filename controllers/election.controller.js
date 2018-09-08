@@ -1,13 +1,14 @@
 const electionApi = require('../ethereum/api/election.api');
-
+const timeUtil = require('../util/time.util');
 
 module.exports = {
     getElectionList: async (req, res) => {
         try {
-            const voteSummaryList = await electionApi.getElectionSummaryList(req.originalUrl === '/private');
+            const electionSummaryList =
+                await electionApi.getElectionSummaryList(req.originalUrl === '/finite');
             res.render('election/electionList', {
                 isFinite: req.originalUrl === '/finite' ? 'finite' : 'public',
-                vote: voteSummaryList
+                electionList: electionSummaryList
             });
         } catch (err) {
             res.send(err.toString());
@@ -38,7 +39,7 @@ module.exports = {
                 if (isOwner) voteDetail.owner = isOwner;
             }
 
-            res.render('vote/voteDetail', {
+            res.render('election/voteDetail', {
                 voteDetail: voteDetail,
                 path: req.path
             });
@@ -102,7 +103,7 @@ module.exports = {
             const voteState = await voterApi.getVoterState(voteAddress, voterAddress);
             if (voteState !== '2') {
                 voteDetail.candidateList = await candidateService.getCandidateList(voteAddress);
-                res.render('vote/vote', {
+                res.render('election/election', {
                     voteDetail: voteDetail,
                     path: req.path
                 });

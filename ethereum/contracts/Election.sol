@@ -31,6 +31,7 @@ contract Election is Ownable, CandidateList, VoterList {
     bool private finiteElection;
     uint private startDate;
     uint private endDate;
+    string private tallyResult;
 
     // 투표용지(IPFS 해쉬값)
     mapping(address => string) private ballots;
@@ -93,6 +94,14 @@ contract Election is Ownable, CandidateList, VoterList {
     }
 
     /**
+     * @dev 선거의 집계 결과를 반환하는 메소드
+     * @return 선거 집계 결과
+     */
+    function getTallyResult() external view returns (string) {
+        return tallyResult;
+    }
+
+    /**
      * @dev 투표용지의 수을 얻는 메소드
      * @return 투표용지의 수
      */
@@ -108,6 +117,7 @@ contract Election is Ownable, CandidateList, VoterList {
         return publicKeyOfHe;
     }
 
+
     /**
      * @dev 현재 선거의 요약 정보를 얻는 메소드
      * @return 현재 선거의 요약 정보를 반환
@@ -119,7 +129,7 @@ contract Election is Ownable, CandidateList, VoterList {
         uint,
         uint,
         uint,
-        address
+        bool
     ) {
         return (
             electionName,
@@ -128,7 +138,7 @@ contract Election is Ownable, CandidateList, VoterList {
             startDate,
             endDate,
             ballotCount,
-            owner
+            finiteElection
         );
     }
 
@@ -165,6 +175,14 @@ contract Election is Ownable, CandidateList, VoterList {
      */
     function setPublicKeyOfHe(string _publicKeyOfHe) public onlyOwner {
         publicKeyOfHe = _publicKeyOfHe;
+
+    /**
+     * @dev 선거의 집계 결과를 설정하는 메소드
+     * @param _tallyResult 설정할 집계 결과
+     */
+    function setTallyResult(string _tallyResult) public onlyOwner {
+        require(electionState == ElectionState.Tally);
+        tallyResult = _tallyResult;
     }
 
     /**
