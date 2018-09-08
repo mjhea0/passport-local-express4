@@ -1,4 +1,6 @@
 const electionApi = require('../ethereum/api/election.api');
+const candidateApi = require('../ethereum/api/candidate.api');
+const voterApi = require('../ethereum/api/voter.api');
 const timeUtil = require('../util/time.util');
 
 module.exports = {
@@ -15,32 +17,32 @@ module.exports = {
         }
     },
     getElectionDetail: async (req, res) => {
-        const voteAddress = req.params.address;
-
+        const electionAddress = req.params.address;
         try {
-            let voteDetail = {};
+            let electionDetail = {};
 
-            voteDetail.summary = await electionApi.voteSummary(voteAddress);
-            voteDetail.candidateList = await candidateService.getCandidateList(voteAddress);
-            voteDetail.voterNumber = await electionApi.getNumVotedVoters(voteAddress);
-            if (voteDetail.summary[2] === '3') {
-                const candidateList = voteDetail.candidateList.slice(0);
+            electionDetail.summary = await electionApi.getElectionSummary(electionAddress);
+            electionDetail.candidateList = await candidateApi.getCandidateList(electionAddress);
+            electionDetail.ballotCount = await electionApi.getBallotCount(electionAddress);
+            if (electionDetail.summary['electionState'] === "완료") {
+                const candidateList = electionDetail.candidateList.slice(0);
+                console.log(candidateList);
                 candidateList.sort((a, b) => b[2] - a[2]);
-                const max = candidateList[0][2];
-                voteDetail.resultName = [];
+                const max = candidateList['name'][2];
+                electionDetail.resultName = [];
                 for (let i = 0; i < candidateList.length; i++) {
-                    if (candidateList[i][2] === max) voteDetail.resultName.push(candidateList[i][0]);
+                    if (candidateList[i][2] === max) electionDetail.resultName.push(candidateList[i][0]);
                 }
             }
             if (req.user) {
                 const voterAddress = req.user.etherAccount;
-                voteDetail.voterState = await voterApi.getVoterState(voteAddress, voterAddress);
-                const isOwner = await voterApi.isOwner(voteAddress, voterAddress);
-                if (isOwner) voteDetail.owner = isOwner;
+                electionDetail.voterState = await voterApi.getVoterState(electionAddress, voterAddress);
+                const isOwner = await voterApi.isOwner(electionAddress, voterAddress);
+                if (isOwner) electionDetail.owner = isOwner;
             }
 
             res.render('election/voteDetail', {
-                voteDetail: voteDetail,
+                voteDetail: electionDetail,
                 path: req.path
             });
         } catch (err) {

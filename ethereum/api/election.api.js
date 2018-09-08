@@ -26,8 +26,22 @@ const getBallotCount = async (electionAddress) =>
 const getPublicKeyOfHe = async (electionAddress) =>
     await Election(electionAddress).methods.getPublicKeyOfHe().call();
 
-const getElectionSummary = async (electionAddress) =>
-    await Election(electionAddress).methods.getElectionSummary().call();
+const getElectionSummary = async (electionAddress) => {
+    const rawSummary = await Election(electionAddress).methods.getElectionSummary().call();
+    const startDate = timeUtil.timestampToDate(rawSummary['3']);
+    const endDate = timeUtil.timestampToDate(rawSummary['4']);
+    return await {
+        electionName: rawSummary['0'],
+        electionDescription: rawSummary['1'],
+        electionState: electionState[rawSummary['2']],
+        electionAddress: electionAddress,
+        startDate: startDate,
+        endDate: endDate,
+        showDate: `${startDate} - ${endDate}`,
+        ballotCount: rawSummary['5'],
+        finiteElection: rawSummary['6']
+    };
+};
 
 const setElectionDescription = async (electionAddress, voterAddress, electionDescription) =>
     await Election(electionAddress).methods.setElectionDescription(electionDescription).send({from: voterAddress});
@@ -52,21 +66,7 @@ const vote = async (electionAddress, voterAddress, candidateIndex) => {
 const getElectionSummaryList = async (isFiniteElection) => {
     const electionAddressList = await Factory.methods.getDeployedElections(isFiniteElection).call();
     const electionSummaryList = await electionAddressList.map(
-        async (electionAddress) => {
-            const rawSummary = await getElectionSummary(electionAddress);
-            const startDate = timeUtil.timestampToDate(rawSummary['3']);
-            const endDate = timeUtil.timestampToDate(rawSummary['4']);
-            return await {
-                electionName: rawSummary['0'],
-                electionDescription: rawSummary['1'],
-                electionState: electionState[rawSummary['2']],
-                startDate: startDate,
-                endDate: endDate,
-                showDate: `${startDate} - ${endDate}`,
-                ballotCount: rawSummary['5'],
-                owner: rawSummary['6']
-            };
-        });
+        async (electionAddress) => await getElectionSummary(electionAddress));
     return await Promise.all(electionSummaryList);
 };
 
