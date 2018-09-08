@@ -47,21 +47,15 @@ module.exports = (deployer, network, accounts) =>
                 });
         });
 
-        // hec에 저장한 후
-        await hec.createKeys(deployedPublicElections[0], 10007, 7, async () => {
-            // IPFS에 저장합니다
-            const publicKeyFilePath = "../../hec/data/publicKey/" + deployedPublicElections[0] + ".bin";
-            const publicKeyFile = fs.readFileSync(publicKeyFilePath);
-
-            await ipfs.files.add(new Buffer.from(publicKeyFile), async (err, file) => {
-                if (err) console.log(err);
-                console.debug(file);
-                const publicKeyFileHash = file[0].hash;
-                await deployedHanbatElection.setPublicKeyOfHe(
-                    publicKeyFileHash,
-                    {from: accounts[1]}
-                );
-            });
+        // hec으로 공개키를 저장합니다.
+        await hec.createKeys(deployedPublicElections[0], 10007, 7, 'hec/data', async () => {
+            const publicKeyFilePath = "./hec/data/publicKey/" + deployedPublicElections[0] + ".bin";
+            const fileSize = fs.statSync(publicKeyFilePath).size;
+            if (fileSize > 0) {
+                console.log("good. file saved");
+            } else {
+                console.error("failed: file size 0");
+            }
         });
-
+        // 이후 다른 스크립트로 IPFS를 실행하면 됩니다.
     });
