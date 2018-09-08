@@ -175,6 +175,7 @@ contract Election is Ownable, CandidateList, VoterList {
      */
     function setPublicKeyOfHe(string _publicKeyOfHe) public onlyOwner {
         publicKeyOfHe = _publicKeyOfHe;
+    }
 
     /**
      * @dev 선거의 집계 결과를 설정하는 메소드
