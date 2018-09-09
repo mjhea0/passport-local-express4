@@ -1,7 +1,8 @@
 const execSync = require('child_process').execSync;
 const fs = require('fs');
 
-class Hec {
+// TODO: 오류 발생(cb의 파라미터)할 때의 동작 추가
+class HecApi {
     /**
      * 공개키와 비밀키 파일들을 만드는 API
      *
@@ -15,34 +16,37 @@ class Hec {
         const command = `./hec/createKeys o=${o} p=${p} L=${L} dir=${dir}`;
         console.debug(command);
 
-        let out;
+        let out, err;
         try {
             out = execSync(command).toString();
         } catch (error) {
-            console.log("error!");
-            console.error(stderr);
-            return;
+            err = error;
+        } finally {
+            await cb(out, err);
         }
-        console.debug(out);
-
-        await cb();
     }
 
     /**
      * 후보자 벡터 파일들을 만드는 API
      *
      * @param {string} o 선거 컨트렉트 주소
+     * @param {string} v 유권자의 계정 주소
      * @param {int} t 후보자의 수
+     * @param {string} dir 실행 파일의 디렉토리
      * @param {function} cb exec 처리가 끝난 후의 콜백 함수
      */
-    static encryptCandidateList(o, t, cb) {
-        const command = `./hec/encrypt_candidate_list o=${o} t=${t}`;
+    static async encryptCandidateList(o, v, t, dir='data', cb) {
+        const command = `./hec/encrypt_candidate_list o=${o} v=${v} t=${t} dir=${dir}`;
         console.debug(command);
-        exec(command, function callback(error, stdout, stderr){
-            if(error) console.error(stderr);
-            console.debug(stdout);
-            cb();
-        });
+
+        let out, err;
+        try {
+            out = execSync(command).toString();
+        } catch (error) {
+            err = error;
+        } finally {
+            await cb(out, err);
+        }
     }
 
     /**
@@ -89,5 +93,5 @@ class Hec {
 }
 
 if (typeof module !== 'undefined') {
-    module.exports = Hec
+    module.exports = HecApi
 }

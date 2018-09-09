@@ -59,7 +59,7 @@ block content
             if(user && !electionDetail.owner)
                 if(electionDetail.voterState !== "Voted")
                     .text-center
-                        -electionInPath = path + '/election'
+                        -electionInPath = path + '/vote'
                         -electionButtonDisabled = electionDetail.summary.electionState !== "진행 중"
                         a.btn.btn-primary.btn-lg.active(
                             href=electionInPath

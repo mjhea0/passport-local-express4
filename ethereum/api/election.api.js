@@ -57,11 +57,10 @@ const setElectionDate = async (electionAddress, voterAddress, startDate, endDate
 const setPublicKeyOfHe = async (electionAddress, voterAddress, publickKeyOfHe) =>
     await Election(electionAddress).methods.setPublicKeyOfHe(publickKeyOfHe).send({from: voterAddress});
 
-const vote = async (electionAddress, voterAddress, candidateIndex) => {
+const vote = async (electionAddress, voterAddress, candidateHash) => {
     const ownerAddress = await Election(electionAddress).methods.getOwner().call();
     // console.log(ownerAddress);
-    return await Election(electionAddress)
-        .methods.election(candidateIndex, voterAddress)
+    return await Election(electionAddress).methods.vote(candidateHash, voterAddress)
         .send({from: ownerAddress});
 };
 

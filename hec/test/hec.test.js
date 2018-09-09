@@ -1,4 +1,4 @@
-const hec = require('../hec');
+const hec = require('../hec.api');
 
 // create Key
 // Hec.createKeys("owner");

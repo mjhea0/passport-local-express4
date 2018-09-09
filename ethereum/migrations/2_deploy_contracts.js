@@ -2,7 +2,7 @@ const fs = require('fs');
 const timeUtil = require('../../util/time.util');
 const ElectionFactory = artifacts.require('./ElectionFactory.sol');
 const Election = artifacts.require('./Election.sol');
-const hec = require('../../hec/hec.js');
+const hec = require('../../hec/hec.api.js');
 const ipfs = require('../../ipfs/ipfs.js');
 
 module.exports = (deployer, network, accounts) =>

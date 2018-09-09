@@ -13,7 +13,8 @@ const flash = require('connect-flash');
 const mongo = require('./mongo/mongo');
 const routes = require('./routes/index');
 const accountRoutes = require('./routes/accounts');
-const voteRoutes = require('./routes/elections');
+const electionRoutes = require('./routes/elections');
+const voteRoutes = require('./routes/votes');
 
 const app = express();
 
@@ -43,7 +44,7 @@ app.use(function(req, res, next) {
 });
 
 // 라우팅
-app.use('/', [routes, accountRoutes, voteRoutes]);
+app.use('/', [routes, accountRoutes, electionRoutes, voteRoutes]);
 
 // passport config
 const Account = require('./mongo/models/account');
