@@ -15,14 +15,17 @@ const args = [process.argv[2], // electionAddress
 // 이전에 생성해놨는지 확인
 if(!fs.existsSync('./hec/data/candidate/'+args[3])) {
     // 후보자 목록 파일들 저장
-    hec.encryptCandidateList(...args, () => {
-
+    console.log(args);
+    return hec.encryptCandidateList(...args, (out, err) => {
+	console.log(out);
+	console.log(err);
         // fileList 만들고
         const total = parseInt(args[2]);
         let fileList = [];
         for (let i = 0; i < total; i++) {
+            const path = `./hec/data/candidate/${args[0]}-${i}-${args[1]}.txt`;
             fileList.push({
-                path: `./hec/data/candidate/${args[0]}-${i}-${args[1]}.txt`,
+                path: path,
                 content: new Buffer.from(path)
             })
         }

@@ -36,14 +36,14 @@ class HecApi {
      * @param {function} cb exec 처리가 끝난 후의 콜백 함수
      */
     static async encryptCandidateList(o, v, t, dir='data', cb) {
-        const command = `./hec/encrypt_candidate_list o=${o} v=${v} t=${t} dir=${dir}`;
+        const command = `./hec/encrypt_candidate_list o=${o.toLowerCase()} v=${v.toLowerCase()} t=${t} dir=${dir}`;
         console.debug(command);
 
         let out, err;
         try {
             out = execSync(command).toString();
         } catch (error) {
-            err = error;
+            err = error.toString();
         } finally {
             await cb(out, err);
         }

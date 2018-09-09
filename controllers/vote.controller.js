@@ -25,17 +25,18 @@ module.exports = {
                     electionAddress,
                     voterAddress,
                     electionDetail.candidateList.length,
-                    'hec/data', (err, out) => {
+                    '/home/ssangwoo/prototype/hec/data', (err, out) => {
                         if(err) console.log(err);
                         console.log(out);
-                    });
-                const content = fs.readFileSync(`./hec/data/candidate/${electionAddress}/${voterAddress}`);
-                electionDetail.candidateHashList = content.slice(',');
 
-                res.render('election/vote', {
-                    electionDetail: electionDetail,
-                    path: req.path
-                });
+        	        const content = fs.readFileSync(`./hec/data/candidate/${electionAddress}/${voterAddress}`);
+	                electionDetail.candidateHashList = content.slice(',');
+
+         	        res.render('election/vote', {
+                        	electionDetail: electionDetail,
+                       		path: req.path
+                	});
+		});
             } else {
                 res.redirect(req.path.substring(0, req.path.length - 5));
             }
