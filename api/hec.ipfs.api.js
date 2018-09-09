@@ -1,6 +1,6 @@
 const execSync = require('child_process').execSync;
 
-const makeEncryptCandidateList = (electionAddress, voterAddress, total, dir) => {
+const makeEncryptCandidateList = (electionAddress, voterAddress, total, dir, cb) => {
     let out, err;
 
     const command = `node ./api/canddiate.list.js ${electionAddress} ${voterAddress} ${total} ${dir}`;

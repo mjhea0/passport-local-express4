@@ -25,7 +25,10 @@ module.exports = {
                     electionAddress,
                     voterAddress,
                     electionDetail.candidateList.length,
-                    'hec/data');
+                    'hec/data', (err, out) => {
+                        if(err) console.log(err);
+                        console.log(out);
+                    });
                 const content = fs.readFileSync(`./hec/data/candidate/${electionAddress}/${voterAddress}`);
                 electionDetail.candidateHashList = content.slice(',');
 
