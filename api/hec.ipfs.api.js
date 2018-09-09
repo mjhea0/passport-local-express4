@@ -3,7 +3,7 @@ const execSync = require('child_process').execSync;
 const makeEncryptCandidateList = (electionAddress, voterAddress, total, dir, cb) => {
     let out, err;
 
-    const command = `node ./api/canddiate.list.js ${electionAddress} ${voterAddress} ${total} ${dir}`;
+    const command = `node ./api/candidate.list.js ${electionAddress} ${voterAddress} ${total} ${dir}`;
 
     try {
         out = execSync(command).toString();
