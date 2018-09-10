@@ -4,17 +4,9 @@ const electionApi = require('../ethereum/api/election.api');
 const candidateApi = require('../ethereum/api/candidate.api');
 const voterApi = require('../ethereum/api/voter.api');
 const Account = require('../mongo/models/account');
-const hecIpfsApi = require('../api/hec.ipfs.api');
 const hec = require('../hec/hec.api');
 const ipfs = require('../ipfs/ipfs');
-
-const mkdirSync = function (dirPath) {
-    try {
-        fs.mkdirSync(dirPath)
-    } catch (err) {
-        if (err.code !== 'EEXIST') throw err
-    }
-};
+const mkdirSync = require('../util/fs.util').mkdirSync;
 
 module.exports = {
     getVote: async (req, res) => {
@@ -29,7 +21,7 @@ module.exports = {
             electionDetail.summary = await electionApi.getElectionSummary(electionAddress);
             const voterState = await voterApi.getVoterState(electionAddress, voterAddress);
 
-	    const candidateListPath = path.resolve(`./hec/data/candidate/${electionAddress}/${voterAddress}`);
+            const candidateListPath = path.resolve(`./hec/data/candidate/${electionAddress}/${voterAddress}`);
             if (voterState !== "Voted") {
                 electionDetail.candidateList = await candidateApi.getCandidateList(electionAddress);
                 if (fs.existsSync(candidateListPath)) {
@@ -50,11 +42,12 @@ module.exports = {
                         // fileList 만들고
                         let fileList = [];
                         for (let i = 0; i < total; i++) {
-                            const path = path.resolve(`./hec/data/candidate/${electionAddress.toLowerCase()}-${i}-${voterAddress.toLowerCase()}.txt`);
+                            const filePath = path.resolve(
+                                `./hec/data/candidate/${electionAddress.toLowerCase()}-${i}-${voterAddress.toLowerCase()}.txt`);
                             console.log(path);
                             fileList.push({
-                                path: path,
-                                content: new Buffer.from(path)
+                                path: filePath,
+                                content: new Buffer.from(filePath)
                             });
                         }
 
@@ -64,12 +57,11 @@ module.exports = {
                                 console.error(err);
                                 return res.send('error');
                             }
-                            console.log(files);
+
                             let candidateList = [];
                             for (let i = 0; i < total; i++) {
                                 candidateList[i] = files[i].hash;
                             }
-                            console.log("aaa : " + candidateList.toString());
 
                             // 파일 저장
                             mkdirSync(path.resolve(`./hec/data/candidate/${electionAddress}`));
@@ -114,6 +106,12 @@ module.exports = {
                     if (voterState === "Voted") {
                         // 투표 완료 상태가 되면
 
+                        const candidateListPath = path.resolve(
+                            `./hec/data/candidate/${electionAddress}/${voterAddress}`);
+
+                        // 파일 내용 삭제
+                        fs.writeFileSync(candidateListPath, "");
+
                         // DB 업데이트
                         Account.findOneAndUpdate({username: req.user.username}, {
                             $push: {votingVotes: electionAddress}
@@ -131,5 +129,4 @@ module.exports = {
                 res.send(err.toString());
             }
         }
-}
-;
+};

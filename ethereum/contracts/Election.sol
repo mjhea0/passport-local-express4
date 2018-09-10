@@ -18,11 +18,10 @@ contract Election is Ownable, CandidateList, VoterList {
      *      Open : 선거가 막 열렸고, 투표 제안자의 컨펌을 기다리는 상태
      *      Proceed : 선거 투표를 진행하고 있는 상태
      *      Pause : 선거 투표 진행 도중 문제가 생겨 일시정지한 상태
-     *      Tally : 투표를 집계 중인 상태
      *      Close : 선거가 종료된 상태
      */
     enum ElectionState {
-        Open, Proceed, Pause, Tally, Close
+        Open, Proceed, Pause, Close
     }
     ElectionState internal electionState;
 
@@ -86,6 +85,14 @@ contract Election is Ownable, CandidateList, VoterList {
     }
 
     /**
+     * @dev 선거의 상태를 반환하는 메소드
+     * @return 선거의 상태
+     */
+    function getElectionState() external view returns (uint) {
+        return uint(electionState);
+    }
+
+    /**
      * @dev 유권자가 한정된 선거인지를 반환하는 메소드
      * @return 한정된 선거면 true
      */
@@ -99,6 +106,15 @@ contract Election is Ownable, CandidateList, VoterList {
      */
     function getTallyResult() external view returns (string) {
         return tallyResult;
+    }
+
+    /**
+     * @dev 투표용지의 후보자값(IPFS 해쉬값)을 얻는 메소드
+     * @param _voterAddress 유권자의 계정 주소
+     * @return 후보자값(IPFS 해쉬값)
+     */
+    function getBallot(address _voterAddress) external view returns (string) {
+        return ballots[_voterAddress];
     }
 
     /**
@@ -155,7 +171,7 @@ contract Election is Ownable, CandidateList, VoterList {
      * @param _electionState 변경할 선거의 상태
      */
     function setElectionState(uint _electionState) public onlyOwner {
-        require(_electionState < uint(ElectionState.Tally));
+        require(_electionState < uint(ElectionState.Close));
         electionState = ElectionState(_electionState);
     }
 
@@ -182,7 +198,7 @@ contract Election is Ownable, CandidateList, VoterList {
      * @param _tallyResult 설정할 집계 결과
      */
     function setTallyResult(string _tallyResult) public onlyOwner {
-        require(electionState == ElectionState.Tally);
+        require(electionState == ElectionState.Close);
         tallyResult = _tallyResult;
     }
 

@@ -55,18 +55,23 @@ class HecApi {
      *
      * @param {string} o 선거 컨트렉트 주소
      * @param {int} n 후보자의 수
+     * @param {string} dir 실행 파일의 디렉토리
      * @return {Array} 집계 결과
      * @param {function} cb exec 처리가 끝난 후의 콜백 함수
      */
-    static tally(o, n, cb) {
-        const command = `./hec/tally o=${o} n=${n} d=hec/data/candidate`;
+    static async tally(o, n, dir, cb) {
+        const command = `./hec/tally o=${o} n=${n} dir=${dir}`;
         console.debug(command);
 
-        exec(command, (error, stdout, stderr) => {
-            if(error) console.error(stderr);
-            console.debug(stdout);
-            cb();
-        });
+        let out, err, result;
+        try {
+            out = execSync(command).toString();
+            result = this.getResult(o).toString();
+        } catch (error) {
+            err = error.toString();
+        } finally {
+            await cb(out, err, result);
+        }
     }
 
     /**

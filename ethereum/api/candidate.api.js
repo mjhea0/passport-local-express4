@@ -19,21 +19,24 @@ const getCandidate = async (election, index) => {
     };
 };
 
-const getCandidateList = async (voteAddress) => {
+const getCandidateLength = async (electionAddress) =>
+    await Election(electionAddress).methods.getCandidateLength().call();
+
+const getCandidateList = async (electionAddress) => {
     let candidateList = [];
-    const election = Election(voteAddress);
+    const election = Election(electionAddress);
     const candidateLength = parseInt(await election.methods.getCandidateLength().call());
     for (let i = 0; i < candidateLength; i++) {
         candidateList.push(await getCandidate(election, i));
     }
     return candidateList
 };
-
 module.exports = {
     // Contract methods
     addCandidate,
     removeCandidate,
     getCandidate,
+    getCandidateLength,
     // Custom methods
     getCandidateList
 };

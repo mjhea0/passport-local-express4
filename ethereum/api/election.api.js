@@ -7,8 +7,7 @@ const electionState = {
     "0": "대기",
     "1": "진행 중",
     "2": "일시중지",
-    "3": "집계 중",
-    "4": "종료"
+    "3": "종료"
 };
 
 const isOwner = async (electionAddress, address) =>
@@ -17,8 +16,17 @@ const isOwner = async (electionAddress, address) =>
 const getOwner = async (electionAddress) =>
     await Election(electionAddress).methods.getOwner().call();
 
+const getElectionState = async (electionAddress) =>
+    await Election(electionAddress).methods.getElectionState().call();
+
 const isFiniteElection = async (electionAddress) =>
     await Election(electionAddress).methods.isFiniteElection().call();
+
+const getTallyResult = async (electionAddress) =>
+    await Election(electionAddress).methods.getTallyResult().call();
+
+const getBallot = async (electionAddress, voterAddress) =>
+    await Election(electionAddress).methods.getBallot(voterAddress).call();
 
 const getBallotCount = async (electionAddress) =>
     await Election(electionAddress).methods.getBallotCount().call();
@@ -43,19 +51,25 @@ const getElectionSummary = async (electionAddress) => {
     };
 };
 
-const setElectionDescription = async (electionAddress, voterAddress, electionDescription) =>
+const setElectionDescription = async (electionAddress, ownerAddress, electionDescription) =>
     await Election(electionAddress).methods.setElectionDescription(electionDescription)
-        .send({from: voterAddress, gas: 1000000});
+        .send({from: ownerAddress, gas: 1000000});
 
-const setElectionState = async (electionAddress, voterAddress, electionState) =>
-    await Election(electionAddress).methods.setElectionState(electionState).send({from: voterAddress});
+const setElectionState = async (electionAddress, ownerAddress, electionState) =>
+    await Election(electionAddress).methods.setElectionState(electionState)
+        .send({from: ownerAddress, gas: 1000000});
 
-const setElectionDate = async (electionAddress, voterAddress, startDate, endDate) =>
+const setElectionDate = async (electionAddress, ownerAddress, startDate, endDate) =>
     await Election(electionAddress).methods.setElectionDate(startDate, endDate)
-        .send({from: voterAddress, gas: 1000000});
+        .send({from: ownerAddress, gas: 1000000});
 
-const setPublicKeyOfHe = async (electionAddress, voterAddress, publickKeyOfHe) =>
-    await Election(electionAddress).methods.setPublicKeyOfHe(publickKeyOfHe).send({from: voterAddress});
+const setPublicKeyOfHe = async (electionAddress, ownerAddress, publicKeyOfHe) =>
+    await Election(electionAddress).methods.setPublicKeyOfHe(publicKeyOfHe)
+        .send({from: ownerAddress, gas: 1000000});
+
+const setTallyResult = async (electionAddress, ownerAddress, tallyResult) =>
+    await Election(electionAddress).methods.setTallyResult(tallyResult)
+        .send({from: ownerAddress, gas: 1000000});
 
 const vote = async (electionAddress, voterAddress, candidateHash) => {
     const ownerAddress = await Election(electionAddress).methods.getOwner().call();
@@ -75,7 +89,10 @@ module.exports = {
     // Contract Methods
     isOwner,
     getOwner,
+    getElectionState,
     isFiniteElection,
+    getTallyResult,
+    getBallot,
     getBallotCount,
     getPublicKeyOfHe,
     getElectionSummary,
@@ -83,6 +100,7 @@ module.exports = {
     setElectionState,
     setElectionDate,
     setPublicKeyOfHe,
+    setTallyResult,
     vote,
     // Custom Methods
     getElectionSummaryList
