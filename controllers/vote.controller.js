@@ -21,14 +21,39 @@ module.exports = {
             if (voterState !== "Voted") {
                 electionDetail.candidateList = await candidateApi.getCandidateList(electionAddress);
 
+                const total = electionDetail.candidateList.length;
                 await hec.encryptCandidateList(electionAddress, voterAddress,
-                    electionDetail.candidateList.length, 'hec/data', (err, out) => {
+                    total, 'hec/data', (out, err) => {
                         if(err) console.error(err);
                         console.log(out);
 
-                        res.render('election/vote', {
-                            electionDetail: electionDetail,
-                            path: req.path
+                        // fileList 만들고
+                        let fileList = [];
+                        for (let i = 0; i < total; i++) {
+                            const path = './hec/data/candidate';
+                            fileList.push({
+                                path: path,
+                                content: new Buffer.from(
+                                    `${path}/${electionAddress}-${i}-${voterAddress}.txt`)
+                            });
+                        }
+
+                        // IPFS에 저장
+                        return ipfs.files.add(fileList, (err, res) => {
+                            console.log(res);
+                            // 파일 저장
+                            const byte = fs.writeFileSync(
+                                `./hec/data/candidate/${electionAddress}/${voterAddress}`, res.toString());
+                            if(byte > 0) {
+                                console.log("good!!");
+                            } else {
+                                console.log("error!");
+                            }
+                            res.render('election/vote', {
+                                electionDetail: electionDetail,
+                                candidateList: res,
+                                path: req.path
+                            });
                         });
                     });
                 // 후보자 hash 리스트
