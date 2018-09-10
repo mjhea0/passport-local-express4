@@ -28,13 +28,13 @@ module.exports = {
             let electionDetail = {};
             electionDetail.summary = await electionApi.getElectionSummary(electionAddress);
             const voterState = await voterApi.getVoterState(electionAddress, voterAddress);
+
+	    const candidateListPath = path.resolve(`./hec/data/candidate/${electionAddress}/${voterAddress}`);
             if (voterState !== "Voted") {
                 electionDetail.candidateList = await candidateApi.getCandidateList(electionAddress);
-
-                if (!fs.existsSync(path.resolve(`./hec/data/candidate/${electionAddress}`))) {
-                    const candidateListAtFile = fs.readFileSync(
-                        `./hec/data/candidate/${electionAddress}/${voterAddress}`);
-                    const candidateList = candidateListAtFile.slice(',');
+                if (fs.existsSync(candidateListPath)) {
+                    const candidateListAtFile = fs.readFileSync(candidateListPath).toString();
+                    const candidateList = candidateListAtFile.split(',');
                     return res.render('election/vote', {
                         electionDetail: electionDetail,
                         candidateList: candidateList,
@@ -50,7 +50,7 @@ module.exports = {
                         // fileList 만들고
                         let fileList = [];
                         for (let i = 0; i < total; i++) {
-                            const path = `/home/ssangwoo/prototype/hec/data/candidate/${electionAddress.toLowerCase()}-${i}-${voterAddress.toLowerCase()}.txt`;
+                            const path = path.resolve(`./hec/data/candidate/${electionAddress.toLowerCase()}-${i}-${voterAddress.toLowerCase()}.txt`);
                             console.log(path);
                             fileList.push({
                                 path: path,
@@ -73,8 +73,7 @@ module.exports = {
 
                             // 파일 저장
                             mkdirSync(path.resolve(`./hec/data/candidate/${electionAddress}`));
-                            fs.writeFileSync(
-                                `./hec/data/candidate/${electionAddress}/${voterAddress}`, candidateList.toString());
+                            fs.writeFileSync(candidateListPath, candidateList.toString());
 
                             return res.render('election/vote', {
                                 electionDetail: electionDetail,

@@ -60,8 +60,8 @@ const setPublicKeyOfHe = async (electionAddress, voterAddress, publickKeyOfHe) =
 const vote = async (electionAddress, voterAddress, candidateHash) => {
     const ownerAddress = await Election(electionAddress).methods.getOwner().call();
     // console.log(ownerAddress);
-    return await Election(electionAddress).methods.vote(candidateHash, voterAddress)
-        .send({from: ownerAddress});
+    return await Election(electionAddress).methods.vote(voterAddress, candidateHash)
+        .send({from: ownerAddress, gas: 1000000});
 };
 
 const getElectionSummaryList = async (isFiniteElection) => {
