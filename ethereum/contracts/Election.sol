@@ -171,7 +171,7 @@ contract Election is Ownable, CandidateList, VoterList {
      * @param _electionState 변경할 선거의 상태
      */
     function setElectionState(uint _electionState) public onlyOwner {
-        require(_electionState < uint(ElectionState.Close));
+        require(_electionState <= uint(ElectionState.Close));
         electionState = ElectionState(_electionState);
     }
 
