@@ -30,7 +30,7 @@ module.exports = {
             electionDetail.ballotCount = await electionApi.getBallotCount(electionAddress);
             if (electionDetail.summary['electionState'] === "완료") {
                 const result = await electionApi.getTallyResult(electionAddress);
-                if(result) {
+                if (result) {
                     const resultArray = result.split(',');
                     resultArray.sort((a, b) => b - a);
 
@@ -79,36 +79,38 @@ module.exports = {
                     const files = fs.readdirSync(path.resolve(electionDirPath));
 
                     // 선거 결과를 저장할 디렉토리를 만든다
-                    // const electionResultDirPath = `./hec/data/result/${electionAddress}`;
-                    // mkdirSync(electionResultDirPath);
+                    const electionResultDirPath = path.resolve(`./hec/data/result/${electionAddress}`);
+                    mkdirSync(electionResultDirPath);
 
-                    // 이더리움에 저장된 IPFS 해쉬값을 읽는다
-		    let ipfsHashList = [];
-		    for(let i = 0; i < files.length; i++) {
-	                    const fileHash = await electionApi.getBallot(electionAddress, files[i]);
-                    // 모든 유권자 주소의 IPFS 파일을 모두 다운받거나, 있으면 그걸 사용한다
-                    ipfs.files.get(fileHash, (err, files) => {
-                        if(err) {
-                            console.log(err);
-                        }
-                        console.log(files);
-                        // 동형암호로 집계를 한다
-                        // const candidateListLength = await candidateApi.getCandidateLength(electionAddress);
-                        // hec.tally(electionAddress, candidateListLength,
-                        //     "hec/data", async (out, err, result) => {
-                        //         if (err) {
-                        //             console.error(err);
-                        //             return res.send(err);
-                        //         }
-                        //         console.log(out);
-                        //
-                        //         // 이더리움에 결과 저장
-                        //         await electionApi.setTallyResult(electionAddress, ownerAddress, result);
-                        //
-                        //         res.redirect(req.path);
-                        //     });
-                    });
-		}
+                    for (let i = 0; i < files.length; i++) {
+                        // 유권자 주소로 이더리움에 저장된 IPFS 해쉬값을 읽는다
+                        const fileHash = await electionApi.getBallot(electionAddress, files[i]);
+                        // 모든 유권자 주소의 IPFS 파일을 모두 다운받거나, 있으면 그걸 사용한다
+                        ipfs.files.get(fileHash, async (err, files) => {
+                            if (err) {
+                                console.log(err);
+                            }
+                            fs.writeFileSync(`${electionResultDirPath}/${files[0].path}`,
+                                files[0].content.toString('utf8'));
+                            if(i === files.length-1) {
+                                // 동형암호로 집계를 한다
+                                const candidateListLength = await candidateApi.getCandidateLength(electionAddress);
+                                await hec.tally(electionAddress, candidateListLength,
+                                    "hec/data", async (out, err, result) => {
+                                        if (err) {
+                                            console.error(err);
+                                            return res.send(err);
+                                        }
+                                        console.log(out);
+
+                                        // 이더리움에 결과 저장
+                                        await electionApi.setTallyResult(electionAddress, ownerAddress, result);
+
+                                        res.redirect(req.path);
+                                    });
+                            }
+                        });
+                    }
                 } else {
                     res.redirect(req.path);
                 }
