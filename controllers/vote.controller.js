@@ -47,7 +47,7 @@ module.exports = {
                             console.log(path);
                             fileList.push({
                                 path: filePath,
-                                content: new Buffer.from(filePath)
+                                content: new Buffer.from(fs.readFileSync(filePath))
                             });
                         }
 

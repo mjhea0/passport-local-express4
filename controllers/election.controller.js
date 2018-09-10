@@ -79,7 +79,7 @@ module.exports = {
                     const files = fs.readdirSync(path.resolve(electionDirPath));
 
                     // 선거 결과를 저장할 디렉토리를 만든다
-                    const electionResultDirPath = path.resolve(`./hec/data/result/${electionAddress}`);
+                    const electionResultDirPath = path.resolve(`./hec/data/result/${electionAddress.toLowerCase()}`);
                     mkdirSync(electionResultDirPath);
 
                     for (let i = 0; i < files.length; i++) {
@@ -92,7 +92,8 @@ module.exports = {
                             }
                             fs.writeFileSync(`${electionResultDirPath}/${files[0].path}`,
                                 files[0].content.toString('utf8'));
-                            if(i === files.length-1) {
+                        });
+		    }
                                 // 동형암호로 집계를 한다
                                 const candidateListLength = await candidateApi.getCandidateLength(electionAddress);
                                 await hec.tally(electionAddress, candidateListLength,
@@ -108,9 +109,6 @@ module.exports = {
 
                                         res.redirect(req.path);
                                     });
-                            }
-                        });
-                    }
                 } else {
                     res.redirect(req.path);
                 }

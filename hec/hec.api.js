@@ -60,7 +60,7 @@ class HecApi {
      * @param {function} cb exec 처리가 끝난 후의 콜백 함수
      */
     static async tally(o, n, dir, cb) {
-        const command = `./hec/tally o=${o} n=${n} dir=${dir}`;
+        const command = `./hec/tally o=${o.toLowerCase()} n=${n} dir=${dir}`;
         console.debug(command);
 
         let out, err, result;
@@ -83,7 +83,7 @@ class HecApi {
         // 결과 파일 읽고 배열로 변환
         let resultFile;
         try {
-            resultFile = fs.readFileSync(`hec/data/result/${o}.txt`, 'utf8');
+            resultFile = fs.readFileSync(`hec/data/result/${o.toLowerCase()}.txt`, 'utf8');
         } catch (error) {
             console.debug("file not found");
             return undefined;
