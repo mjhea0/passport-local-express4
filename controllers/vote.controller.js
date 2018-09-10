@@ -1,10 +1,20 @@
 const fs = require('fs');
+const path = require('path');
 const electionApi = require('../ethereum/api/election.api');
 const candidateApi = require('../ethereum/api/candidate.api');
 const voterApi = require('../ethereum/api/voter.api');
 const Account = require('../mongo/models/account');
 const hecIpfsApi = require('../api/hec.ipfs.api');
 const hec = require('../hec/hec.api');
+const ipfs = require('../ipfs/ipfs');
+
+const mkdirSync = function (dirPath) {
+  try {
+    fs.mkdirSync(dirPath)
+  } catch (err) {
+    if (err.code !== 'EEXIST') throw err
+  }
+}
 
 module.exports = {
     getVote: async (req, res) => {
@@ -30,28 +40,35 @@ module.exports = {
                         // fileList 만들고
                         let fileList = [];
                         for (let i = 0; i < total; i++) {
-                            const path = './hec/data/candidate';
+                            const path = `/home/ssangwoo/prototype/hec/data/candidate/${electionAddress.toLowerCase()}-${i}-${voterAddress.toLowerCase()}.txt`;
+			    console.log(path);
                             fileList.push({
                                 path: path,
-                                content: new Buffer.from(
-                                    `${path}/${electionAddress}-${i}-${voterAddress}.txt`)
+                                content: new Buffer.from(path)
                             });
                         }
 
                         // IPFS에 저장
-                        return ipfs.files.add(fileList, (err, res) => {
-                            console.log(res);
+                        return ipfs.files.add(fileList, (err, files) => {
+			    if(err) {
+				console.error(err);
+				return res.send('error');
+			    }
+                            console.log(files);
+			    let candidateList = [];
+			    for(let i = 0; i < total; i++) {
+				candidateList[i] = files[i].hash;
+			    }
+			    console.log("aaa : " + candidateList.toString());
+
                             // 파일 저장
-                            const byte = fs.writeFileSync(
-                                `./hec/data/candidate/${electionAddress}/${voterAddress}`, res.toString());
-                            if(byte > 0) {
-                                console.log("good!!");
-                            } else {
-                                console.log("error!");
-                            }
+			    mkdirSync(path.resolve(`./hec/data/candidate/${electionAddress}`));
+                            fs.writeFileSync(
+                                `./hec/data/candidate/${electionAddress}/${voterAddress}`, candidateList.toString());
+
                             res.render('election/vote', {
                                 electionDetail: electionDetail,
-                                candidateList: res,
+                                candidateList: candidateList,
                                 path: req.path
                             });
                         });
