@@ -1,4 +1,4 @@
-const fs = rquire('fs');
+const fs = require('fs');
 const path = require('path');
 const electionApi = require('../ethereum/api/election.api');
 const candidateApi = require('../ethereum/api/candidate.api');
@@ -68,7 +68,7 @@ module.exports = {
         try {
             const isVoteOwner = await electionApi.isOwner(electionAddress, ownerAddress);
             if (isVoteOwner) {
-                const state = req.body.state;
+                const state = req.body.electionState;
                 await electionApi.setElectionState(electionAddress, ownerAddress, state);
                 const electionState = await electionApi.getElectionState(electionAddress);
                 if (electionState === '3') {
@@ -76,7 +76,8 @@ module.exports = {
 
                     // 선거 폴더의 파일 이름(=유권자 주소)을 모두 읽는다
                     const electionDirPath = `./hec/data/candidate/${electionAddress}`;
-                    const files = fs.readdirSync(path.resolve(electionDirPath);
+                    const files = fs.readdirSync(path.resolve(electionDirPath));
+		    console.log(files);
 
                     // 선거 결과를 저장할 디렉토리를 만든다
                     // const electionResultDirPath = `./hec/data/result/${electionAddress}`;
