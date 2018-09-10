@@ -93,22 +93,21 @@ module.exports = {
                             fs.writeFileSync(`${electionResultDirPath}/${files[0].path}`,
                                 files[0].content.toString('utf8'));
                         });
-		    }
-                                // 동형암호로 집계를 한다
-                                const candidateListLength = await candidateApi.getCandidateLength(electionAddress);
-                                await hec.tally(electionAddress, candidateListLength,
-                                    "hec/data", async (out, err, result) => {
-                                        if (err) {
-                                            console.error(err);
-                                            return res.send(err);
-                                        }
-                                        console.log(out);
+                    }
+                    // 동형암호로 집계를 한다
+                    const candidateListLength = await candidateApi.getCandidateLength(electionAddress);
+                    await hec.tally(electionAddress, candidateListLength,
+                        "hec/data", async (out, err) => {
+                            if (err) {
+                                return res.send(err);
+                            }
+                            console.log(out);
+                            const resultArray = hec.getResult(electionAddress);
+                            // 이더리움에 결과 저장
+                            await electionApi.setTallyResult(electionAddress, ownerAddress, resultArray);
 
-                                        // 이더리움에 결과 저장
-                                        await electionApi.setTallyResult(electionAddress, ownerAddress, result);
-
-                                        res.redirect(req.path);
-                                    });
+                            res.redirect(req.path);
+                        });
                 } else {
                     res.redirect(req.path);
                 }

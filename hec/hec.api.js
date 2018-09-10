@@ -63,14 +63,13 @@ class HecApi {
         const command = `./hec/tally o=${o.toLowerCase()} n=${n} dir=${dir}`;
         console.debug(command);
 
-        let out, err, result;
+        let out, err;
         try {
             out = execSync(command).toString();
-            result = this.getResult(o).toString();
         } catch (error) {
             err = error.toString();
         } finally {
-            await cb(out, err, result);
+            await cb(out, err);
         }
     }
 
