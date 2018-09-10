@@ -23,21 +23,16 @@ if(!fs.existsSync('./hec/data/candidate/'+args[3])) {
         const total = parseInt(args[2]);
         let fileList = [];
         for (let i = 0; i < total; i++) {
-            const path = `./hec/data/candidate/${args[0]}-${i}-${args[1]}.txt`;
+            const path = './hec/data/candidate';
             fileList.push({
                 path: path,
-                content: new Buffer.from(path)
-            })
+                content: new Buffer.from(`${path}/${args[0]}-${i}-${args[1]}.txt`)
+            });
         }
 
         // IPFS에 저장
         return ipfs.files.add(fileList, (err, res) => {
             console.log(res);
-            // 파일명 해쉬값으로 변경
-            for (let i = 0; i < total; i++) {
-                fs.renameSync(`./hec/data/candidate/${args[0]}-${i}-${args[1]}.txt`,
-                    './hec/data/candidate/' + res[i].hash)
-            }
             // 파일 저장
             const byte = fs.writeFileSync(`./hec/data/candidate/${args[0]}/${args[1]}`, res.toString());
             if(byte > 0) {

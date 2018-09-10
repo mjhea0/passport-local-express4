@@ -4,6 +4,7 @@ const candidateApi = require('../ethereum/api/candidate.api');
 const voterApi = require('../ethereum/api/voter.api');
 const Account = require('../mongo/models/account');
 const hecIpfsApi = require('../api/hec.ipfs.api');
+const hec = require('../hec/hec.api');
 
 module.exports = {
     getVote: async (req, res) => {
@@ -20,23 +21,32 @@ module.exports = {
             if (voterState !== "Voted") {
                 electionDetail.candidateList = await candidateApi.getCandidateList(electionAddress);
 
-                // 후보자 hash 리스트
-                await hecIpfsApi.makeEncryptCandidateList(
-                    electionAddress,
-                    voterAddress,
-                    electionDetail.candidateList.length,
-                    '/home/ssangwoo/prototype/hec/data', (err, out) => {
-                        if(err) console.log(err);
+                await hec.encryptCandidateList(electionAddress, voterAddress,
+                    electionDetail.candidateList.length, 'hec/data', (err, out) => {
+                        if(err) console.error(err);
                         console.log(out);
 
-        	        const content = fs.readFileSync(`./hec/data/candidate/${electionAddress}/${voterAddress}`);
-	                electionDetail.candidateHashList = content.slice(',');
-
-         	        res.render('election/vote', {
-                        	electionDetail: electionDetail,
-                       		path: req.path
-                	});
-		});
+                        res.render('election/vote', {
+                            electionDetail: electionDetail,
+                            path: req.path
+                        });
+                    });
+                // 후보자 hash 리스트
+                // await hecIpfsApi.makeEncryptCandidateList(
+                //     electionAddress,
+                //     voterAddress,
+                //     electionDetail.candidateList.length,
+                //     '/home/ssangwoo/prototype/hec/data', (err, out) => {
+                //         if(err) console.log(err);
+                //         console.log(out);
+                //
+                //     const content = fs.readFileSync(`./hec/data/candidate/${electionAddress}/${voterAddress}`);
+                //     electionDetail.candidateHashList = content.slice(',');
+                //
+                //      res.render('election/vote', {
+                //         	electionDetail: electionDetail,
+                //        		path: req.path
+                // 	});
             } else {
                 res.redirect(req.path.substring(0, req.path.length - 5));
             }
