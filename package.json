@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "compile": "truffle compile",
-    "migration": "truffle migration --reset; node ipfs/script/ipfs.hanbat.js; node mongo/script/mongo.account.update.js",
+    "remake": "rm -r ethereum/build/ ; truffle migration --reset; node ipfs/script/ipfs.hanbat.js; node mongo/script/mongo.account.update.js",
     "windows-compile": "truffle.cmd compile",
     "windows-migration": "truffle.cmd migration --reset",
     "start": "nodemon ./bin/www",

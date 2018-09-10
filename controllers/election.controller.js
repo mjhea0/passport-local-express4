@@ -77,18 +77,17 @@ module.exports = {
                     // 선거 폴더의 파일 이름(=유권자 주소)을 모두 읽는다
                     const electionDirPath = `./hec/data/candidate/${electionAddress}`;
                     const files = fs.readdirSync(path.resolve(electionDirPath));
-		    console.log(files);
 
                     // 선거 결과를 저장할 디렉토리를 만든다
                     // const electionResultDirPath = `./hec/data/result/${electionAddress}`;
                     // mkdirSync(electionResultDirPath);
 
                     // 이더리움에 저장된 IPFS 해쉬값을 읽는다
-                    const ipfsHashList = await files.forEach(async (voterAddress) =>
-                        await electionApi.getBallot(electionAddress, voterAddress));
-
+		    let ipfsHashList = [];
+		    for(let i = 0; i < files.length; i++) {
+	                    const fileHash = await electionApi.getBallot(electionAddress, files[i]);
                     // 모든 유권자 주소의 IPFS 파일을 모두 다운받거나, 있으면 그걸 사용한다
-                    ipfs.files.get(ipfsHashList, (err, files) => {
+                    ipfs.files.get(fileHash, (err, files) => {
                         if(err) {
                             console.log(err);
                         }
@@ -109,6 +108,7 @@ module.exports = {
                         //         res.redirect(req.path);
                         //     });
                     });
+		}
                 } else {
                     res.redirect(req.path);
                 }
