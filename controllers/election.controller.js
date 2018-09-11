@@ -28,13 +28,12 @@ module.exports = {
             electionDetail.summary = await electionApi.getElectionSummary(electionAddress);
             electionDetail.candidateList = await candidateApi.getCandidateList(electionAddress);
             electionDetail.ballotCount = await electionApi.getBallotCount(electionAddress);
-            if (electionDetail.summary['electionState'] === "완료") {
+            if (electionDetail.summary['electionState'] === "종료") {
                 const result = await electionApi.getTallyResult(electionAddress);
                 if (result) {
-                    const resultArray = result.split(',');
-                    resultArray.sort((a, b) => b - a);
+                    const resultArray = result.split(',').map((val) => parseInt(val));
 
-                    const max = resultArray[0];
+                    const max = Math.max.apply(null, resultArray);
                     electionDetail.resultName = [];
                     for (let i = 0; i < resultArray.length; i++) {
                         if (resultArray[i] === max)
@@ -104,7 +103,7 @@ module.exports = {
                             console.log(out);
                             const resultArray = hec.getResult(electionAddress);
                             // 이더리움에 결과 저장
-                            await electionApi.setTallyResult(electionAddress, ownerAddress, resultArray);
+                            await electionApi.setTallyResult(electionAddress, ownerAddress, resultArray.toString());
 
                             res.redirect(req.path);
                         });
