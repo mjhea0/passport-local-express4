@@ -42,8 +42,8 @@ module.exports = (deployer, network, accounts) =>
             if (err) throw 'error opening file: ' + err;
             const jsonObj = {
                 factory: deployedElectionFactory.address,
-                test_qkxeo_contract: deployedPublicElections[0],
-                test_qkxeo_address: accounts[1]
+                test_region_contract: deployedPublicElections[0],
+                test_region_address: accounts[1]
             };
             fs.writeFile('./config/contract-address.json',
                 new Buffer.from(JSON.stringify(jsonObj)), 'utf8', (err) => {

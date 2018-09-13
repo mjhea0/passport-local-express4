@@ -6,14 +6,14 @@ mongo.connection.on('error', (err) => console.error(err.message));
 
 // DB 변경
 Account.findOne({
-    'username': 'gksqkx@eo.election'
+    'username': 'region@election.com'
 }, (err, account) => {
     if (err) return console.log(err.message);
-    account.etherAccount = contractAddress.test_qkxeo_address;
-    account.deployedVotes = [contractAddress.test_qkxeo_contract];
+    account.etherAccount = contractAddress['test_region_address'];
+    account.deployedVotes = [contractAddress['test_region_contract']];
     account.save((err) => {
         if (err) return console.log(err.message);
-        console.info("한밭대 완료");
+        console.info("지방선거 완료");
         process.exit();
     })
 });
