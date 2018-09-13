@@ -44,7 +44,7 @@ contract ElectionFactory is Ownable {
      * @param _finiteElection true면 한정된 유권자만 투표할 수 있는
      *                        선거를 생성
      */
-    function makeNewVote(
+    function makeNewElection(
         string _electionName,
         string _electionDescription,
         address _electionOwner,

@@ -15,7 +15,6 @@ ipfs.files.add(buffer, async (err, res) => {
         console.log(err);
         return;
     }
-    console.log(res);
     const publicKeyFileHash = res[0].hash;
     await Election(contractAddress).methods
         .setPublicKeyOfHe(publicKeyFileHash).send({from: ownerAddress});

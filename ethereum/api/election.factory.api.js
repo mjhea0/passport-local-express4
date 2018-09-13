@@ -7,7 +7,7 @@ const getDeployedElections = async (isFinite) =>
 const getDeployedElectionsLength = async (isFinite) =>
     await ElectionFactory.methods.getDeployedElectionsLength(isFinite).call();
 
-const makeNewVote = async (adminAddress,
+const makeNewElection = async (adminAddress,
                            electionName,
                            electionDescription,
                            electionOwner,
@@ -15,7 +15,7 @@ const makeNewVote = async (adminAddress,
                            endDate,
                            publicKeyOfHe,
                            finiteElection) =>
-    await ElectionFactory.methods.makeNewVote(
+    await ElectionFactory.methods.makeNewElection(
         electionName,
         electionDescription,
         electionOwner,
@@ -28,5 +28,5 @@ const makeNewVote = async (adminAddress,
 module.exports = {
     getDeployedElections,
     getDeployedElectionsLength,
-    makeNewVote
+    makeNewElection
 };

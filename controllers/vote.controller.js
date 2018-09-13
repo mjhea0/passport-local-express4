@@ -44,7 +44,6 @@ module.exports = {
                         for (let i = 0; i < total; i++) {
                             const filePath = path.resolve(
                                 `./hec/data/candidate/${electionAddress.toLowerCase()}-${i}-${voterAddress.toLowerCase()}.txt`);
-                            console.log(path);
                             fileList.push({
                                 path: filePath,
                                 content: new Buffer.from(fs.readFileSync(filePath))

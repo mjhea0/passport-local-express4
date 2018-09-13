@@ -14,6 +14,7 @@ Account.findOne({
     account.save((err) => {
         if (err) return console.log(err.message);
         console.info("한밭대 완료");
+        process.exit();
     })
 });
 
