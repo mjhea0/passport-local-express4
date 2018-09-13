@@ -8,45 +8,41 @@ const ipfs = require('../../ipfs/ipfs.js');
 module.exports = (deployer, network, accounts) =>
     deployer.then(async () => {
         await deployer.deploy(ElectionFactory);
-        const deployedVoteFactory = await ElectionFactory.deployed();
+        const deployedElectionFactory = await ElectionFactory.deployed();
 
-        await deployedVoteFactory.makeNewVote(
-            '한밭대학교 총학생회장 선거',
-            '2018년도 총학생회장 선거를 개최합니다. \n' +
-            '총학생회는 학생들의 자율적인 의사에 따라 이루어진 자치기구로서 자주 학원건설의 길로 새로운 시작의 발걸음을 시작할 것입니다. \n' +
-            '작은 발걸음부터 시작하지만 그 작은 약속을 가장 소중히 생각하며 새로운 희망의 씨를 뿌리는 자주학원 건설을 위한 총학생회를 만들 것입니다.',
+        await deployedElectionFactory.makeNewElection(
+            '6.13 대전 지방선거',
+            '이번 선거에서 선출된 공직자의 임기는 4년(2018. 7. 1.~2022. 6. 30.)이며, 재보궐선거의 경우 전임자의 잔여임기(~2020. 5. 29.)까지 업무를 수행하게 된다.',
             accounts[1],
-            timeUtil.dateStringToTimestamp('09/06/2018 08:30:00'),
-            timeUtil.dateStringToTimestamp('09/15/2018 22:00:00'),
-            false
-        );
+            timeUtil.dateStringToTimestamp('09/10/2018 06:00:00'),
+            timeUtil.dateStringToTimestamp('10/10/2018 18:00:00'),
+            false);
 
-        const deployedPublicElections = await deployedVoteFactory.getDeployedElections.call(false);
-        console.log('밭대선거 : ' + deployedPublicElections[0]);
+        const deployedPublicElections = await deployedElectionFactory.getDeployedElections.call(false);
+        console.log('지방선거 : ' + deployedPublicElections[0]);
 
-        // 한밭대선거 투표에 후보자 추가
-        const deployedHanbatElection = await Election.at(deployedPublicElections[0]);
-        const candidateList = ['악센트', '라우드', '비포유'];
-        const candidateCommitment = [
-            'https://www.facebook.com/496324237400491/photos/pcb.500330310333217/500330110333237/?type=3&theater',
-            'https://www.facebook.com/348577105502407/photos/pcb.348811022145682/348810525479065/?type=3&theater',
-            'https://www.facebook.com/beforu.hanbat/photos/a.1099073166799222.1073741828.1099070860132786/1100406446665894/?type=3&theater'
+        // 지방선거 투표에 후보자 추가
+        const deployedRegionElection = await Vote.at(deployedPublicElections[0]);
+        const regionCandidateList = ['허태정', '박성효', '남충희', '김윤기'];
+        const regionCandidateCommitment = [
+            'http://policy.nec.go.kr/skin/doc.html?fn=20180602153429870_1.pdf&rs=/preview/html/201806/',
+            'http://policy.nec.go.kr/skin/doc.html?fn=20180601163602545_1.pdf&rs=/preview/html/201806/',
+            'http://policy.nec.go.kr/skin/doc.html?fn=20180603213658679_1.pdf&rs=/preview/html/201806/',
+            'http://policy.nec.go.kr/skin/doc.html?fn=20180601163653030_1.pdf&rs=/preview/html/201806/'
         ];
-        for (let i = 0; i < candidateList.length; i++) {
-            await deployedHanbatElection.addCandidate(
-                candidateList[i],
-                candidateCommitment[i],
+        for (let i = 0; i < regionCandidateList.length; i++) {
+            await deployedRegionElection.addCandidate(
+                regionCandidateList[i],
+                regionCandidateCommitment[i],
                 {from: accounts[1]}
             );
-            // const addedCandidate2 = await deployedPrivateVote.getCandidate.call(i);
-            // await console.log(addedCandidate2);
         }
 
         // 파일에 저장
         await fs.open('./config/contract-address.json', 'w', (err, fd) => {
             if (err) throw 'error opening file: ' + err;
             const jsonObj = {
-                factory: deployedVoteFactory.address,
+                factory: deployedElectionFactory.address,
                 test_qkxeo_contract: deployedPublicElections[0],
                 test_qkxeo_address: accounts[1]
             };
@@ -62,9 +58,9 @@ module.exports = (deployer, network, accounts) =>
             const publicKeyFilePath = "./hec/data/publicKey/" + deployedPublicElections[0] + ".bin";
             const fileSize = fs.statSync(publicKeyFilePath).size;
             if (fileSize > 0) {
-                console.log("good. file saved");
+                console.log("good. Key files saved");
             } else {
-                console.error("failed: file size 0");
+                console.error("failed: file not Saved");
             }
         });
         // 이후 다른 스크립트로 IPFS를 실행하면 됩니다.
