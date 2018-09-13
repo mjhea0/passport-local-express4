@@ -3,7 +3,6 @@ const timeUtil = require('../../util/time.util');
 const ElectionFactory = artifacts.require('./ElectionFactory.sol');
 const Election = artifacts.require('./Election.sol');
 const hec = require('../../hec/hec.api.js');
-const ipfs = require('../../ipfs/ipfs.js');
 
 module.exports = (deployer, network, accounts) =>
     deployer.then(async () => {
@@ -22,7 +21,7 @@ module.exports = (deployer, network, accounts) =>
         console.log('지방선거 : ' + deployedPublicElections[0]);
 
         // 지방선거 투표에 후보자 추가
-        const deployedRegionElection = await Vote.at(deployedPublicElections[0]);
+        const deployedRegionElection = await Election.at(deployedPublicElections[0]);
         const regionCandidateList = ['허태정', '박성효', '남충희', '김윤기'];
         const regionCandidateCommitment = [
             'http://policy.nec.go.kr/skin/doc.html?fn=20180602153429870_1.pdf&rs=/preview/html/201806/',
