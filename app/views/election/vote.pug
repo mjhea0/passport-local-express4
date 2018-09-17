@@ -1,0 +1,42 @@
+extends ../base/layout
+
+block content
+    .container
+        if(!user)
+            p 로그인이 필요합니다!
+        else
+            h1.display-4 #{electionDetail.summary.electionName}
+            hr
+            br
+            form(role='form', action=path, method="post")
+                .card-deck
+                    -val = 0
+                    each candidate in electionDetail.candidateList
+                        label
+                            input(type='radio', name='candidate', value=candidateList[val] autocomplete='off')
+                            .card(style='width: 13rem;')
+                                .card-body
+                                    h5.card-title
+                                        b #{val}
+                                        | #{": " + candidate.name}
+                                    if(candidate.commitment.includes("http"))
+                                        -onClick = "window.open('" + candidate.commitment + "')"
+                                        button.btn.btn-success(onclick=onClick) 공약보기
+                                    else
+                                        button.btn.btn-primary(type='button', data-toggle='modal', data-target='#commitmentModal')
+                                            | 공약보기
+                                        // Modal
+                                        #commitmentModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modalCenterTitle', aria-hidden='true')
+                                            .modal-dialog.modal-dialog-centered(role='document')
+                                                .modal-content
+                                                    .modal-header
+                                                        h5#modalLongTitle.modal-title #{candidate.name}의 공약
+                                                        button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                                            span(aria-hidden='true') ×
+                                                    .modal-body
+                                                        | #{candidate.commitment}
+                                                    .modal-footer
+                                                        button.btn.btn-secondary(type='button', data-dismiss='modal') 닫기
+                        -val = val+1
+                .text-center
+                    button.btn.btn-danger(type='submit') 투표하기

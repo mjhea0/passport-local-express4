@@ -1,0 +1,29 @@
+extends ../base/layout
+include ../vote/voteListItem
+
+block content
+    .container
+        h1.display-5 #{user.username} 님의 정보
+        hr(style='margin: 0px 0px 40px')
+        h2 사용하고 계신 계정
+        p.text-center #{user.etherAccount}
+        hr(style='margin: 40px 40px 20px')
+        h4 내가 참여한 투표 목록
+        if(votingVotes)
+            .list-group
+                each val in votingVotes
+                    +voteItem(val, val[5] ? 'private' : 'public')
+        else
+            p.text-center(style='color: gray') 아직 참여하신 투표가 없습니다.
+        hr(style='margin: 40px 40px 20px')
+        if(deployedVotes)
+            h4 주최 투표 목록
+            .list-group
+                each val in deployedVotes
+                    +voteItem(val, val[5] ? 'private' : 'public')
+
+        a.btn.btn-primary.btn-lg(style='margin: 30px')(
+        href="/voterequest"
+        role="button"
+        aria-pressed="true"
+        ) 투표신청

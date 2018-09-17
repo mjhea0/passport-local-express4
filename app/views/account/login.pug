@@ -1,0 +1,13 @@
+extends ../base/layout
+
+block content
+  .container
+    h1 로그인
+    br
+    form(role='form', action="/login", method="post", style='max-width: 300px;')
+      .form-group
+          input.form-control(type='text', name="username", placeholder='이메일')
+      .form-group
+        input.form-control(type='password', name="password", placeholder='비밀번호')
+      button.btn.btn-primary(type='submit') 로그인
+

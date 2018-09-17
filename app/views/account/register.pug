@@ -1,0 +1,36 @@
+extends ../base/layout
+
+block content
+    .container
+        h1 회원가입
+        //p.lead Say something worthwhile here.
+        br
+        form.needs-validation(role='form', action="/register",method="post", style='max-width: 300px;' novalidate)
+            .form-group
+                input.form-control(type='email', name="username", placeholder='이메일' required)
+                .invalid-feedback 이메일을 입력해주세요.
+            .form-group
+                input.form-control(type='password', name="password", placeholder='비밀번호' required)
+                .invalid-feedback 비밀번호를 입력해주세요.
+            button#RegisterButton.btn.btn-primary(type='submit') 회원가입
+            | &nbsp;
+            a(href='/')
+                button.btn.btn-default(type='button') 취소
+        script.
+            (function () {
+                'use strict';
+                window.addEventListener('load', function () {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();

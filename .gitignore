@@ -1,4 +1,5 @@
 /log/*.log
+
 /tmp
 .DS_Store
 .idea/
@@ -7,3 +8,19 @@
 node_modules
 *.out
 npm-debug.log
+*.html
+config/email-config.js
+package-lock.json
+
+# custom
+build/
+ethereum/build/
+hec/data/candidate/*
+hec/data/publicKey/*
+hec/data/secretKey/*
+hec/data/result/*
+hec/createKeys
+hec/encrypt_candidate_list
+hec/tally
+
+.env

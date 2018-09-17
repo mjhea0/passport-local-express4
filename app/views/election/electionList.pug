@@ -1,0 +1,11 @@
+extends ../base/layout
+include electionListItem
+
+block content
+    .container
+        if (!electionList)
+            p 현재 진행 중인 투표가 없습니다!
+        else
+            .list-group
+                each election in electionList
+                    +voteItem(election, isFinite)

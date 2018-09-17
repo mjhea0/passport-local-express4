@@ -1,0 +1,130 @@
+extends ../base/layout
+
+block content
+    .container
+        if (!electionDetail)
+            p 해당 주소의 투표가 존재하지 않습니다!
+        else
+            h1.display-4 #{electionDetail.summary.electionName}
+            if (electionDetail.summary.finiteElection)
+                small (인원이 한정된 투표)
+            h5.my-1
+                case electionDetail.summary.electionState
+                    when "대기": b.text-muted 대기
+                    when "진행 중": b.text-primary 진행 중
+                    when "일시중지": b.text-success 일시중지
+                    when "종료"
+                        if(electionDetail.resultName)
+                            b.text-danger 종료
+                        else
+                            b.text-success 집계 중
+                    default: b.text-danger 오류
+            p.lead #{electionDetail.summary.electionDescription}
+                br
+                | #{electionDetail.summary.showDate}
+            if(electionDetail.summary.electionState === "진행 중" || electionDetail.summary.electionState === "일시중지")
+                h4 총 투표자 수 : #{electionDetail.ballotCount}
+            hr.my-4
+            if(electionDetail.resultName)
+                h1.text-center
+                    b #{electionDetail.resultName.join(',')}
+                    | 님이 당선되셨습니다!
+            h3 후보자 목록
+            p
+                -val = 1
+                .card-deck
+                    each candidate in electionDetail.candidateList
+                        .card(style='width: 15rem;')
+                            .card-body
+                                h5.card-title
+                                    b #{val}
+                                    | #{": " + candidate.name}
+                                if(candidate.commitment.includes("http"))
+                                    -onClick = "window.open('" + candidate.commitment + "')"
+                                    button.btn.btn-success(onclick=onClick) 공약보기
+                                else
+                                    button.btn.btn-primary(type='button', data-toggle='modal', data-target='#commitmentModal')
+                                        | 공약보기
+                                    // Modal
+                                    #commitmentModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modalCenterTitle', aria-hidden='true')
+                                        .modal-dialog.modal-dialog-centered(role='document')
+                                            .modal-content
+                                                .modal-header
+                                                    h5#modalLongTitle.modal-title #{candidate.name}의 공약
+                                                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                                        span(aria-hidden='true') ×
+                                                .modal-body
+                                                    | #{candidate.commitment}
+                                                .modal-footer
+                                                    button.btn.btn-secondary(type='button', data-dismiss='modal') 닫기
+
+                        -val += 1
+            if(user && !electionDetail.owner)
+                if(electionDetail.voterState !== "Voted")
+                    .text-center
+                        -electionInPath = path + '/vote'
+                        -electionButtonDisabled = electionDetail.summary.electionState !== "진행 중"
+                        a.btn.btn-primary.btn-lg.active(
+                            href=electionInPath
+                            role="button"
+                            aria-pressed="true"
+                            disabled=electionButtonDisabled
+                        ) 투표참여
+                else
+                    .text-center
+                        button.btn.btn-primary.btn-lg.active(
+                        role="button"
+                        aria-pressed="true"
+                        disabled
+                        ) 이미 투표에 참여하셨습니다!
+            if(electionDetail.owner)
+                button.btn.btn-default(
+                    data-target='#modifyForm'
+                    data-toggle='collapse'
+                    aria-expanded="false"
+                    aria-controls="modifyForm") 투표 정보 수정하기
+                #modifyForm.collapse(style='margin: 30px;')
+                    form(role='form', action=path, method="post", style='max-width: 300px;')
+                        .form-group
+                            label(for='electionState') 투표 상태 변경
+                            #electionState.btn-group.btn-group-toggle(data-toggle='buttons')
+                                label.btn.btn-secondary
+                                    input#option1(type='radio', name='electionState', value='0' autocomplete='off')
+                                    |  대기
+                                label.btn.btn-primary
+                                    input#option2(type='radio', name='electionState', value='1' autocomplete='off')
+                                    |  진행 중
+                                label.btn.btn-success
+                                    input#option3(type='radio', name='electionState', value='2' autocomplete='off')
+                                    |  일시중지
+                                label.btn.btn-danger
+                                    input#option4(type='radio', name='electionState', value='3' autocomplete='off')
+                                    |  종료
+                        button.btn.btn-default(type='submit') 바꾸기
+                    br
+                    br
+                    form(role='form', action=path+'/modify', method="post", style='max-width: 300px;')
+                        fieldset(disabled)
+                            .form-group
+                                label(for='electionName') 투표 제목(변경 불가)
+                                input#electionName.form-control(type='text', placeholder=electionDetail.summary.electionName)
+                        .form-group
+                            label(for='electionDescription') 투표 설명
+                            textarea#electionDescription.form-control(rows='3' name='electionDescription') #{electionDetail.summary.electionDescription}
+                        .form-group
+                            span
+                                label(for='startDateTimePicker') 투표 시작 날짜
+                                input#startDateTimePicker(width='312' name='startDate' value=electionDetail.summary.startDate)
+                                br
+                                label(for='endDateTimePicker') 투표 종료 날짜
+                                input#endDateTimePicker(width='312' name='endDate' value=electionDetail.summary.endDate)
+                            script.
+                                $('#startDateTimePicker').datetimepicker({
+                                    uiLibrary: 'bootstrap4',
+                                    format: 'yyyy-m-dd HH:MM'
+                                });
+                                $('#endDateTimePicker').datetimepicker({
+                                    uiLibrary: 'bootstrap4',
+                                    format: 'yyyy-m-dd HH:MM'
+                                });
+                        button.btn.btn-default(type='submit') 정보 변경
