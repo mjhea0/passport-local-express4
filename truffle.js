@@ -1,16 +1,18 @@
 const path = require('path');
-const dbConfig = require('./config/db-config.json');
+require('dotenv').config();
+const env = process.env;
+
 
 module.exports = {
-    contracts_directory: "./ethereum/contracts",
-    migrations_directory: "./ethereum/migrations",
-    contracts_build_directory: path.join(__dirname, "./ethereum/build/contracts"),
-    test_directory: "./ethereum/test",
+    contracts_directory: "./app/ethereum/contracts",
+    migrations_directory: "./app/ethereum/migrations",
+    contracts_build_directory: path.join(__dirname, "./app/ethereum/build/contracts"),
+    test_directory: "./test/ethereum",
     networks: {
         development: {
-            host: dbConfig.ganache.state === 'remote' ? dbConfig.remoteUrl : dbConfig.localUrl,
-            port: dbConfig.ganache.port,
-            network_id: dbConfig.ganache.networkId
+            host: env.GANACHE_URL,
+            port: env.GANACHE_PORT,
+            network_id: env.GANACHE_NETWORK_ID
         }
     },
     solc: {
